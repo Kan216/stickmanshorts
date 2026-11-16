@@ -1,0 +1,13 @@
+node_modules/
+out/
+.DS_Store
+*.log
+# reference videos (third-party) stay local
+references/*.mp4
+references/*.mov
+references/analysis/
+# generated audio — run `npm run sfx` to recreate
+public/sfx/*.wav
+public/music/pad-*.wav
+# local HyperFrames experiments build output
+hyperframes/**/node_modules/
