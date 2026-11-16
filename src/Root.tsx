@@ -6,6 +6,10 @@ import { TheRock, THE_ROCK_DURATION } from "./shorts/the-rock/TheRock";
 import { OnePercent, ONE_PERCENT_DURATION } from "./shorts/one-percent/OnePercent";
 import { Same24Hours, SAME_24_HOURS_DURATION } from "./shorts/same-24-hours/Same24Hours";
 import { CrabBucket, CRAB_BUCKET_DURATION } from "./shorts/crab-bucket/CrabBucket";
+import { NoOneWatching, NO_ONE_WATCHING_DURATION } from "./shorts/no-one-watching/NoOneWatching";
+import { Iceberg, ICEBERG_DURATION } from "./shorts/iceberg/Iceberg";
+import { Overthinker, OVERTHINKER_DURATION } from "./shorts/overthinker/Overthinker";
+import { OwnLane, OWN_LANE_DURATION } from "./shorts/own-lane/OwnLane";
 import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
 
@@ -20,6 +24,10 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="OnePercent" component={OnePercent} durationInFrames={ONE_PERCENT_DURATION} {...VIDEO} />
     <Composition id="Same24Hours" component={Same24Hours} durationInFrames={SAME_24_HOURS_DURATION} {...VIDEO} />
     <Composition id="CrabBucket" component={CrabBucket} durationInFrames={CRAB_BUCKET_DURATION} {...VIDEO} />
+    <Composition id="NoOneWatching" component={NoOneWatching} durationInFrames={NO_ONE_WATCHING_DURATION} {...VIDEO} />
+    <Composition id="Iceberg" component={Iceberg} durationInFrames={ICEBERG_DURATION} {...VIDEO} />
+    <Composition id="Overthinker" component={Overthinker} durationInFrames={OVERTHINKER_DURATION} {...VIDEO} />
+    <Composition id="OwnLane" component={OwnLane} durationInFrames={OWN_LANE_DURATION} {...VIDEO} />
     <Composition id="OrbOfLight3D" component={OrbOfLight3D} durationInFrames={150} {...VIDEO} />
     <Still id="PoseSheet" component={PoseSheet} width={VIDEO.width} height={VIDEO.height} />
   </>

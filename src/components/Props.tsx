@@ -8,9 +8,9 @@ import { AbsoluteFill, useCurrentFrame } from "remotion";
 import { COLORS, LAYOUT, VIDEO, resolveColor } from "../lib/theme";
 import { rand } from "../lib/anim";
 
-const Layer: React.FC<{ children: React.ReactNode; opacity?: number }> = ({ children, opacity = 1 }) => (
+const Layer: React.FC<{ children: React.ReactNode; opacity?: number; h?: number }> = ({ children, opacity = 1, h = VIDEO.height }) => (
   <AbsoluteFill style={{ opacity }}>
-    <svg width={VIDEO.width} height={VIDEO.height} viewBox={`0 0 ${VIDEO.width} ${VIDEO.height}`}>
+    <svg width={VIDEO.width} height={h} viewBox={`0 0 ${VIDEO.width} ${h}`} style={{ overflow: "visible" }}>
       {children}
     </svg>
   </AbsoluteFill>
@@ -87,19 +87,19 @@ export const stairTop = (i: number, x = 380, stepW = 36, stepH = 36) => ({
   y: LAYOUT.groundY - (i + 1) * stepH,
 });
 
-/** Water body with an animated surface line from `surfaceY` down to the floor. */
-export const Water: React.FC<{ surfaceY?: number; color?: string }> = ({ surfaceY = 420, color = "#1c2a3d" }) => {
+/** Water body with an animated surface line from `surfaceY` down to the floor (or `bottomY`, may exceed the frame for camera pans). */
+export const Water: React.FC<{ surfaceY?: number; color?: string; bottomY?: number }> = ({ surfaceY = 420, color = "#1c2a3d", bottomY = LAYOUT.groundY }) => {
   const f = useCurrentFrame();
   const pts = Array.from({ length: 25 }).map((_, i) => {
     const x = (i / 24) * VIDEO.width;
     return `${x},${surfaceY + Math.sin(i * 0.9 + f / 10) * 4}`;
   });
   return (
-    <Layer>
-      <polygon points={`0,${LAYOUT.groundY} ${pts.join(" ")} ${VIDEO.width},${LAYOUT.groundY}`} fill={color} opacity={0.85} />
+    <Layer h={Math.max(VIDEO.height, bottomY + 10)}>
+      <polygon points={`0,${bottomY} ${pts.join(" ")} ${VIDEO.width},${bottomY}`} fill={color} opacity={0.85} />
       <polyline points={pts.join(" ")} fill="none" stroke="#9fb6d4" strokeWidth={2.5} opacity={0.8} />
       {Array.from({ length: 14 }).map((_, i) => {
-        const y = LAYOUT.groundY - ((f * (0.8 + rand(i) * 1.2) + rand(i + 5) * 500) % (LAYOUT.groundY - surfaceY));
+        const y = bottomY - ((f * (0.8 + rand(i) * 1.2) + rand(i + 5) * 500) % (bottomY - surfaceY));
         return <circle key={i} cx={rand(i + 11) * VIDEO.width} cy={y} r={2 + rand(i) * 3} fill="none" stroke="#9fb6d4" opacity={0.35} />;
       })}
     </Layer>
@@ -329,6 +329,228 @@ export const Boulder: React.FC<{
           );
         });
       })}
+    </Layer>
+  );
+};
+
+/**
+ * Cone of light from (x, y) down to (toX, toY): a stage spot / stadium flood.
+ * `w0` = width at the lamp, `w1` = width at the floor. Draws a floor pool and an optional lamp fixture.
+ */
+export const LightBeam: React.FC<{ x: number; y: number; toX?: number; toY: number; w0?: number; w1?: number; color?: string; strength?: number; fixture?: boolean }> = ({
+  x,
+  y,
+  toX,
+  toY,
+  w0 = 30,
+  w1 = 260,
+  color = "white",
+  strength = 1,
+  fixture = true,
+}) => {
+  const c = resolveColor(color);
+  const tx = toX ?? x;
+  const id = `beam-${Math.round(x)}-${Math.round(y)}-${Math.round(tx)}`;
+  if (strength <= 0.001) return fixture ? <Layer><rect x={x - w0 / 2 - 6} y={y - 12} width={w0 + 12} height={14} rx={4} fill="#2a2f38" stroke="#4a5361" strokeWidth={1.5} /></Layer> : null;
+  return (
+    <Layer>
+      <defs>
+        <linearGradient id={id} gradientUnits="userSpaceOnUse" x1={x} y1={y} x2={tx} y2={toY}>
+          <stop offset="0%" stopColor={c} stopOpacity={0.55 * strength} />
+          <stop offset="100%" stopColor={c} stopOpacity={0.08 * strength} />
+        </linearGradient>
+        <radialGradient id={`${id}-pool`}>
+          <stop offset="0%" stopColor={c} stopOpacity={0.5 * strength} />
+          <stop offset="100%" stopColor={c} stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <polygon points={`${x - w0 / 2},${y} ${x + w0 / 2},${y} ${tx + w1 / 2},${toY} ${tx - w1 / 2},${toY}`} fill={`url(#${id})`} />
+      <ellipse cx={tx} cy={toY} rx={w1 * 0.6} ry={w1 * 0.09} fill={`url(#${id}-pool)`} />
+      {fixture && (
+        <g>
+          <rect x={x - w0 / 2 - 6} y={y - 12} width={w0 + 12} height={14} rx={4} fill="#2a2f38" stroke="#4a5361" strokeWidth={1.5} />
+          <rect x={x - w0 / 2} y={y - 2} width={w0} height={4} rx={2} fill={c} opacity={0.4 + 0.6 * strength} />
+        </g>
+      )}
+    </Layer>
+  );
+};
+
+/**
+ * Row of crowd silhouettes (head + shoulders) between x0..x1 standing on baseY.
+ * `cheer` 0→1 raises and pumps their arms. `rim` colours the outline (e.g. stadium light).
+ */
+export const Crowd: React.FC<{ x0: number; x1: number; baseY: number; count?: number; size?: number; rim?: string; cheer?: number; opacity?: number; seed?: number }> = ({
+  x0,
+  x1,
+  baseY,
+  count = 8,
+  size = 70,
+  rim = "gold",
+  cheer = 0,
+  opacity = 1,
+  seed = 1,
+}) => {
+  const f = useCurrentFrame();
+  const rc = resolveColor(rim);
+  return (
+    <Layer opacity={opacity}>
+      {Array.from({ length: count }).map((_, i) => {
+        const s = size * (0.85 + rand(seed * 31 + i) * 0.3);
+        const cx = x0 + ((i + 0.5) / count) * (x1 - x0) + (rand(seed * 7 + i) - 0.5) * 10;
+        const bob = cheer * Math.abs(Math.sin(f / 5 + i * 1.7)) * s * 0.08;
+        const top = baseY - s - bob;
+        const headR = s * 0.17;
+        const sw = s * 0.36;
+        const shY = top + headR * 2.3;
+        const arm = cheer * (0.75 + 0.25 * Math.sin(f / 4 + i));
+        const armLen = s * 0.5;
+        const lx = cx - sw * (0.8 + 0.3 * arm);
+        const ly = shY + 8 - armLen * arm * 1.1 + (1 - arm) * armLen * 0.5;
+        const rx = cx + sw * (0.8 + 0.3 * arm);
+        return (
+          <g key={i} fill="#04060a" stroke={rc} strokeWidth={2} strokeOpacity={0.7}>
+            {cheer > 0.02 && (
+              <g strokeWidth={s * 0.11} strokeLinecap="round" stroke="#04060a">
+                <line x1={cx - sw * 0.7} y1={shY + 8} x2={lx} y2={ly} />
+                <line x1={cx + sw * 0.7} y1={shY + 8} x2={rx} y2={ly} />
+              </g>
+            )}
+            {cheer > 0.02 && (
+              <g stroke={rc} strokeWidth={2} fill="none" strokeOpacity={0.7}>
+                <circle cx={lx} cy={ly} r={s * 0.05} />
+                <circle cx={rx} cy={ly} r={s * 0.05} />
+              </g>
+            )}
+            <path d={`M${cx - sw} ${baseY + 4} L${cx - sw} ${shY + sw * 0.5} Q${cx - sw} ${shY} ${cx - sw * 0.4} ${shY} L${cx + sw * 0.4} ${shY} Q${cx + sw} ${shY} ${cx + sw} ${shY + sw * 0.5} L${cx + sw} ${baseY + 4} Z`} />
+            <circle cx={cx} cy={top + headR} r={headR} />
+          </g>
+        );
+      })}
+    </Layer>
+  );
+};
+
+/**
+ * Iceberg: small tip above `waterY` (flat top, feet go at waterY - tipH) and a huge
+ * translucent mass below it. `labels` pop in at their frame `at`, spread evenly down the mass.
+ */
+export const Iceberg: React.FC<{
+  cx: number;
+  waterY: number;
+  tipW?: number;
+  tipH?: number;
+  width?: number;
+  depth?: number;
+  labels?: { text: string; at: number }[];
+  glow?: number;
+  labelColor?: string;
+}> = ({ cx, waterY, tipW = 170, tipH = 110, width = 620, depth = 1100, labels = [], glow = 0, labelColor = "white" }) => {
+  const f = useCurrentFrame();
+  const P = (pts: number[][]) => pts.map(([x, y]) => `${cx + x},${waterY + y}`).join(" ");
+  const w = width;
+  const d = depth;
+  const tip = P([[-tipW * 0.5, 2], [-tipW * 0.32, -tipH * 0.55], [-tipW * 0.18, -tipH], [tipW * 0.2, -tipH], [tipW * 0.3, -tipH * 0.6], [tipW * 0.5, 2]]);
+  const body = P([
+    [-tipW * 0.5, 0], [-w * 0.3, d * 0.12], [-w * 0.46, d * 0.3], [-w * 0.5, d * 0.5], [-w * 0.4, d * 0.72], [-w * 0.26, d * 0.9],
+    [-w * 0.06, d], [w * 0.14, d * 0.96], [w * 0.34, d * 0.8], [w * 0.5, d * 0.55], [w * 0.45, d * 0.3], [w * 0.3, d * 0.12], [tipW * 0.5, 0],
+  ]);
+  const gc = COLORS.gold;
+  const lc = resolveColor(labelColor);
+  return (
+    <Layer h={Math.max(VIDEO.height, waterY + d + 40)}>
+      <defs>
+        <linearGradient id={`ice-${cx}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stopColor="#7fb2d9" stopOpacity={0.42} />
+          <stop offset="100%" stopColor="#2b4f78" stopOpacity={0.35} />
+        </linearGradient>
+      </defs>
+      <polygon points={body} fill={`url(#ice-${cx})`} stroke={glow > 0 ? gc : "#9fc4e4"} strokeOpacity={0.55 + 0.45 * glow} strokeWidth={3 + 2 * glow} strokeLinejoin="round" />
+      {[0.25, 0.55, 0.8].map((t, i) => (
+        <path key={i} d={`M${cx - w * (0.32 - i * 0.05)} ${waterY + d * t} l${w * 0.12} ${d * 0.05} l${w * 0.1} -${d * 0.03}`} stroke="#b5d3ec" strokeOpacity={0.25} strokeWidth={2} fill="none" />
+      ))}
+      <polygon points={tip} fill="#dbeaf6" stroke="#ffffff" strokeWidth={2} strokeLinejoin="round" />
+      <polygon points={P([[tipW * 0.05, -tipH], [tipW * 0.2, -tipH], [tipW * 0.3, -tipH * 0.6], [tipW * 0.5, 2], [tipW * 0.1, 2]])} fill="#a9c6de" />
+      {labels.map((l, i) => {
+        const age = f - l.at;
+        if (age < 0) return null;
+        const sc = Math.min(1, 0.6 + age / 8) + (age < 8 ? Math.sin((age / 8) * Math.PI) * 0.12 : 0);
+        const y = waterY + d * (0.17 + (0.68 * i) / Math.max(1, labels.length - 1));
+        return (
+          <g key={i} transform={`translate(${cx} ${y}) scale(${sc})`} opacity={Math.min(1, age / 5)}>
+            <text textAnchor="middle" dominantBaseline="middle" fontFamily="Segoe UI, Arial" fontWeight={800} fontSize={34} letterSpacing={2} fill={lc} style={{ filter: `drop-shadow(0 0 8px ${glow > 0 ? gc : "#4a7fb0"})` }}>
+              {l.text}
+            </text>
+          </g>
+        );
+      })}
+    </Layer>
+  );
+};
+
+/**
+ * Running-track strip with lane dashes that scroll left by `offset` px (world distance
+ * travelled by the camera) — shows speed in side-view chases. Top edge sits on `y`.
+ */
+export const GroundMarks: React.FC<{ y: number; offset: number; spacing?: number; len?: number; color?: string; depth?: number; opacity?: number }> = ({
+  y,
+  offset,
+  spacing = 120,
+  len = 46,
+  color = "#4a5361",
+  depth = 30,
+  opacity = 1,
+}) => {
+  const c = resolveColor(color);
+  const n = Math.ceil(VIDEO.width / spacing) + 2;
+  const shift = ((offset % spacing) + spacing) % spacing;
+  return (
+    <Layer opacity={opacity}>
+      <rect x={0} y={y} width={VIDEO.width} height={depth} fill="#10141b" />
+      <line x1={0} y1={y} x2={VIDEO.width} y2={y} stroke="#5d6675" strokeWidth={2} />
+      {Array.from({ length: n }).map((_, i) => {
+        const x = i * spacing - shift;
+        return (
+          <g key={i}>
+            <line x1={x} y1={y + depth * 0.55} x2={x + len} y2={y + depth * 0.55} stroke={c} strokeWidth={3} strokeLinecap="round" />
+            <line x1={x + spacing / 2} y1={y + 3} x2={x + spacing / 2 - 6} y2={y + depth - 3} stroke={c} strokeWidth={1.5} opacity={0.5} />
+          </g>
+        );
+      })}
+    </Layer>
+  );
+};
+
+/**
+ * Side-view finish line: checkered strip on the ground, two posts and a tape at chest height.
+ * `broken` 0→1 snaps the tape in the middle and swings both halves down.
+ */
+export const FinishTape: React.FC<{ x: number; groundY: number; h?: number; broken?: number; color?: string }> = ({ x, groundY, h = 160, broken = 0, color = "gold" }) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  const ty = groundY - h * 0.62;
+  const back = { x: x - 14, y: ty - 12 };
+  const front = { x: x + 14, y: ty + 12 };
+  const mid = { x: x, y: ty };
+  const flutter = broken > 0 ? Math.sin(f / 2.5) * 8 * (1 - broken * 0.5) : 0;
+  const half = (p: { x: number; y: number }, dir: 1 | -1) => {
+    const len = Math.hypot(mid.x - p.x, mid.y - p.y) + 40 * broken;
+    const ang = Math.atan2(mid.y - p.y, mid.x - p.x) + dir * broken * 1.2 + (flutter * Math.PI) / 180;
+    return <line x1={p.x} y1={p.y} x2={p.x + Math.cos(ang) * len} y2={p.y + Math.sin(ang) * len} stroke={c} strokeWidth={5} strokeLinecap="round" />;
+  };
+  return (
+    <Layer>
+      {Array.from({ length: 6 }).map((_, i) => (
+        <polygon key={i} points={`${x - 22 + i * 2},${groundY + i * 5} ${x + 2 + i * 2},${groundY + i * 5} ${x + 4 + i * 2},${groundY + (i + 1) * 5} ${x - 20 + i * 2},${groundY + (i + 1) * 5}`} fill={i % 2 ? "#eef2f7" : "#10141b"} opacity={0.85} />
+      ))}
+      <rect x={back.x - 3} y={groundY - h - 12} width={6} height={h + 12} fill="#3a414c" />
+      {broken === 0 ? <line x1={back.x} y1={back.y} x2={front.x} y2={front.y} stroke={c} strokeWidth={5} strokeLinecap="round" /> : (
+        <>
+          {half(back, -1)}
+          {half(front, 1)}
+        </>
+      )}
+      <rect x={front.x - 3} y={groundY - h + 12} width={6} height={h - 12} fill="#5d6675" />
     </Layer>
   );
 };

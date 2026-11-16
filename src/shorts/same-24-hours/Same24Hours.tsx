@@ -13,7 +13,8 @@ import { Particles, Spotlight } from "../../components/Props";
 import { Music, Sfx } from "../../components/Sound";
 import { addPose, breathe, lerpPose, pose, Pose, solve } from "../../lib/pose";
 import { clamp, ease, progress, sec } from "../../lib/anim";
-import { COLORS, FONTS, VIDEO } from "../../lib/theme";
+import { COLORS, VIDEO } from "../../lib/theme";
+import { DayPill, PanelCounter, SplitPanel as Panel } from "../../components/Split";
 
 export const SAME_24_HOURS_DURATION = sec(18);
 
@@ -105,7 +106,7 @@ export const Same24Hours: React.FC = () => {
       <PanelCounter y={BOT_PANEL.y + 18} label="SKILLS" value={String(skills)} color={gold > 0.5 ? COLORS.gold : COLORS.teal} glow={done} />
 
       {/* day pill on the seam */}
-      {lapse && <DayPill day={day} gold={done} />}
+      {lapse && <DayPill text={`DAY ${day}`} gold={done} />}
 
       {/* ---- TEXT ---- */}
       <Headline text="SAME 24 HOURS." start={B.hook} end={B.split} size={48} y={135} />
@@ -145,21 +146,6 @@ const Svg: React.FC<{ children: React.ReactNode; opacity?: number }> = ({ childr
   </AbsoluteFill>
 );
 
-const Panel: React.FC<{ y: number; h: number; accent: string; dim: number; glow?: number; children?: React.ReactNode }> = ({ y, h, accent, dim, glow = 0, children }) => (
-  <Svg>
-    <defs>
-      <linearGradient id={`pg-${y}`} x1="0" y1="1" x2="0" y2="0">
-        <stop offset="0%" stopColor={accent} stopOpacity={0.22 * dim + 0.25 * glow} />
-        <stop offset="100%" stopColor={accent} stopOpacity={0} />
-      </linearGradient>
-    </defs>
-    <rect x={24} y={y} width={672} height={h} rx={18} fill="#07090e" stroke={accent} strokeOpacity={0.35 * dim + 0.5 * glow} strokeWidth={2} />
-    <rect x={24} y={y} width={672} height={h} rx={18} fill={`url(#pg-${y})`} />
-    <line x1={60} y1={y + h - 30} x2={660} y2={y + h - 30} stroke="#3a414c" strokeWidth={2} />
-    <g opacity={0.4 + 0.6 * dim}>{children}</g>
-  </Svg>
-);
-
 const Couch: React.FC<{ x: number; ground: number }> = ({ x, ground }) => (
   <g>
     <rect x={x - 30} y={ground - SEAT} width={150} height={SEAT} rx={10} fill="#1d2330" stroke="#3b4659" strokeWidth={2} />
@@ -188,23 +174,3 @@ const Book: React.FC<{ x: number; y: number }> = ({ x, y }) => (
     <line x1={x} y1={y - 16} x2={x} y2={y + 12} stroke={COLORS.teal} strokeWidth={2} />
   </Svg>
 );
-
-const PanelCounter: React.FC<{ y: number; label: string; value: string; color: string; dim?: boolean; glow?: boolean }> = ({ y, label, value, color, dim, glow }) => (
-  <AbsoluteFill style={{ top: y, left: 50, height: "auto", width: "auto", opacity: dim ? 0.45 : 1, fontFamily: FONTS.headline }}>
-    <div style={{ color, fontSize: 22, fontWeight: 700, letterSpacing: 2 }}>{label}</div>
-    <div style={{ fontFamily: FONTS.mono, fontSize: 44, fontWeight: 700, color: dim ? COLORS.dim : COLORS.white, textShadow: glow ? `0 0 18px ${color}, 0 0 36px ${color}` : undefined }}>
-      {value}
-    </div>
-  </AbsoluteFill>
-);
-
-const DayPill: React.FC<{ day: number; gold: boolean }> = ({ day, gold }) => {
-  const c = gold ? COLORS.gold : COLORS.white;
-  return (
-    <AbsoluteFill style={{ top: 540, height: "auto", alignItems: "center" }}>
-      <div style={{ fontFamily: FONTS.mono, fontWeight: 700, fontSize: 30, color: c, background: "#05070b", border: `2px solid ${c}`, borderRadius: 30, padding: "4px 22px", boxShadow: gold ? `0 0 20px ${c}` : undefined }}>
-        DAY {day}
-      </div>
-    </AbsoluteFill>
-  );
-};
