@@ -225,3 +225,110 @@ export const Spotlight: React.FC<{ x: number; y: number; r?: number; color?: str
     </Layer>
   );
 };
+
+/**
+ * Boulder with a progressive crack that can split open.
+ *  crack 0→1 reveals the main crack top→bottom (branches appear after 0.5)
+ *  split 0→1 slides the two halves apart and lets light out from inside
+ *  impacts: frames when a hit lands → dust burst + small shake at `impactAt`
+ */
+export const Boulder: React.FC<{
+  cx: number;
+  w?: number;
+  h?: number;
+  crack?: number;
+  split?: number;
+  crackColor?: string;
+  lightColor?: string;
+  impacts?: number[];
+  /** impact point relative to (cx, ground), px */
+  impactAt?: { x: number; y: number };
+  opacity?: number;
+}> = ({ cx, w = 180, h = 180, crack = 0, split = 0, crackColor = "gold", lightColor = "gold", impacts = [], impactAt = { x: -70, y: -150 }, opacity = 1 }) => {
+  const f = useCurrentFrame();
+  const G = LAYOUT.groundY;
+  const sx = w / 180;
+  const sy = h / 180;
+  const P = (x: number, y: number) => `${cx + x * sx},${G + y * sy}`;
+  const rock = [[-88, 0], [-95, -55], [-78, -122], [-38, -170], [12, -180], [60, -155], [90, -98], [95, -40], [88, 0]];
+  const crackPts = [[2, -178], [-12, -142], [8, -110], [-10, -76], [12, -46], [-4, -16], [4, 0]];
+  const rockPts = rock.map(([x, y]) => P(x, y)).join(" ");
+  const crackD = "M" + crackPts.map(([x, y]) => P(x, y)).join(" L");
+  const leftClip = [[2, -260], ...crackPts, [4, 30], [-300, 30], [-300, -260]];
+  const rightClip = [[2, -260], ...crackPts, [4, 30], [300, 30], [300, -260]];
+  const b1 = `M${P(-12, -142)} L${P(-48, -124)} L${P(-70, -132)}`;
+  const b2 = `M${P(12, -46)} L${P(46, -62)} L${P(70, -58)}`;
+  const b3 = `M${P(8, -110)} L${P(40, -118)}`;
+  const cc = resolveColor(crackColor);
+  const lc = resolveColor(lightColor);
+  const id = `rock-${Math.round(cx)}`;
+
+  // shake for 6 frames after the latest impact
+  const last = impacts.filter((t) => t <= f).pop();
+  const since = last === undefined ? 99 : f - last;
+  const jx = since < 6 ? Math.sin(f * 3.1) * (6 - since) * 0.8 : 0;
+
+  const half = (clip: number[][], dir: 1 | -1) => (
+    <g transform={`translate(${dir * split * (dir > 0 ? 22 : 38) + jx} 0) rotate(${dir * split * 7} ${cx + dir * 88 * sx} ${G})`}>
+      <clipPath id={`${id}-${dir}`}>
+        <polygon points={clip.map(([x, y]) => P(x, y)).join(" ")} />
+      </clipPath>
+      <g clipPath={`url(#${id}-${dir})`}>
+        <polygon points={rockPts} fill="#272c35" stroke="#7d8798" strokeWidth={3} strokeLinejoin="round" />
+        <path d={`M${P(-60, -120)} Q${P(-20, -150)} ${P(30, -150)}`} stroke="#3a414c" strokeWidth={6} fill="none" strokeLinecap="round" />
+        <path d={`M${P(40, -40)} Q${P(60, -70)} ${P(55, -100)}`} stroke="#1c2027" strokeWidth={6} fill="none" strokeLinecap="round" />
+      </g>
+    </g>
+  );
+
+  return (
+    <Layer opacity={opacity}>
+      <defs>
+        <filter id={`${id}-glow`} x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation={4} result="b" />
+          <feMerge>
+            <feMergeNode in="b" />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+        <radialGradient id={`${id}-light`}>
+          <stop offset="0%" stopColor={lc} stopOpacity={0.95} />
+          <stop offset="40%" stopColor={lc} stopOpacity={0.5} />
+          <stop offset="100%" stopColor={lc} stopOpacity={0} />
+        </radialGradient>
+      </defs>
+      <clipPath id={`${id}-above`}>
+        <rect x={0} y={0} width={VIDEO.width} height={G} />
+      </clipPath>
+      {split > 0 && <ellipse clipPath={`url(#${id}-above)`} cx={cx} cy={G - 90 * sy} rx={60 + split * 120} ry={120 + split * 130} fill={`url(#${id}-light)`} opacity={Math.min(1, split * 1.5)} />}
+      {half(leftClip, -1)}
+      {half(rightClip, 1)}
+      {split < 0.05 && crack > 0 && (
+        <g filter={`url(#${id}-glow)`} transform={`translate(${jx} 0)`} stroke={cc} strokeWidth={3.5} fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <path d={crackD} pathLength={1} strokeDasharray={`${crack} 1`} />
+          {crack > 0.5 && <path d={b1} pathLength={1} strokeDasharray={`${(crack - 0.5) * 2} 1`} />}
+          {crack > 0.7 && <path d={b2} pathLength={1} strokeDasharray={`${(crack - 0.7) * 3.3} 1`} />}
+          {crack > 0.85 && <path d={b3} pathLength={1} strokeDasharray={`${(crack - 0.85) * 6.6} 1`} />}
+        </g>
+      )}
+      {impacts.map((t, k) => {
+        const age = f - t;
+        if (age < 0 || age > 14) return null;
+        return Array.from({ length: 8 }).map((_, i) => {
+          const ang = -Math.PI * (0.15 + rand(k * 10 + i) * 0.7);
+          const sp = 3 + rand(k * 10 + i + 5) * 5;
+          return (
+            <circle
+              key={`${k}-${i}`}
+              cx={cx + impactAt.x * sx - Math.cos(ang) * sp * age}
+              cy={G + impactAt.y * sy + Math.sin(ang) * sp * age + 0.25 * age * age}
+              r={2 + rand(k + i) * 2.5}
+              fill="#9aa6b8"
+              opacity={1 - age / 14}
+            />
+          );
+        });
+      })}
+    </Layer>
+  );
+};

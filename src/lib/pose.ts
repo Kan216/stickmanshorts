@@ -80,6 +80,16 @@ export const POSES = {
   lieBack: pose({ dy: 0.44, torso: -90, head: -5, frontShoulder: 10, backShoulder: -5, frontElbow: 5, backElbow: 5, frontHip: 2, backHip: -2, frontKnee: 3, backKnee: 6 }),
   /** Treading water / drowning — arms up, legs kicking. */
   swimUp: pose({ head: -30, frontShoulder: 160, backShoulder: 120, frontElbow: 30, backElbow: 50, frontHip: 20, backHip: -15, frontKnee: 40, backKnee: 30 }),
+  /** Hammer resting in front, ready to work. */
+  hammerReady: pose({ torso: 8, head: 8, frontShoulder: 55, frontElbow: 35, backShoulder: 50, backElbow: 40, frontHip: 14, backHip: 0, frontKnee: 8, backKnee: 6 }),
+  /** Big overhead wind-up (hammer behind the head). */
+  hammerUp: pose({ torso: -10, head: -8, frontShoulder: 200, frontElbow: 30, backShoulder: 195, backElbow: 35, frontHip: 2, backHip: -18, frontKnee: 6, backKnee: 4 }),
+  /** Overhead strike landed — lunging forward, arms extended down-forward. */
+  hammerDown: pose({ torso: 30, head: 12, frontShoulder: 88, frontElbow: 4, backShoulder: 82, backElbow: 8, frontHip: 55, backHip: 18, frontKnee: 35, backKnee: 6 }),
+  /** Small tap: hammer raised just above the shoulder. */
+  tapUp: pose({ torso: 6, head: 6, frontShoulder: 120, frontElbow: 40, backShoulder: 112, backElbow: 45, frontHip: 16, backHip: 0, frontKnee: 10, backKnee: 6 }),
+  /** Small tap landed. */
+  tapDown: pose({ torso: 14, head: 12, frontShoulder: 78, frontElbow: 8, backShoulder: 72, backElbow: 12, frontHip: 28, backHip: 6, frontKnee: 18, backKnee: 6 }),
   /** Archer: front arm holds bow forward, back arm draws string. */
   drawBow: pose({ head: 4, frontShoulder: 90, frontElbow: 0, backShoulder: -85, backElbow: 160, frontHip: 15, backHip: -15 }),
 } satisfies Record<string, Pose>;

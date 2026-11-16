@@ -35,6 +35,8 @@ export type StickmanProps = {
   spin?: number;
   /** draw a soft light pool on the floor under the character */
   floorLight?: boolean;
+  /** object held in the front hand, aligned with the forearm */
+  holding?: "hammer" | "none";
 };
 
 const line = (pts: Pt[]) => pts.map((p, i) => `${i ? "L" : "M"}${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(" ");
@@ -52,6 +54,7 @@ export const Stickman: React.FC<StickmanProps> = ({
   opacity = 1,
   spin = 0,
   floorLight = false,
+  holding = "none",
 }) => {
   const rawId = useId();
   const id = rawId.replace(/[^a-zA-Z0-9_-]/g, "");
@@ -102,6 +105,29 @@ export const Stickman: React.FC<StickmanProps> = ({
   const headStroke = style === "solid" ? shade(c, -0.45) : style === "silhouette" ? (glow > 0 ? c : COLORS.ink) : c;
   const headSW = style === "solid" ? outline * 1.6 : style === "silhouette" ? 2 : style === "line" ? sw : sw * 0.6;
 
+  /** Hammer along the forearm direction: grip at the hand, head at the far end. */
+  const hammer = (elbow: Pt, hand: Pt) => {
+    const len = Math.hypot(hand.x - elbow.x, hand.y - elbow.y) || 1;
+    const d = { x: (hand.x - elbow.x) / len, y: (hand.y - elbow.y) / len };
+    const a = { x: hand.x - d.x * H * 0.04, y: hand.y - d.y * H * 0.04 };
+    const b = { x: hand.x + d.x * H * 0.3, y: hand.y + d.y * H * 0.3 };
+    const n = { x: -d.y, y: d.x };
+    const hw = H * 0.09; // half head width
+    const hd = H * 0.045; // half head depth
+    const head = [
+      { x: b.x + n.x * hw - d.x * hd, y: b.y + n.y * hw - d.y * hd },
+      { x: b.x + n.x * hw + d.x * hd, y: b.y + n.y * hw + d.y * hd },
+      { x: b.x - n.x * hw + d.x * hd, y: b.y - n.y * hw + d.y * hd },
+      { x: b.x - n.x * hw - d.x * hd, y: b.y - n.y * hw - d.y * hd },
+    ];
+    return (
+      <g>
+        <path d={line([a, b])} stroke={style === "solid" ? shade(c, -0.45) : c} strokeWidth={H * 0.022} strokeLinecap="round" />
+        <path d={line(head) + " Z"} fill={COLORS.ink} stroke={c} strokeWidth={H * 0.014} strokeLinejoin="round" />
+      </g>
+    );
+  };
+
   const eyeColor = style === "solid" ? "#f4f7fb" : style === "silhouette" ? "#f4f7fb" : COLORS.white;
 
   return (
@@ -133,6 +159,7 @@ export const Stickman: React.FC<StickmanProps> = ({
           {bone(leg("front"))}
           <circle cx={s.head.x} cy={s.head.y} r={s.headR} fill={headFill} stroke={headStroke} strokeWidth={headSW} />
           <Face cx={s.head.x} cy={s.head.y} r={s.headR} angle={s.headAngle} facing={facing} kind={expression} color={eyeColor} />
+          {holding === "hammer" && hammer(s.front.elbow, s.front.hand)}
           {bone(arm("front"))}
         </g>
       </svg>

@@ -143,9 +143,10 @@ export type Stat = {
 };
 
 /** Row of labelled counters: TALENT 5 · DISCIPLINE 6/10 · EGO 7 */
-export const StatRow: React.FC<{ stats: Stat[]; y?: number; start?: number }> = ({ stats, y = LAYOUT.statsY, start = 0 }) => {
+export const StatRow: React.FC<{ stats: Stat[]; y?: number; start?: number; end?: number }> = ({ stats, y = LAYOUT.statsY, start = 0, end }) => {
   const frame = useCurrentFrame();
-  const a = interpolate(frame, [start, start + 10], [0, 1], clamp);
+  const out = end === undefined ? 1 : 1 - interpolate(frame, [end - 10, end], [0, 1], clamp);
+  const a = interpolate(frame, [start, start + 10], [0, 1], clamp) * out;
   return (
     <AbsoluteFill style={{ top: y - 30, height: "auto", flexDirection: "row", justifyContent: "space-evenly", opacity: a, padding: `0 ${LAYOUT.safeX}px` }}>
       {stats.map((s, i) => {
