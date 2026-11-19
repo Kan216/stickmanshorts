@@ -6,6 +6,11 @@ no voice-over. Videos are **code**: Remotion (React → MP4), optional Three.js 
 `@remotion/three`, and ffmpeg for audio/loudness/QA. HyperFrames (HeyGen) is an optional
 alternative engine (see `.claude/skills/hyperframes-alt`).
 
+> **Two channels live here.** The motivational stickman shorts (everything below) and
+> **ChalkTalk**: chalkboard + stickman *data explainers* with an edge-tts voice-over, where one
+> `episode.json` renders a 9:16 Short **and** a 16:9 long video. ChalkTalk code is in `src/chalk/`;
+> start with the `chalk-explainer` skill. See "ChalkTalk channel" at the end of this file.
+
 ## Quick commands
 
 ```bash
@@ -83,3 +88,28 @@ out/                          # renders (git-ignored)
 - WebGL uses `swangle` (software) — works headless everywhere; set `"angle"` in
   `remotion.config.ts` on a GPU desktop for speed.
 - A 15s short renders in ~45s on a small cloud container.
+
+## ChalkTalk channel (data explainers)
+
+```bash
+pip install edge-tts                                   # once
+npm run chalk:tts -- top10-air-forces                  # voice-over + word timings (both formats) + flags
+npm run still -- ChalkSheet out/chalk/sheet.png        # look test
+npm run still -- Top10AirForcesShort out/chalk/s230.png 230
+npm run render -- Top10AirForcesShort                  # 720x1280
+npm run render -- Top10AirForcesLong                   # 1280x720
+```
+
+| Skill | Use when |
+|---|---|
+| `chalk-explainer` | **Main entry.** "Make a ChalkTalk video / top 10 X / compare countries by Y". |
+| `chalk-research` | Gathering and fact-checking the numbers (source + year for every figure). |
+| `chalk-voiceover` | edge-tts voice, speed, pronunciation, regenerating lines, ducking. |
+| `chalk-scenes` | Changing the chalk look or adding a scene template. |
+
+- Data + script: `src/chalk/episodes/<slug>/episode.json` (register in `src/chalk/episodes/index.ts`).
+  Compositions `<id>Short` / `<id>Long` are created automatically.
+- Timing comes from the voice (`public/chalk/<slug>/<fmt>/timing.json`), not a hand-written `B` object.
+  Retiming = edit the line and re-run TTS.
+- Numbers need a source and year (`research/<slug>.md`); keep `"verified": false` until checked with the user.
+- edge-tts needs network access to `speech.platform.bing.com`.

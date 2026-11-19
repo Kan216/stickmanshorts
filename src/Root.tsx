@@ -12,6 +12,10 @@ import { Overthinker, OVERTHINKER_DURATION } from "./shorts/overthinker/Overthin
 import { OwnLane, OWN_LANE_DURATION } from "./shorts/own-lane/OwnLane";
 import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
+import { ChalkExplainer, calcChalkMetadata } from "./chalk/Explainer";
+import { ChalkSheet } from "./chalk/ChalkSheet";
+import { EPISODES } from "./chalk/episodes";
+import { LAYOUTS } from "./chalk/theme";
 
 /**
  * Register every short here. Composition id = PascalCase slug, used by
@@ -30,5 +34,23 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="OwnLane" component={OwnLane} durationInFrames={OWN_LANE_DURATION} {...VIDEO} />
     <Composition id="OrbOfLight3D" component={OrbOfLight3D} durationInFrames={150} {...VIDEO} />
     <Still id="PoseSheet" component={PoseSheet} width={VIDEO.width} height={VIDEO.height} />
+
+    {/* ChalkTalk channel: each episode.json → <Id>Short (9:16) + <Id>Long (16:9); duration comes from the voice-over */}
+    {EPISODES.flatMap((ep) =>
+      (["short", "long"] as const).map((format) => (
+        <Composition
+          key={`${ep.id}-${format}`}
+          id={`${ep.id}${format === "short" ? "Short" : "Long"}`}
+          component={ChalkExplainer}
+          defaultProps={{ episode: ep, format, timing: null }}
+          calculateMetadata={calcChalkMetadata}
+          durationInFrames={300}
+          fps={30}
+          width={LAYOUTS[format].W}
+          height={LAYOUTS[format].H}
+        />
+      )),
+    )}
+    <Still id="ChalkSheet" component={ChalkSheet} width={720} height={1280} />
   </>
 );

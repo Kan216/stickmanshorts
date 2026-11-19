@@ -34,3 +34,11 @@ gen boom   "0.9*sin(2*PI*(60-25*t)*t)*exp(-2.5*t)+0.3*(random(0)-0.5)*exp(-12*t)
 pad() { ffmpeg -v error -y -f lavfi -i "aevalsrc=$2:s=$R:d=30" -af "lowpass=f=1800,afade=t=in:d=2,afade=t=out:st=27:d=3,volume=0.6" -ac 2 "public/music/$1.wav"; echo "music/$1.wav"; }
 pad pad-dark  "0.18*(sin(2*PI*110*t)+0.7*sin(2*PI*130.81*t)+0.6*sin(2*PI*164.81*t)+0.3*sin(2*PI*220*t))*(0.75+0.25*sin(2*PI*0.15*t))"
 pad pad-hope  "0.16*(sin(2*PI*130.81*t)+0.7*sin(2*PI*164.81*t)+0.6*sin(2*PI*196*t)+0.35*sin(2*PI*261.63*t))*(0.75+0.25*sin(2*PI*0.2*t))"
+
+# --- ChalkTalk (chalkboard explainers) ---
+# chalk-tap: chalk hitting the board (scene start, number reveal)
+gen chalk-tap   "0.8*(random(0)-0.5)*exp(-140*t)+0.4*sin(2*PI*1900*t)*exp(-120*t)" 0.08 "highpass=f=900"
+# chalk-write: scratchy strokes (writing a line)
+gen chalk-write "(random(0)-0.5)*(0.6+0.4*sin(2*PI*9*t))*ceil(sin(2*PI*3.1*t+0.3))*(1-t/0.9)" 0.9 "bandpass=f=3500:width_type=o:w=1.5,volume=1.6"
+# eraser: soft felt swipe (scene change)
+gen eraser      "(random(0)-0.5)*sin(PI*t/0.5)" 0.5 "lowpass=f=1400,highpass=f=200,volume=1.8"

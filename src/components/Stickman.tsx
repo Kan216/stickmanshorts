@@ -1,5 +1,6 @@
 import React, { useId } from "react";
-import { AbsoluteFill } from "remotion";
+import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { ChalkFilter } from "../lib/chalkFilter";
 import { Pose, Pt, solve, NEUTRAL, POSES, PoseName } from "../lib/pose";
 import { COLORS, VIDEO, resolveColor } from "../lib/theme";
 
@@ -10,8 +11,10 @@ export type StickStyle =
   | "solid"
   /** pure black figure, optional rim light (for lit rooms) */
   | "silhouette"
-  /** thin single line, no fill (minimal / chalk look) */
-  | "line";
+  /** thin single line, no fill (minimal look) */
+  | "line"
+  /** grainy hand-drawn chalk lines that "boil" a few times a second (ChalkTalk) */
+  | "chalk";
 
 export type Expression = "neutral" | "angry" | "happy" | "sad" | "closed" | "dead" | "none";
 
@@ -37,6 +40,8 @@ export type StickmanProps = {
   floorLight?: boolean;
   /** object held in the front hand, aligned with the forearm */
   holding?: "hammer" | "none";
+  /** SVG canvas size — defaults to VIDEO (720x1280); pass the composition size for other formats (e.g. 16:9) */
+  canvas?: { w: number; h: number };
 };
 
 const line = (pts: Pt[]) => pts.map((p, i) => `${i ? "L" : "M"}${p.x.toFixed(2)} ${p.y.toFixed(2)}`).join(" ");
@@ -55,7 +60,9 @@ export const Stickman: React.FC<StickmanProps> = ({
   spin = 0,
   floorLight = false,
   holding = "none",
+  canvas,
 }) => {
+  const frame = useCurrentFrame();
   const rawId = useId();
   const id = rawId.replace(/[^a-zA-Z0-9_-]/g, "");
   const p = typeof pose === "string" ? POSES[pose] : pose;
@@ -63,7 +70,7 @@ export const Stickman: React.FC<StickmanProps> = ({
   const c = resolveColor(color);
   const H = height;
 
-  const sw = style === "solid" ? H * 0.062 : style === "line" ? H * 0.018 : H * 0.034;
+  const sw = style === "solid" ? H * 0.062 : style === "line" ? H * 0.018 : style === "chalk" ? H * 0.03 : H * 0.034;
   const outline = style === "solid" ? H * 0.014 : 0;
 
   const torsoPath = line([s.hip, s.neck]);
@@ -101,9 +108,9 @@ export const Stickman: React.FC<StickmanProps> = ({
     return <path {...common} stroke={c} strokeWidth={sw} opacity={o} />;
   };
 
-  const headFill = style === "solid" ? c : coreColor;
+  const headFill = style === "solid" ? c : style === "chalk" ? "none" : coreColor;
   const headStroke = style === "solid" ? shade(c, -0.45) : style === "silhouette" ? (glow > 0 ? c : COLORS.ink) : c;
-  const headSW = style === "solid" ? outline * 1.6 : style === "silhouette" ? 2 : style === "line" ? sw : sw * 0.6;
+  const headSW = style === "solid" ? outline * 1.6 : style === "silhouette" ? 2 : style === "line" || style === "chalk" ? sw : sw * 0.6;
 
   /** Hammer along the forearm direction: grip at the hand, head at the far end. */
   const hammer = (elbow: Pt, hand: Pt) => {
@@ -132,8 +139,9 @@ export const Stickman: React.FC<StickmanProps> = ({
 
   return (
     <AbsoluteFill style={{ opacity }}>
-      <svg width={VIDEO.width} height={VIDEO.height} viewBox={`0 0 ${VIDEO.width} ${VIDEO.height}`}>
+      <svg width={canvas?.w ?? VIDEO.width} height={canvas?.h ?? VIDEO.height} viewBox={`0 0 ${canvas?.w ?? VIDEO.width} ${canvas?.h ?? VIDEO.height}`}>
         <defs>
+          {style === "chalk" && <ChalkFilter id={`chalk-${id}`} seed={1 + (Math.floor(frame / 4) % 6)} rough={1.1} grain={0.8} />}
           <filter id={`glow-${id}`} x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation={6 * glow} result="b1" />
             <feGaussianBlur in="SourceGraphic" stdDeviation={18 * glow} result="b2" />
@@ -150,7 +158,7 @@ export const Stickman: React.FC<StickmanProps> = ({
         </defs>
         {floorLight && <ellipse cx={x} cy={y} rx={H * 0.45} ry={H * 0.07} fill={`url(#pool-${id})`} />}
         <g
-          filter={glow > 0 && style !== "silhouette" ? `url(#glow-${id})` : undefined}
+          filter={style === "chalk" ? `url(#chalk-${id})` : glow > 0 && style !== "silhouette" ? `url(#glow-${id})` : undefined}
           transform={spin ? `rotate(${spin * facing} ${s.hip.x} ${s.hip.y})` : undefined}
         >
           {bone(arm("back"), true)}
