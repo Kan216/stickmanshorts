@@ -82,6 +82,15 @@ Read both JPGs. Stop-scroll checklist: readable at phone size (≤ 4 big words),
 teacher's surprised face large, #1 circled, nothing important in the bottom-right corner of the 16:9
 one (YouTube timestamp), no text overlap. Thumbnail must match the video's promise; no fake numbers.
 
-## 7. Deliver
+## 7. Upload (only when the user says to post)
+```bash
+npm run yt -- upload <slug> --format short --publish-at <RFC3339>     # Short
+npm run yt -- upload <slug> --format long  --publish-at <RFC3339>     # long-form
+```
+**Always add hashtags** (user rule): set `episode.youtube.hashtags` — 8 tags, strongest 3 first
+(they show above the title), ≤ 15 total; Shorts start with `Shorts`, and include `ChalkTalk`.
+The uploader falls back to title-derived hashtags if missing, but write real ones.
+
+## 8. Deliver
 Send the two MP4s **and the two thumbnails** to the user. Report durations, sources and as-of year
 (paste-ready for the video description), and whether `verified` is true.

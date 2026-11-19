@@ -115,5 +115,7 @@ npm run still -- TeacherSheet out/chalk/teacher.png 0  # presenter: all gestures
   Retiming = edit the line and re-run TTS.
 - Numbers need a source and year (`research/<slug>.md`); keep `"verified": false` until checked with the user.
 - edge-tts needs network access to `speech.platform.bing.com`.
+- **YouTube uploads always include hashtags** (`episode.youtube.hashtags`, strongest 3 first, ≤ 15).
+  Upload with `npm run yt -- upload <slug> ...` only when the user asks to post.
 - Presenter = the ChalkTalk teacher (`src/chalk/Teacher.tsx`, acted by `Presenter.tsx`): lip-synced,
   gestures follow the narration. Every delivered episode includes both thumbnails.

@@ -149,7 +149,13 @@ def metadata(ep: dict, fmt: str) -> dict:
         + ("#Shorts " if fmt == "short" else "")
         + "#ChalkTalk #Top10 #Data"
     )
-    # episode-specific hashtags (first 3 show above the title on YouTube; keep ≤ 15)
+    # ALWAYS hashtags: episode-specific if given, else generated from the title (first 3 show above the title; ≤ 15)
+    if not y.get("hashtags"):
+        stop = {"top", "10", "the", "of", "in", "with", "most", "largest", "world", "countries", "country", "a", "and", "by", "on", "explained", "chalkboard"}
+        words = [w for w in "".join(c if c.isalnum() or c == " " else " " for c in ep["title"]).split() if w.lower() not in stop]
+        topic = "".join(w.capitalize() for w in words[:3])
+        y = {**y, "hashtags": (["Shorts"] if fmt == "short" else []) + ([topic] if topic else []) + [w.capitalize() for w in words[:3]] + ["Top10", "ChalkTalk", "Facts"]}
+        y["hashtags"] = list(dict.fromkeys(y["hashtags"]))
     if y.get("hashtags"):
         lines = desc.rstrip().split("\n")
         while lines and lines[-1].strip().startswith("#"):
