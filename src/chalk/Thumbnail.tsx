@@ -38,6 +38,10 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
       };
 
   const fh = (g.flag.w * 3) / 4;
+  // auto-fit: never wrap the headline (Gochi Hand caps ≈ 0.6em per char)
+  const plain = t.text.replace(/\{(\w+|#[0-9a-fA-F]{3,8}):([^}]+)\}/g, "$2").split("\n");
+  const longest = Math.max(...plain.map((l) => l.length));
+  const textSize = Math.min(g.text.size, Math.floor(g.text.w / (longest * 0.6)));
   const kickerW = (t.kicker?.length ?? 0) * g.kicker.size * 0.48 + 40;
   const kickerX = short ? (720 - kickerW) / 2 : g.kicker.x - 16;
 
@@ -76,7 +80,7 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
           x={g.text.x}
           y={g.text.y}
           w={g.text.w}
-          size={g.text.size}
+          size={textSize}
           align={g.text.align}
           font="title"
           cps={0}
@@ -117,7 +121,7 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
             x={g.badge.x}
             y={g.badge.y}
             w={g.badge.w}
-            size={g.badge.size}
+            size={Math.min(g.badge.size, Math.floor((g.badge.w - 40) / ((t.badge?.length ?? 1) * 0.62)))}
             align={g.badge.align}
             font="title"
             color="yellow"
