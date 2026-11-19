@@ -34,7 +34,7 @@ export type ChalkTextProps = {
   w?: number;
   align?: "left" | "center" | "right";
   color?: string;
-  font?: "title" | "body";
+  font?: "title" | "body" | "bold";
   /** frame the hand starts writing */
   start?: number;
   /** chars per second while writing (0 = appear instantly) */
@@ -90,6 +90,7 @@ export const ChalkText: React.FC<ChalkTextProps> = ({
         width: w,
         textAlign: align,
         fontFamily: CHALK_FONTS[font],
+        fontWeight: font === "bold" ? 900 : undefined,
         fontSize: size,
         lineHeight,
         color: base,

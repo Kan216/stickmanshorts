@@ -29,6 +29,8 @@ export const CHALK_FONTS = {
   title: "'Gochi Hand', 'Patrick Hand', 'Comic Sans MS', cursive",
   /** body, labels, captions — more legible */
   body: "'Patrick Hand', 'Gochi Hand', 'Comic Sans MS', cursive",
+  /** thumbnails: clean, heavy, readable at phone size (Roboto Black 900) */
+  bold: "'Roboto', 'Arial Black', Arial, sans-serif",
 };
 
 /** Layout per format (px). All scene templates read positions from here. */

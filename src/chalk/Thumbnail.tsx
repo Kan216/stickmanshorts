@@ -11,7 +11,12 @@ import type { Episode } from "./types";
  * the top flags (#1 circled in red), and the teacher with a surprised face.
  * Rendered by scripts/chalk-thumb.sh at 1.5× (→ 1920×1080 / 1080×1920 JPEG).
  */
-const SHADOW = "0 5px 0 rgba(0,0,0,0.55), 0 0 22px rgba(0,0,0,0.55)";
+/** heavy dark outline + drop shadow: readable on any screen */
+const SHADOW = [
+  "-4px -4px 0 #0a100d", "4px -4px 0 #0a100d", "-4px 4px 0 #0a100d", "4px 4px 0 #0a100d",
+  "0 -5px 0 #0a100d", "0 5px 0 #0a100d", "-5px 0 0 #0a100d", "5px 0 0 #0a100d",
+  "0 9px 0 #0a100d", "0 12px 22px rgba(0,0,0,0.65)",
+].join(", ");
 
 export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({ episode, format }) => {
   const t = episode.thumbnail ?? { text: episode.title };
@@ -41,8 +46,9 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
   // auto-fit: never wrap the headline (Gochi Hand caps ≈ 0.6em per char)
   const plain = t.text.replace(/\{(\w+|#[0-9a-fA-F]{3,8}):([^}]+)\}/g, "$2").split("\n");
   const longest = Math.max(...plain.map((l) => l.length));
-  const textSize = Math.min(g.text.size, Math.floor(g.text.w / (longest * 0.6)));
-  const kickerW = (t.kicker?.length ?? 0) * g.kicker.size * 0.48 + 40;
+  const textSize = Math.min(g.text.size, Math.floor(g.text.w / (longest * 0.68)));
+  const kickerSize = Math.min(g.kicker.size, Math.floor((short ? 600 : 760) / (Math.max(1, t.kicker?.length ?? 1) * 0.56)));
+  const kickerW = (t.kicker?.length ?? 0) * kickerSize * 0.56 + 36;
   const kickerX = short ? (720 - kickerW) / 2 : g.kicker.x - 16;
 
   return (
@@ -58,19 +64,19 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
         {t.kicker && (
           <>
             <Sketch>
-              <Draw d={roughRect(kickerX, g.kicker.y - 4, kickerW, g.kicker.size * 1.25, 21, 2)} start={-30} color="yellow" width={5} />
+              <Draw d={roughRect(kickerX, g.kicker.y - 4, kickerW, kickerSize * 1.25, 21, 2)} start={-30} color="yellow" width={5} />
             </Sketch>
             <ChalkText
               text={t.kicker}
               x={g.kicker.x}
               y={g.kicker.y}
               w={short ? g.kicker.w : kickerW}
-              size={g.kicker.size}
+              size={kickerSize}
               align={g.kicker.align}
-              font="title"
+              font="bold"
               color="yellow"
               cps={0}
-              texture="soft"
+              texture="none"
               shadow={SHADOW}
             />
           </>
@@ -82,10 +88,10 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
           w={g.text.w}
           size={textSize}
           align={g.text.align}
-          font="title"
+          font="bold"
           cps={0}
           lineHeight={0.98}
-          texture="soft"
+          texture="none"
           shadow={SHADOW}
         />
         {flags.map((cc, i) => {
@@ -100,10 +106,10 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
                 w={g.flag.w}
                 align="center"
                 size={short ? 52 : 44}
-                font="title"
+                font="bold"
                 color={i === 0 ? "yellow" : "white"}
                 cps={0}
-                texture="soft"
+                texture="none"
                 shadow={SHADOW}
               />
             </React.Fragment>
@@ -117,7 +123,7 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
         {/* 16:9 without flags: shock number + a chalk timeline bar fill the lower half */}
         {!short && flags.length === 0 && t.badge && (
           <>
-            <ChalkText text={t.badge} x={60} y={410} w={820} size={118} font="title" color="yellow" cps={0} rotate={-3} texture="soft" shadow={SHADOW} />
+            <ChalkText text={t.badge} x={60} y={410} w={820} size={118} font="bold" color="yellow" cps={0} rotate={-3} texture="none" shadow={SHADOW} />
             <Sketch>
               <Draw d={roughLine(70, 640, 860, 636, 5, 2)} start={-30} color="dim" width={4} />
               <path d={hatch(120, 588, 620, 40, 10, 3)} stroke={CHALK.yellow} strokeWidth={4.5} fill="none" opacity={0.9} />
@@ -133,13 +139,13 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
             x={g.badge.x}
             y={g.badge.y}
             w={g.badge.w}
-            size={Math.min(g.badge.size, Math.floor((g.badge.w - 40) / ((t.badge?.length ?? 1) * 0.62)))}
+            size={Math.min(g.badge.size, Math.floor((g.badge.w - 40) / ((t.badge?.length ?? 1) * 0.66)))}
             align={g.badge.align}
-            font="title"
+            font="bold"
             color="yellow"
             cps={0}
             rotate={g.badge.rot}
-            texture="soft"
+            texture="none"
             shadow={SHADOW}
           />
         )}
