@@ -7,8 +7,12 @@ argument-hint: "<topic, e.g. 'top 10 navies'>  [--format short|long|both]"
 # Make a ChalkTalk episode — end to end
 
 Input: `$ARGUMENTS` (a topic like "top 10 armies by active soldiers").
-Output: `out/<Id>Short.mp4` (720×1280) + `out/<Id>Long.mp4` (1280×720), both −14 LUFS,
-from ONE file: `src/chalk/episodes/<slug>/episode.json`.
+Output, all from ONE file `src/chalk/episodes/<slug>/episode.json`:
+- `out/<Id>Short.mp4` (720×1280) + `out/<Id>Long.mp4` (1280×720), both −14 LUFS
+- `out/<Id>-thumb-long.jpg` (1920×1080) + `out/<Id>-thumb-short.jpg` (1080×1920): **stop-scroll thumbnails, always delivered with the videos**
+
+The presenter is the ChalkTalk teacher (`src/chalk/Teacher.tsx`): a big-headed chalk stick figure who
+explains: lip-synced to the voice, gesturing per sentence, thinking/idea/surprised/happy faces.
 
 This channel is separate from the motivational shorts: code lives in `src/chalk/`, never edit
 `src/shorts/` for it. Same hard rules (deterministic frames, look before you ship).
@@ -37,6 +41,9 @@ Set `"verified": true` in episode.json only after that check.
   make the stat appear exactly when spoken. `stats[0]` is the headline number and drives the bars.
 - Country codes: ISO-3166 alpha-2, lowercase (`us`, `gb`, `kr`).
 - Register: add the import to `src/chalk/episodes/index.ts` (Root.tsx picks it up automatically).
+- `thumbnail`: `text` (2–4 huge words, a question or shock claim, one `{yellow:WORD}`), `kicker`
+  (small tag, e.g. "TOP 10 AIR POWERS"), `flags` (top 3, #1 first, it gets circled red), `flagLabels`
+  (`["#1","#2","#3"]`, Short), `flagValues` (numbers under the flags, 16:9), `badge` (the shock number, Short).
 
 ## 3. Voice-over  (skill: `chalk-voiceover`)
 ```bash
@@ -53,7 +60,8 @@ Render the hook, one early rank (after its number is said), #1, leaderboard and 
 npm run still -- <Id>Short out/chalk/s230.png 230
 npm run still -- <Id>Long  out/chalk/l200.png 200
 ```
-Read the PNGs. Check: long names fit (e.g. "United States", "Saudi Arabia"); numbers not clipped;
+Also `npm run still -- TeacherSheet out/chalk/teacher.png 0` after any change to the character.
+Read the PNGs. Check: the teacher's head/effects (?, !, bulb, lines) don't touch text; long names fit (e.g. "United States", "Saudi Arabia"); numbers not clipped;
 nothing under the presenter stickman; captions don't cover content; Short text above y=1000.
 
 ## 5. Render + QA
@@ -66,6 +74,14 @@ Read `info.txt` (−14 LUFS ±1, duration ≤ 60 s for the Short) and `wave.png`
 Note: the contact sheet's timestamps are approximate; to check one moment use
 `ffmpeg -ss <t> -i out/<Id>Short.mp4 -frames:v 1 x.png`.
 
-## 6. Deliver
-Report: both file paths, durations, sources and as-of year (paste-ready for the video description),
-and whether `verified` is true. Offer thumbnails via `ffmpeg-post`.
+## 6. Thumbnails (always)
+```bash
+npm run chalk:thumb -- <Id>     # → out/<Id>-thumb-long.jpg + out/<Id>-thumb-short.jpg
+```
+Read both JPGs. Stop-scroll checklist: readable at phone size (≤ 4 big words), one yellow highlight,
+teacher's surprised face large, #1 circled, nothing important in the bottom-right corner of the 16:9
+one (YouTube timestamp), no text overlap. Thumbnail must match the video's promise; no fake numbers.
+
+## 7. Deliver
+Send the two MP4s **and the two thumbnails** to the user. Report durations, sources and as-of year
+(paste-ready for the video description), and whether `verified` is true.

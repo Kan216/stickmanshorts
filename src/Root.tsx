@@ -14,6 +14,8 @@ import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
 import { ChalkExplainer, calcChalkMetadata } from "./chalk/Explainer";
 import { ChalkSheet } from "./chalk/ChalkSheet";
+import { TeacherSheet } from "./chalk/TeacherSheet";
+import { ChalkThumbnail } from "./chalk/Thumbnail";
 import { EPISODES } from "./chalk/episodes";
 import { LAYOUTS } from "./chalk/theme";
 
@@ -51,6 +53,19 @@ export const RemotionRoot: React.FC = () => (
         />
       )),
     )}
+    {EPISODES.flatMap((ep) =>
+      (["short", "long"] as const).map((format) => (
+        <Still
+          key={`${ep.id}-thumb-${format}`}
+          id={`${ep.id}Thumb${format === "short" ? "Short" : "Long"}`}
+          component={ChalkThumbnail}
+          defaultProps={{ episode: ep, format }}
+          width={LAYOUTS[format].W}
+          height={LAYOUTS[format].H}
+        />
+      )),
+    )}
     <Still id="ChalkSheet" component={ChalkSheet} width={720} height={1280} />
+    <Still id="TeacherSheet" component={TeacherSheet} width={720} height={1280} />
   </>
 );

@@ -5,10 +5,39 @@
   "header": "TOP 10 · MILITARY AIRCRAFT",
   "metric": "Total aircraft",
   "asOf": "2025",
-  "sources": ["Global Firepower 2025"],
+  "sources": [
+    "Global Firepower 2025"
+  ],
   "verified": false,
-  "voice": { "name": "en-US-AndrewNeural", "rateShort": "+10%", "rateLong": "+0%" },
-  "music": { "file": "pad-hope.wav", "volume": 0.2 },
+  "voice": {
+    "name": "en-US-AndrewNeural",
+    "rateShort": "+10%",
+    "rateLong": "+0%"
+  },
+  "music": {
+    "file": "pad-hope.wav",
+    "volume": 0.2
+  },
+  "thumbnail": {
+    "text": "WHO OWNS\nTHE {yellow:SKY}?",
+    "kicker": "TOP 10 AIR POWERS",
+    "flags": [
+      "us",
+      "ru",
+      "cn"
+    ],
+    "flagLabels": [
+      "#1",
+      "#2",
+      "#3"
+    ],
+    "badge": "13,043",
+    "flagValues": [
+      "13,043",
+      "4,292",
+      "3,309"
+    ]
+  },
   "scenes": [
     {
       "type": "hook",
@@ -18,63 +47,143 @@
       "sayLong": "Which countries have the most military aircraft on the planet? Fighters, bombers, helicopters, transports, all of it. Let's count down the top ten."
     },
     {
-      "type": "rank", "rank": 10, "country": "fr", "name": "France",
-      "stats": [{ "label": "Aircraft", "value": 976 }],
+      "type": "rank",
+      "rank": 10,
+      "country": "fr",
+      "name": "France",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 976
+        }
+      ],
       "note": "Home of the Rafale fighter.",
       "say": "Number ten. France, with 976 aircraft.",
       "sayLong": "Number ten is France, with 976 military aircraft, led by its home-built Rafale fighter jets."
     },
     {
-      "type": "rank", "rank": 9, "country": "tr", "name": "Turkey",
-      "stats": [{ "label": "Aircraft", "value": 1083 }],
+      "type": "rank",
+      "rank": 9,
+      "country": "tr",
+      "name": "Turkey",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 1083
+        }
+      ],
       "say": "Number nine. Turkey, 1,083.",
       "sayLong": "Number nine is Turkey, with 1,083 aircraft, the second biggest air fleet in NATO's European half."
     },
     {
-      "type": "rank", "rank": 8, "country": "eg", "name": "Egypt",
-      "stats": [{ "label": "Aircraft", "value": 1093 }],
+      "type": "rank",
+      "rank": 8,
+      "country": "eg",
+      "name": "Egypt",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 1093
+        }
+      ],
       "say": "Number eight. Egypt, 1,093.",
       "sayLong": "Number eight is Egypt, with 1,093 aircraft, the largest air fleet in Africa."
     },
     {
-      "type": "rank", "rank": 7, "country": "pk", "name": "Pakistan",
-      "stats": [{ "label": "Aircraft", "value": 1399 }],
+      "type": "rank",
+      "rank": 7,
+      "country": "pk",
+      "name": "Pakistan",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 1399
+        }
+      ],
       "say": "Number seven. Pakistan, 1,399.",
       "sayLong": "Number seven is Pakistan, with 1,399 aircraft."
     },
     {
-      "type": "rank", "rank": 6, "country": "jp", "name": "Japan",
-      "stats": [{ "label": "Aircraft", "value": 1443 }],
+      "type": "rank",
+      "rank": 6,
+      "country": "jp",
+      "name": "Japan",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 1443
+        }
+      ],
       "say": "Number six. Japan, 1,443.",
       "sayLong": "Number six is Japan, with 1,443 aircraft, guarding thousands of kilometres of island coastline."
     },
     {
-      "type": "rank", "rank": 5, "country": "kr", "name": "South Korea",
-      "stats": [{ "label": "Aircraft", "value": 1592 }],
+      "type": "rank",
+      "rank": 5,
+      "country": "kr",
+      "name": "South Korea",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 1592
+        }
+      ],
       "say": "Number five. South Korea, 1,592.",
       "sayLong": "Number five is South Korea, with 1,592 aircraft, always on alert just a few minutes' flight from the border."
     },
     {
-      "type": "rank", "rank": 4, "country": "in", "name": "India",
-      "stats": [{ "label": "Aircraft", "value": 2229 }],
+      "type": "rank",
+      "rank": 4,
+      "country": "in",
+      "name": "India",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 2229
+        }
+      ],
       "say": "Number four. India, 2,229.",
       "sayLong": "Number four is India, with 2,229 aircraft, and the gap starts to open up from here."
     },
     {
-      "type": "rank", "rank": 3, "country": "cn", "name": "China",
-      "stats": [{ "label": "Aircraft", "value": 3309 }],
+      "type": "rank",
+      "rank": 3,
+      "country": "cn",
+      "name": "China",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 3309
+        }
+      ],
       "say": "Number three. China, 3,309.",
       "sayLong": "Number three is China, with 3,309 aircraft, and it is building new ones faster than almost anyone."
     },
     {
-      "type": "rank", "rank": 2, "country": "ru", "name": "Russia",
-      "stats": [{ "label": "Aircraft", "value": 4292 }],
+      "type": "rank",
+      "rank": 2,
+      "country": "ru",
+      "name": "Russia",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 4292
+        }
+      ],
       "say": "Number two. Russia, 4,292.",
       "sayLong": "Number two is Russia, with 4,292 aircraft."
     },
     {
-      "type": "rank", "rank": 1, "country": "us", "name": "United States",
-      "stats": [{ "label": "Aircraft", "value": 13043 }],
+      "type": "rank",
+      "rank": 1,
+      "country": "us",
+      "name": "United States",
+      "stats": [
+        {
+          "label": "Aircraft",
+          "value": 13043
+        }
+      ],
       "say": "And number one. The United States, with 13,043. More than the next three combined.",
       "sayLong": "And number one, by a mile, is the United States, with 13,043 aircraft. That is more than Russia, China and India combined.",
       "pause": 0.8

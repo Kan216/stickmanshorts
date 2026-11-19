@@ -23,7 +23,7 @@ export const Hook: React.FC<SceneProps<HookScene>> = ({ ps }) => {
   const short = format === "short";
   const size = short ? 96 : 84;
   const lines = s.title.split("\n").length;
-  const titleY = short ? 330 : 170;
+  const titleY = short ? 250 : 170;
   const w = short ? L.W - 2 * L.pad : 900;
   const x = short ? L.pad : 80;
   const ulY = titleY + lines * size * 1.02 + 10;
@@ -66,9 +66,9 @@ export const Rank: React.FC<SceneProps<RankScene>> = ({ ps, ep }) => {
     ? {
         rank: { x: 56, y: 200, size: 160 },
         flag: { x: 352, y: 228, w: 290 },
-        name: { x: L.pad, y: 470, w: L.W - 2 * L.pad, size: 78, align: "center" as const },
-        stats: { x: 60, y: 580, w: 470, row: 66, label: 40, value: 56 },
-        barW: 470,
+        name: { x: L.pad, y: 458, w: L.W - 2 * L.pad, size: 78, align: "center" as const },
+        stats: { x: 56, y: 560, w: 432, row: 66, label: 40, value: 56 },
+        barW: 432,
       }
     : {
         rank: { x: 76, y: 104, size: 140 },
@@ -236,16 +236,16 @@ export const Outro: React.FC<SceneProps<OutroScene>> = ({ ps, ep }) => {
   const w = short ? L.W - 2 * L.pad : 900;
   return (
     <>
-      <ChalkText text={ps.scene.title} x={x} y={short ? 320 : 170} w={w} size={short ? 84 : 76} align={short ? "center" : "left"} font="title" start={2} cps={22} />
-      <ChalkText text={`Follow {yellow:${CHALK_CHANNEL}}\nfor more numbers`} x={x} y={short ? 520 : 360} w={w} size={short ? 56 : 48} align={short ? "center" : "left"} start={24} cps={30} />
+      <ChalkText text={ps.scene.title} x={x} y={short ? 230 : 170} w={w} size={short ? 84 : 76} align={short ? "center" : "left"} font="title" start={2} cps={22} />
+      <ChalkText text={`Follow {yellow:${CHALK_CHANNEL}}\nfor more numbers`} x={x} y={short ? 430 : 360} w={w} size={short ? 56 : 48} align={short ? "center" : "left"} start={24} cps={30} />
       <Sketch>
-        {short && <Draw d="M360 680 q-8 40 4 80 M340 735 l24 28 l20 -30" start={50} dur={14} color="yellow" width={5} />}
+        {short && <Draw d="M300 580 q-8 50 4 100 M280 655 l24 28 l20 -30" start={50} dur={14} color="yellow" width={5} />}
       </Sketch>
       <ChalkText
         text={`Sources: ${ep.sources.join(", ")}`}
         x={x}
-        y={short ? 800 : 500}
-        w={w}
+        y={short ? 740 : 500}
+        w={short ? 470 : w}
         size={short ? 28 : 26}
         align={short ? "center" : "left"}
         color="dim"

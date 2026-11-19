@@ -98,6 +98,8 @@ npm run still -- ChalkSheet out/chalk/sheet.png        # look test
 npm run still -- Top10AirForcesShort out/chalk/s230.png 230
 npm run render -- Top10AirForcesShort                  # 720x1280
 npm run render -- Top10AirForcesLong                   # 1280x720
+npm run chalk:thumb -- Top10AirForces                  # stop-scroll thumbnails (16:9 + 9:16 JPEG)
+npm run still -- TeacherSheet out/chalk/teacher.png 0  # presenter: all gestures + expressions
 ```
 
 | Skill | Use when |
@@ -113,3 +115,5 @@ npm run render -- Top10AirForcesLong                   # 1280x720
   Retiming = edit the line and re-run TTS.
 - Numbers need a source and year (`research/<slug>.md`); keep `"verified": false` until checked with the user.
 - edge-tts needs network access to `speech.platform.bing.com`.
+- Presenter = the ChalkTalk teacher (`src/chalk/Teacher.tsx`, acted by `Presenter.tsx`): lip-synced,
+  gestures follow the narration. Every delivered episode includes both thumbnails.

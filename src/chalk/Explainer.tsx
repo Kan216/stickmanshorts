@@ -1,16 +1,15 @@
 import React from "react";
 import { AbsoluteFill, CalculateMetadataFunction, Html5Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
-import { Stickman } from "../components/Stickman";
 import { Sfx } from "../components/Sound";
 import { clamp } from "../lib/anim";
-import { Pose, PoseName, POSES, addPose, poseAt } from "../lib/pose";
 import { ChalkBoard, ChalkProvider, useChalk } from "./Board";
 import { Captions } from "./Captions";
+import { Presenter } from "./Presenter";
 import { ChalkText } from "./draw";
 import { buildPlan, totalFrames } from "./plan";
 import { Hook, Leaderboard, Outro, Rank } from "./scenes";
-import { CHALK, FPS, Format, LAYOUTS } from "./theme";
-import type { Episode, PlannedScene, Scene, Timing } from "./types";
+import { FPS, Format, LAYOUTS } from "./theme";
+import type { Episode, PlannedScene, Timing } from "./types";
 
 export type ExplainerProps = {
   episode: Episode;
@@ -38,47 +37,6 @@ const SceneWrap: React.FC<{ ps: PlannedScene; children: React.ReactNode }> = ({ 
   const out = interpolate(f, [ps.dur - 7, ps.dur], [1, 0], clamp);
   const blur = interpolate(f, [ps.dur - 7, ps.dur], [0, 6], clamp);
   return <AbsoluteFill style={{ opacity: out, filter: blur > 0.1 ? `blur(${blur}px)` : undefined }}>{children}</AbsoluteFill>;
-};
-
-const scenePose = (s: Scene): PoseName => {
-  switch (s.type) {
-    case "hook":
-      return "think";
-    case "rank":
-    case "leaderboard":
-      return "point";
-    case "outro":
-      return "victory";
-  }
-};
-
-/** The teacher: stands bottom-right, changes pose with each scene, breathes. */
-const Presenter: React.FC<{ plan: PlannedScene[] }> = ({ plan }) => {
-  const frame = useCurrentFrame();
-  const { L } = useChalk();
-  const keys = plan.flatMap((p, i) => [
-    { f: p.from, pose: (i === 0 ? scenePose(p.scene) : scenePose(plan[i - 1].scene)) as Pose | PoseName },
-    { f: p.from + 9, pose: scenePose(p.scene) as Pose | PoseName },
-  ]);
-  const base = poseAt(frame, keys);
-  const breathe = Math.sin(frame / 14);
-  const pose = addPose(base, { frontShoulder: breathe * 3, backShoulder: -breathe * 2, head: breathe * 1.5 });
-  const enter = interpolate(frame, [0, 10], [0, 1], clamp);
-  return (
-    <Stickman
-      x={L.presenter.x}
-      y={L.presenter.ground}
-      height={L.presenter.height}
-      pose={pose}
-      facing={-1}
-      style="chalk"
-      color={CHALK.white}
-      expression={plan[0] && frame < plan[0].dur ? "neutral" : "happy"}
-      glow={0}
-      opacity={enter}
-      canvas={{ w: L.W, h: L.H }}
-    />
-  );
 };
 
 /** Small persistent header ("TOP 10 AIR FORCES") during data scenes. */

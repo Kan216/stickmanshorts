@@ -44,6 +44,12 @@ export type ChalkTextProps = {
   opacity?: number;
   lineHeight?: number;
   rotate?: number;
+  /** chalk texture strength: "text" (default), "soft" (cleaner, for thumbnails), "none" */
+  texture?: "text" | "soft" | "none";
+  /** CSS text-shadow, e.g. for thumbnail legibility */
+  shadow?: string;
+  /** CSS font-weight / letter-spacing passthrough */
+  letterSpacing?: number;
 };
 
 /**
@@ -65,6 +71,9 @@ export const ChalkText: React.FC<ChalkTextProps> = ({
   opacity = 1,
   lineHeight = 1.05,
   rotate = 0,
+  texture = "text",
+  shadow,
+  letterSpacing,
 }) => {
   const frame = useCurrentFrame();
   if (frame < start) return null;
@@ -85,7 +94,9 @@ export const ChalkText: React.FC<ChalkTextProps> = ({
         lineHeight,
         color: base,
         opacity: opacity * out,
-        filter: `url(#${CK.text})`,
+        filter: texture === "none" ? undefined : `url(#${texture === "soft" ? CK.soft : CK.text})`,
+        textShadow: shadow,
+        letterSpacing,
         transform: rotate ? `rotate(${rotate}deg)` : undefined,
         transformOrigin: "left top",
         whiteSpace: "pre-wrap",

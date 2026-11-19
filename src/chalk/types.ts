@@ -60,6 +60,21 @@ export type Episode = {
   verified: boolean;
   voice: { name: string; rateShort?: string; rateLong?: string; pitch?: string };
   music?: { file: string; volume?: number };
+  /** stop-scroll thumbnail (both formats) */
+  thumbnail?: {
+    /** 2–4 huge words, {yellow:WORD} markup, \n for lines */
+    text: string;
+    /** small tag above the big text */
+    kicker?: string;
+    /** flags to show (ISO-2), in order; the first one gets circled */
+    flags?: string[];
+    /** labels under the flags, e.g. ["#1", "#2", "#3"] */
+    flagLabels?: string[];
+    /** values under the flags on the 16:9 thumbnail, e.g. ["13,043", "4,292", "3,309"] */
+    flagValues?: string[];
+    /** big number badge, e.g. "13,043" */
+    badge?: string;
+  };
   scenes: Scene[];
 };
 
