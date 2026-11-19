@@ -11,3 +11,7 @@ public/sfx/*.wav
 public/music/pad-*.wav
 # local HyperFrames experiments build output
 hyperframes/**/node_modules/
+
+# credentials (YouTube OAuth client + tokens) — never commit
+.secrets/
+client_secret*.json

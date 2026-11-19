@@ -11,7 +11,8 @@
     "typecheck": "tsc --noEmit",
     "lint": "tsc --noEmit",
     "chalk:tts": "python3 scripts/chalk-tts.py",
-    "chalk:thumb": "bash scripts/chalk-thumb.sh"
+    "chalk:thumb": "bash scripts/chalk-thumb.sh",
+    "yt": "python3 scripts/youtube-upload.py"
   },
   "license": "UNLICENSED",
   "dependencies": {
