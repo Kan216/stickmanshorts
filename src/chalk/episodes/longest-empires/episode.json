@@ -1,0 +1,361 @@
+{
+  "slug": "longest-empires",
+  "id": "LongestEmpires",
+  "title": "Top 10 Longest-Lasting Empires in History",
+  "header": "TOP 10 · LONGEST-LASTING EMPIRES",
+  "metric": "Years",
+  "asOf": "2026",
+  "sources": [
+    "Wikipedia: List of empires",
+    "HowStuffWorks",
+    "24/7 Wall St."
+  ],
+  "verified": true,
+  "formats": [
+    "long"
+  ],
+  "timeline": {
+    "from": -1500,
+    "to": 2000,
+    "step": 500
+  },
+  "voice": {
+    "name": "en-US-AndrewNeural",
+    "rateShort": "+10%",
+    "rateLong": "-8%"
+  },
+  "music": {
+    "file": "pad-hope.wav",
+    "volume": 0.16
+  },
+  "thumbnail": {
+    "text": "WHICH EMPIRE\nLASTED {yellow:LONGEST}?",
+    "kicker": "TOP 10 LONGEST EMPIRES",
+    "badge": "1,000+ YEARS"
+  },
+  "youtube": {
+    "title": "Top 10 Longest-Lasting Empires in History (Explained on a Chalkboard)",
+    "description": "Which empire lasted the longest? We put history's ten longest-lasting empires on the chalkboard, from the Parthians to Rome.\n\n#10 Parthian Empire: 247 BC – AD 224 (471 years)\n#9 Ottoman Empire: 1299 – 1922 (623 years)\n#8 Khmer Empire: 802 – 1431 (629 years)\n#7 Ethiopian Empire: 1270 – 1974 (704 years)\n#6 Srivijaya: c. 650 – 1377 (727 years)\n#5 Kingdom of Aksum: c. 100 – 940 (840 years)\n#4 Holy Roman Empire: 800 – 1806 (1,006 years)\n#3 Kanem–Bornu Empire: c. 700 – 1893 (1,193 years)\n#2 Kingdom of Kush: c. 1070 BC – AD 350 (1,420 years)\n#1 Roman Empire (incl. Eastern/Byzantine): 27 BC – AD 1453 (1,480 years)\n\nHow we count: from founding to final end, as one continuous state. Ancient dates are estimates and historians disagree on some of them.\nSources: Wikipedia (List of empires), HowStuffWorks, 24/7 Wall St.\n\nNarration is AI text-to-speech. Animation made in code.\nSubscribe to ChalkTalk for more numbers on the board.\n\n#history #empires #ChalkTalk",
+    "tags": [
+      "ChalkTalk",
+      "history",
+      "empires",
+      "longest empires",
+      "Roman Empire",
+      "Ottoman Empire",
+      "Holy Roman Empire",
+      "Kingdom of Kush",
+      "Byzantine",
+      "top 10"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "WHICH EMPIRE\nLASTED {yellow:LONGEST}?",
+      "subtitle": "Top 10 longest-lasting empires in history",
+      "say": "Empires rise, and empires fall. Most of them don't even make it to three hundred years. But a few lasted for more than a thousand. Today we're putting history's longest-lasting empires on the board, from number ten all the way to number one. And the winner might surprise you, because it fell twice.",
+      "pause": 0.8
+    },
+    {
+      "type": "hook",
+      "title": "HOW WE {yellow:COUNT}",
+      "subtitle": "Founding → final end · ancient dates are estimates",
+      "say": "First, the rules. We count from the year each empire was founded to the year it finally ended, as one continuous state. Ancient dates are often estimates, and historians argue about them, so we'll tell you where it matters. Ready? Let's start counting.",
+      "pause": 0.8
+    },
+    {
+      "type": "era",
+      "rank": 10,
+      "name": "Parthian Empire",
+      "start": -247,
+      "end": 224,
+      "facts": [
+        {
+          "text": "Ruled Iran & Mesopotamia",
+          "cue": "Mesopotamia"
+        },
+        {
+          "text": "Rome's great rival in the east",
+          "cue": "rival"
+        },
+        {
+          "text": "Beat Rome at Carrhae, 53 BC",
+          "cue": "Carrhae"
+        },
+        {
+          "text": "Horse archers: the \"Parthian shot\"",
+          "cue": "backwards"
+        }
+      ],
+      "say": "Number ten. The Parthian Empire. Founded around 247 BC, it lasted 471 years. At its height it ruled Iran and Mesopotamia, from the Euphrates river to modern Afghanistan. The Parthians were Rome's great rival in the east, and they beat Roman armies more than once, most famously at Carrhae in 53 BC. Their horse archers could turn in the saddle and fire backwards while riding away. That move may be where we get the phrase, a parting shot. In 224 AD, a rebel named Ardashir overthrew them and founded the Sasanian Empire.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 9,
+      "name": "Ottoman Empire",
+      "start": 1299,
+      "end": 1922,
+      "facts": [
+        {
+          "text": "Founded by Osman I in 1299",
+          "cue": "Osman"
+        },
+        {
+          "text": "Took Constantinople in 1453",
+          "cue": "1453"
+        },
+        {
+          "text": "Spanned three continents",
+          "cue": "three"
+        },
+        {
+          "text": "Ended 1922 → modern Turkey",
+          "cue": "1922"
+        }
+      ],
+      "say": "Number nine. The Ottoman Empire, 623 years. It began in 1299 as a small state in Anatolia, led by Osman the First. In 1453, Mehmed the Second captured Constantinople and made it his capital, Istanbul, one of the richest cities on Earth. At its peak under Suleiman the Magnificent, the empire stretched across three continents, from Hungary to Iraq to North Africa. It ended up on the losing side of World War One, and in 1922 the sultanate was abolished. A year later, the Republic of Turkey was born.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 8,
+      "name": "Khmer Empire",
+      "start": 802,
+      "end": 1431,
+      "facts": [
+        {
+          "text": "Founded 802 by Jayavarman II",
+          "cue": "Jayavarman"
+        },
+        {
+          "text": "Angkor: a giant city of canals",
+          "cue": "canals"
+        },
+        {
+          "text": "Built Angkor Wat",
+          "cue": "Wat,"
+        },
+        {
+          "text": "Angkor sacked in 1431",
+          "cue": "1431"
+        }
+      ],
+      "say": "Number eight. The Khmer Empire of Southeast Asia, 629 years. In 802, King Jayavarman the Second declared himself universal ruler, and the empire grew to cover most of today's Cambodia, Thailand, Laos and southern Vietnam. Its capital, Angkor, may have been the largest city of the pre-industrial world, fed by a huge network of canals and reservoirs. It also built Angkor Wat, still the largest religious monument on Earth. In 1431, Angkor was sacked by the Ayutthaya kingdom, and the capital moved south.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 7,
+      "name": "Ethiopian Empire",
+      "start": 1270,
+      "end": 1974,
+      "facts": [
+        {
+          "text": "Solomonic dynasty from 1270",
+          "cue": "Solomonic"
+        },
+        {
+          "text": "Emperors ruled from tent camps",
+          "cue": "tent"
+        },
+        {
+          "text": "Beat Italy at Adwa, 1896",
+          "cue": "Adwa"
+        },
+        {
+          "text": "Last emperor: Haile Selassie",
+          "cue": "Selassie,"
+        }
+      ],
+      "say": "Number seven. The Ethiopian Empire, 704 years. In 1270, Yekuno Amlak founded the Solomonic dynasty, whose emperors claimed descent from King Solomon and the Queen of Sheba. For centuries there was no fixed capital, and the emperors ruled from huge moving tent camps. In 1896, Ethiopia crushed an Italian invasion at the Battle of Adwa, and stayed independent through the scramble for Africa. Its last emperor, Haile Selassie, was overthrown in 1974, which means this empire ended within living memory.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 6,
+      "name": "Srivijaya",
+      "start": 650,
+      "end": 1377,
+      "approx": true,
+      "facts": [
+        {
+          "text": "Sea empire based on Sumatra",
+          "cue": "Sumatra,"
+        },
+        {
+          "text": "Controlled the Strait of Malacca",
+          "cue": "Malacca,"
+        },
+        {
+          "text": "Center of Buddhist learning",
+          "cue": "Buddhist"
+        },
+        {
+          "text": "Faded away by 1377",
+          "cue": "1377"
+        }
+      ],
+      "say": "Number six. Srivijaya, about 727 years. From around 650, this sea empire, based on the island of Sumatra, controlled the Strait of Malacca, one of the busiest shipping lanes on the planet. Ships sailing between China and India had to pass through its waters, and pay. It was also a great center of Buddhist learning. The Chinese monk Yijing studied Sanskrit there in the 600s on his way to India. By the 1300s its power had faded, and its last remnants fell around 1377.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 5,
+      "name": "Kingdom of Aksum",
+      "start": 100,
+      "end": 940,
+      "approx": true,
+      "facts": [
+        {
+          "text": "Traded with Rome, Arabia & India",
+          "cue": "India."
+        },
+        {
+          "text": "One of the 4 great powers",
+          "cue": "four"
+        },
+        {
+          "text": "Minted its own gold coins",
+          "cue": "coins,"
+        },
+        {
+          "text": "Christian since ~330 AD",
+          "cue": "Ezana,"
+        }
+      ],
+      "say": "Number five. The Kingdom of Aksum, about 840 years. Rising around 100 AD, in what is now Ethiopia and Eritrea, Aksum grew rich trading ivory and gold between Rome, Arabia and India. The Persian prophet Mani called it one of the four great powers of the world, alongside Rome, Persia and China. Aksum minted its own gold coins, raised giant stone obelisks, and under King Ezana, around 330, became one of the first states to adopt Christianity. By the 900s, it had declined.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 4,
+      "name": "Holy Roman Empire",
+      "start": 800,
+      "end": 1806,
+      "facts": [
+        {
+          "text": "Charlemagne crowned, 800",
+          "cue": "Charlemagne"
+        },
+        {
+          "text": "Hundreds of states, one elected emperor",
+          "cue": "hundreds"
+        },
+        {
+          "text": "\"Neither holy, nor Roman, nor an empire\"",
+          "cue": "Voltaire"
+        },
+        {
+          "text": "Dissolved in 1806",
+          "cue": "1806,"
+        }
+      ],
+      "say": "Number four. The Holy Roman Empire, 1,006 years, if you start when Charlemagne was crowned on Christmas Day in the year 800. Some historians start in 962 with Otto the First instead. It covered much of central Europe, including today's Germany, Austria and the Czech Republic. But it wasn't really one country. It was hundreds of states under one elected emperor. The writer Voltaire joked that it was neither holy, nor Roman, nor an empire. In 1806, after defeats by Napoleon, Emperor Francis the Second dissolved it.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 3,
+      "name": "Kanem–Bornu Empire",
+      "start": 700,
+      "end": 1893,
+      "approx": true,
+      "facts": [
+        {
+          "text": "Around Lake Chad, Africa",
+          "cue": "Chad,"
+        },
+        {
+          "text": "Sayfawa dynasty: ~800 years",
+          "cue": "Sayfawa"
+        },
+        {
+          "text": "Moved west to Bornu, 1300s",
+          "cue": "west"
+        },
+        {
+          "text": "Fell in 1893",
+          "cue": "1893"
+        }
+      ],
+      "say": "Number three. The Kanem Bornu Empire, around Lake Chad, in central Africa. About 1,193 years. Kanem emerged around 700, and one ruling family, the Sayfawa dynasty, held power for nearly 800 years, one of the longest-ruling dynasties ever. In the late 1300s, civil war forced them to move west to Bornu, where they rebuilt even stronger. Under Idris Alooma in the 1500s, the empire used musketeers and controlled trade routes across the Sahara. It finally fell in 1893 to the warlord Rabih az-Zubayr.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 2,
+      "name": "Kingdom of Kush",
+      "start": -1070,
+      "end": 350,
+      "approx": true,
+      "facts": [
+        {
+          "text": "In today's Sudan",
+          "cue": "Sudan,"
+        },
+        {
+          "text": "Ruled Egypt as the 25th dynasty",
+          "cue": "Pharaohs."
+        },
+        {
+          "text": "Built 200+ pyramids",
+          "cue": "pyramids"
+        },
+        {
+          "text": "Declined ~350 AD",
+          "cue": "350"
+        }
+      ],
+      "say": "Number two. The Kingdom of Kush, in today's Sudan, about 1,420 years. It rose around 1070 BC, as Egypt's power faded. Then, around 730 BC, the Kushite kings turned the tables, conquered Egypt itself, and ruled it as the 25th dynasty, the Black Pharaohs. Its powerful queens, called Kandakes, sometimes ruled in their own right. Kush built more than 200 pyramids, more than Egypt did. It finally declined around 350 AD, after Aksum, our number five, invaded.",
+      "pause": 1.0
+    },
+    {
+      "type": "era",
+      "rank": 1,
+      "name": "Roman Empire",
+      "start": -27,
+      "end": 1453,
+      "facts": [
+        {
+          "text": "Augustus: first emperor, 27 BC",
+          "cue": "Augustus"
+        },
+        {
+          "text": "West falls in 476 AD",
+          "cue": "476"
+        },
+        {
+          "text": "East = the Byzantine Empire",
+          "cue": "Byzantine"
+        },
+        {
+          "text": "Ends May 29, 1453",
+          "cue": "1453,"
+        }
+      ],
+      "say": "And number one. The Roman Empire, 1,480 years. It began in 27 BC, when Augustus became the first emperor. The western half fell in 476 AD. But the eastern half, which historians now call the Byzantine Empire, kept going from Constantinople, and its people still called themselves Romans. It finally ended on May 29th, 1453, when the Ottomans, our number nine, broke through the city walls. From Augustus to the last emperor, Constantine the Eleventh, that's almost 1,500 years of Rome.",
+      "pause": 1.4
+    },
+    {
+      "type": "timeline",
+      "title": "ALL 10 ON ONE {yellow:TIMELINE}",
+      "say": "Now let's put all ten on one timeline. Look how far back Kush goes, starting more than three thousand years ago. Rome and Kush each lasted around fourteen to fifteen centuries. Notice how many of them overlap. Rome traded with Aksum, and fought the Parthians. The Ottomans ended Rome. And the Ethiopian Empire only ended in 1974. Together, these ten empires span more than three thousand years of history.",
+      "pause": 1.5
+    },
+    {
+      "type": "hook",
+      "title": "HONORABLE {yellow:MENTIONS}",
+      "subtitle": "Venice · Ancient Egypt · Silla · Byzantium",
+      "say": "Before we go, some honorable mentions. The Republic of Venice lasted 1,100 years, but it was a republic, not an empire. Ancient Egypt lasted around three thousand years, but it was broken up by periods of division and foreign rule. Silla, in Korea, lasted 992 years as a kingdom. And the Byzantine Empire isn't missing. We counted it as part of Rome, because that's exactly what it was.",
+      "pause": 1.0
+    },
+    {
+      "type": "outro",
+      "title": "Which empire\ndid we {yellow:miss}?",
+      "say": "Which empire do you think deserved a spot on this list? Tell me in the comments, and subscribe to ChalkTalk for more history on the board.",
+      "pause": 1.2
+    }
+  ]
+}

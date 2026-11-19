@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill } from "remotion";
 import { ChalkBoard, ChalkProvider } from "./Board";
-import { ChalkText, Draw, Flag, Sketch, roughEllipse, roughRect } from "./draw";
+import { ChalkText, Draw, Flag, Sketch, hatch, roughEllipse, roughLine, roughRect } from "./draw";
 import { Teacher } from "./Teacher";
 import { CHALK, Format, LAYOUTS } from "./theme";
 import type { Episode } from "./types";
@@ -113,6 +113,18 @@ export const ChalkThumbnail: React.FC<{ episode: Episode; format: Format }> = ({
           <Sketch>
             <Draw d={roughEllipse(g.flag.x0 + g.flag.w / 2, g.flag.y + fh / 2 + 18, g.flag.w * 0.68, fh * 0.95, 4)} start={-30} color={CHALK.red} width={8} />
           </Sketch>
+        )}
+        {/* 16:9 without flags: shock number + a chalk timeline bar fill the lower half */}
+        {!short && flags.length === 0 && t.badge && (
+          <>
+            <ChalkText text={t.badge} x={60} y={410} w={820} size={118} font="title" color="yellow" cps={0} rotate={-3} texture="soft" shadow={SHADOW} />
+            <Sketch>
+              <Draw d={roughLine(70, 640, 860, 636, 5, 2)} start={-30} color="dim" width={4} />
+              <path d={hatch(120, 588, 620, 40, 10, 3)} stroke={CHALK.yellow} strokeWidth={4.5} fill="none" opacity={0.9} />
+              <Draw d={roughLine(120, 580, 120, 644, 6, 1)} start={-30} color="yellow" width={5} />
+              <Draw d={roughLine(740, 580, 740, 644, 7, 1)} start={-30} color="yellow" width={5} />
+            </Sketch>
+          </>
         )}
         {/* the shock number: big on the Short; on 16:9 the numbers sit under the flags instead */}
         {t.badge && short && (

@@ -39,7 +39,7 @@ export const RemotionRoot: React.FC = () => (
 
     {/* ChalkTalk channel: each episode.json → <Id>Short (9:16) + <Id>Long (16:9); duration comes from the voice-over */}
     {EPISODES.flatMap((ep) =>
-      (["short", "long"] as const).map((format) => (
+      (ep.formats ?? (["short", "long"] as const)).map((format) => (
         <Composition
           key={`${ep.id}-${format}`}
           id={`${ep.id}${format === "short" ? "Short" : "Long"}`}
@@ -54,7 +54,7 @@ export const RemotionRoot: React.FC = () => (
       )),
     )}
     {EPISODES.flatMap((ep) =>
-      (["short", "long"] as const).map((format) => (
+      (ep.formats ?? (["short", "long"] as const)).map((format) => (
         <Still
           key={`${ep.id}-thumb-${format}`}
           id={`${ep.id}Thumb${format === "short" ? "Short" : "Long"}`}

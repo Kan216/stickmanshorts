@@ -54,7 +54,27 @@ export type OutroScene = Common & {
   title: string;
 };
 
-export type Scene = HookScene | RankScene | LeaderboardScene | OutroScene;
+/** Long-form history card: a span of years on a timeline + facts written as they're narrated. */
+export type EraScene = Common & {
+  type: "era";
+  rank: number;
+  name: string;
+  /** years; negative = BC */
+  start: number;
+  end: number;
+  /** dates are estimates → shown with "c." */
+  approx?: boolean;
+  /** each fact is written when the narrator says its cue word (searched in order) */
+  facts: { text: string; cue?: string }[];
+};
+
+/** All era scenes of the episode on one shared time axis (Gantt chart). */
+export type TimelineScene = Common & {
+  type: "timeline";
+  title?: string;
+};
+
+export type Scene = HookScene | RankScene | LeaderboardScene | OutroScene | EraScene | TimelineScene;
 
 export type Episode = {
   slug: string;
@@ -90,6 +110,10 @@ export type Episode = {
     badge?: string;
   };
   scenes: Scene[];
+  /** formats to register (default both) */
+  formats?: Format[];
+  /** time axis for era/timeline scenes, in years (negative = BC) */
+  timeline?: { from: number; to: number; step?: number };
 };
 
 /** Written by scripts/chalk-tts.py → public/chalk/<slug>/<format>/timing.json */

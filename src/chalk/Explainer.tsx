@@ -8,6 +8,7 @@ import { Presenter } from "./Presenter";
 import { ChalkText } from "./draw";
 import { buildPlan, totalFrames } from "./plan";
 import { Hook, Leaderboard, Outro, Rank } from "./scenes";
+import { Era, Timeline } from "./scenes/history";
 import { FPS, Format, LAYOUTS } from "./theme";
 import type { Episode, PlannedScene, Timing } from "./types";
 
@@ -28,6 +29,10 @@ const SceneBody: React.FC<{ ps: PlannedScene; ep: Episode }> = ({ ps, ep }) => {
       return <Leaderboard ps={ps as never} ep={ep} />;
     case "outro":
       return <Outro ps={ps as never} ep={ep} />;
+    case "era":
+      return <Era ps={ps as never} ep={ep} />;
+    case "timeline":
+      return <Timeline ps={ps as never} ep={ep} />;
   }
 };
 
@@ -104,7 +109,7 @@ export const ChalkExplainer: React.FC<ExplainerProps> = ({ episode, format, timi
               </Sequence>
             )}
             <Sfx at={1} name="chalk-tap" volume={0.5} />
-            {ps.scene.type === "rank" && <Sfx at={3} name="chalk-write" volume={0.35} />}
+            {(ps.scene.type === "rank" || ps.scene.type === "era") && <Sfx at={3} name="chalk-write" volume={0.35} />}
             {ps.from > 0 && <Sfx at={0} name="eraser" volume={0.3} />}
           </Sequence>
         ))}

@@ -4,7 +4,7 @@ import { clamp, ease } from "../lib/anim";
 import { useChalk } from "./Board";
 import { cueFrame } from "./plan";
 import { Effect, Expression, GESTURES, GestureName, Teacher, lerpArms } from "./Teacher";
-import type { PlannedScene, RankScene, Word } from "./types";
+import type { EraScene, PlannedScene, RankScene, Word } from "./types";
 
 /**
  * The "director" for the presenter: turns each scene's narration into gestures,
@@ -68,6 +68,17 @@ const sceneKeys = (ps: PlannedScene): Key[] => {
       keys.push({ f: lastEnd + 4, arms: "wave", expr: "happy", fx: "sparkle" });
       return keys;
     }
+    case "era": {
+      const e = s as EraScene;
+      const yrs = (e.end - e.start).toLocaleString("en-US");
+      const durAt = cueFrame(w, yrs, 40);
+      const keys: Key[] = [{ f: 0, arms: "explain" }, { f: durAt, arms: "present", fx: "lines", fxFrames: 30 }];
+      if (e.rank === 1) keys[1] = { f: durAt, arms: "cheeks", expr: "surprised", fx: "exclaim", fxFrames: 50 };
+      keys.push(...beats(w, durAt + 40, 7));
+      return keys;
+    }
+    case "timeline":
+      return [{ f: 0, arms: "presentHigh", fx: "lines", fxFrames: 30 }, ...beats(w, 60, 8)];
   }
 };
 
