@@ -1,7 +1,18 @@
 import type { Format } from "./theme";
 
 /** A number on the board. `cue` = word the narrator says when it should appear (default: the number itself). */
-export type Stat = { label: string; value: number; unit?: string; cue?: string; color?: string };
+export type Stat = {
+  label: string;
+  value: number;
+  /** shown before the number, e.g. "$" */
+  prefix?: string;
+  /** shown after the number, e.g. "B" or " t" */
+  unit?: string;
+  /** decimals to display (default: as many as `value` has) */
+  decimals?: number;
+  cue?: string;
+  color?: string;
+};
 
 type Common = {
   /** narration (both formats unless sayLong is given) */
@@ -54,6 +65,9 @@ export type Episode = {
   header: string;
   /** what the first stat measures, for the bar + leaderboard ("Total aircraft") */
   metric: string;
+  /** prefix/unit for the metric in the bar label + leaderboard, e.g. "$" / "B" */
+  metricPrefix?: string;
+  metricUnit?: string;
   asOf: string;
   sources: string[];
   /** false until the numbers have been checked against the sources */

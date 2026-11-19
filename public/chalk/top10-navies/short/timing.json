@@ -1,0 +1,531 @@
+{
+ "format": "short",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "scenes": [
+  {
+   "index": 0,
+   "audio": "chalk/top10-navies/short/s00.mp3",
+   "duration": 3.312,
+   "text": "Which countries have the biggest navies? Let's count the ships.",
+   "words": [
+    {
+     "w": "Which",
+     "t": 0.102,
+     "d": 0.136
+    },
+    {
+     "w": "countries",
+     "t": 0.25,
+     "d": 0.375
+    },
+    {
+     "w": "have",
+     "t": 0.636,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.784,
+     "d": 0.08
+    },
+    {
+     "w": "biggest",
+     "t": 0.875,
+     "d": 0.341
+    },
+    {
+     "w": "navies?",
+     "t": 1.227,
+     "d": 0.5
+    },
+    {
+     "w": "Let's",
+     "t": 2.102,
+     "d": 0.125
+    },
+    {
+     "w": "count",
+     "t": 2.239,
+     "d": 0.182
+    },
+    {
+     "w": "the",
+     "t": 2.432,
+     "d": 0.057
+    },
+    {
+     "w": "ships.",
+     "t": 2.5,
+     "d": 0.466
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "audio": "chalk/top10-navies/short/s01.mp3",
+   "duration": 3.24,
+   "text": "Number ten. Sri Lanka, 275.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.205
+    },
+    {
+     "w": "ten.",
+     "t": 0.307,
+     "d": 0.284
+    },
+    {
+     "w": "Sri",
+     "t": 0.977,
+     "d": 0.182
+    },
+    {
+     "w": "Lanka,",
+     "t": 1.17,
+     "d": 0.375
+    },
+    {
+     "w": "275.",
+     "t": 1.773,
+     "d": 1.125
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "audio": "chalk/top10-navies/short/s02.mp3",
+   "duration": 2.976,
+   "text": "Number nine. Sweden, 279.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "nine.",
+     "t": 0.295,
+     "d": 0.295
+    },
+    {
+     "w": "Sweden,",
+     "t": 0.977,
+     "d": 0.386
+    },
+    {
+     "w": "279.",
+     "t": 1.591,
+     "d": 1.034
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "audio": "chalk/top10-navies/short/s03.mp3",
+   "duration": 2.904,
+   "text": "Number eight. Italy, 285.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.216
+    },
+    {
+     "w": "eight.",
+     "t": 0.318,
+     "d": 0.205
+    },
+    {
+     "w": "Italy,",
+     "t": 0.898,
+     "d": 0.318
+    },
+    {
+     "w": "285.",
+     "t": 1.432,
+     "d": 1.125
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "audio": "chalk/top10-navies/short/s04.mp3",
+   "duration": 2.64,
+   "text": "Number seven. Thailand, 304.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "seven.",
+     "t": 0.284,
+     "d": 0.318
+    },
+    {
+     "w": "Thailand,",
+     "t": 0.977,
+     "d": 0.375
+    },
+    {
+     "w": "304.",
+     "t": 1.545,
+     "d": 0.75
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "audio": "chalk/top10-navies/short/s05.mp3",
+   "duration": 3.144,
+   "text": "Number six. North Korea, 332.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.17
+    },
+    {
+     "w": "six.",
+     "t": 0.273,
+     "d": 0.42
+    },
+    {
+     "w": "North",
+     "t": 1.068,
+     "d": 0.182
+    },
+    {
+     "w": "Korea,",
+     "t": 1.261,
+     "d": 0.386
+    },
+    {
+     "w": "332.",
+     "t": 1.909,
+     "d": 0.886
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "audio": "chalk/top10-navies/short/s06.mp3",
+   "duration": 3.336,
+   "text": "Number five. Indonesia, 338.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "five.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "Indonesia,",
+     "t": 0.989,
+     "d": 0.58
+    },
+    {
+     "w": "338.",
+     "t": 1.761,
+     "d": 1.239
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "audio": "chalk/top10-navies/short/s07.mp3",
+   "duration": 2.928,
+   "text": "Number four. India, 343.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "four.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "India,",
+     "t": 0.989,
+     "d": 0.352
+    },
+    {
+     "w": "343.",
+     "t": 1.557,
+     "d": 1.023
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "audio": "chalk/top10-navies/short/s08.mp3",
+   "duration": 5.568,
+   "text": "Number three. United States, 465. But by tonnage, the US is number one.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "three.",
+     "t": 0.284,
+     "d": 0.284
+    },
+    {
+     "w": "United",
+     "t": 0.943,
+     "d": 0.284
+    },
+    {
+     "w": "States,",
+     "t": 1.239,
+     "d": 0.466
+    },
+    {
+     "w": "465.",
+     "t": 1.898,
+     "d": 0.852
+    },
+    {
+     "w": "But",
+     "t": 3.136,
+     "d": 0.08
+    },
+    {
+     "w": "by",
+     "t": 3.227,
+     "d": 0.114
+    },
+    {
+     "w": "tonnage,",
+     "t": 3.352,
+     "d": 0.5
+    },
+    {
+     "w": "the",
+     "t": 4.057,
+     "d": 0.068
+    },
+    {
+     "w": "US",
+     "t": 4.136,
+     "d": 0.511
+    },
+    {
+     "w": "is",
+     "t": 4.659,
+     "d": 0.091
+    },
+    {
+     "w": "number",
+     "t": 4.761,
+     "d": 0.239
+    },
+    {
+     "w": "one.",
+     "t": 5.011,
+     "d": 0.216
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "audio": "chalk/top10-navies/short/s09.mp3",
+   "duration": 2.904,
+   "text": "Number two. Russia, 747.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "two.",
+     "t": 0.295,
+     "d": 0.227
+    },
+    {
+     "w": "Russia,",
+     "t": 0.898,
+     "d": 0.341
+    },
+    {
+     "w": "747.",
+     "t": 1.455,
+     "d": 1.114
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "audio": "chalk/top10-navies/short/s10.mp3",
+   "duration": 5.16,
+   "text": "And number one. China, with 841 ships. The biggest navy on Earth.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.091,
+     "d": 0.057
+    },
+    {
+     "w": "number",
+     "t": 0.159,
+     "d": 0.216
+    },
+    {
+     "w": "one.",
+     "t": 0.386,
+     "d": 0.216
+    },
+    {
+     "w": "China,",
+     "t": 0.977,
+     "d": 0.307
+    },
+    {
+     "w": "with",
+     "t": 1.614,
+     "d": 0.125
+    },
+    {
+     "w": "841",
+     "t": 1.83,
+     "d": 0.795
+    },
+    {
+     "w": "ships.",
+     "t": 2.636,
+     "d": 0.5
+    },
+    {
+     "w": "The",
+     "t": 3.523,
+     "d": 0.068
+    },
+    {
+     "w": "biggest",
+     "t": 3.602,
+     "d": 0.364
+    },
+    {
+     "w": "navy",
+     "t": 3.977,
+     "d": 0.33
+    },
+    {
+     "w": "on",
+     "t": 4.318,
+     "d": 0.125
+    },
+    {
+     "w": "Earth.",
+     "t": 4.455,
+     "d": 0.352
+    }
+   ]
+  },
+  {
+   "index": 11,
+   "audio": "chalk/top10-navies/short/s11.mp3",
+   "duration": 1.872,
+   "text": "Here's the full board.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.125,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.273,
+     "d": 0.08
+    },
+    {
+     "w": "full",
+     "t": 0.364,
+     "d": 0.227
+    },
+    {
+     "w": "board.",
+     "t": 0.602,
+     "d": 0.307
+    }
+   ]
+  },
+  {
+   "index": 12,
+   "audio": "chalk/top10-navies/short/s12.mp3",
+   "duration": 2.904,
+   "text": "Did your country make the list? Tell me in the comments.",
+   "words": [
+    {
+     "w": "Did",
+     "t": 0.091,
+     "d": 0.08
+    },
+    {
+     "w": "your",
+     "t": 0.182,
+     "d": 0.091
+    },
+    {
+     "w": "country",
+     "t": 0.284,
+     "d": 0.318
+    },
+    {
+     "w": "make",
+     "t": 0.614,
+     "d": 0.159
+    },
+    {
+     "w": "the",
+     "t": 0.784,
+     "d": 0.08
+    },
+    {
+     "w": "list?",
+     "t": 0.875,
+     "d": 0.398
+    },
+    {
+     "w": "Tell",
+     "t": 1.648,
+     "d": 0.102
+    },
+    {
+     "w": "me",
+     "t": 1.761,
+     "d": 0.091
+    },
+    {
+     "w": "in",
+     "t": 1.864,
+     "d": 0.057
+    },
+    {
+     "w": "the",
+     "t": 1.932,
+     "d": 0.068
+    },
+    {
+     "w": "comments.",
+     "t": 2.011,
+     "d": 0.545
+    }
+   ]
+  }
+ ]
+}

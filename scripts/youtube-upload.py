@@ -132,7 +132,11 @@ def metadata(ep: dict, fmt: str) -> dict:
         title = f"{title} #Shorts"
     title = title[:100]
     ranks = sorted([s for s in ep["scenes"] if s["type"] == "rank"], key=lambda s: s["rank"])
-    listing = "\n".join(f"#{s['rank']} {s['name']}: {s['stats'][0]['value']:,}" for s in ranks)
+    def num(st: dict) -> str:
+        v = st["value"]
+        body = f"{v:,}" if float(v).is_integer() else f"{v:,}"
+        return f"{st.get('prefix', '')}{body}{st.get('unit', '')}"
+    listing = "\n".join(f"#{s['rank']} {s['name']}: {num(s['stats'][0])}" for s in ranks if s.get("stats"))
     desc = y.get("description") or (
         f"{ep['title']} — counted on the chalkboard.\n\n"
         f"{listing}\n\n"

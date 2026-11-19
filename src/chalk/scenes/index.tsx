@@ -9,7 +9,10 @@ import type { Episode, HookScene, LeaderboardScene, OutroScene, PlannedScene, Ra
 
 export type SceneProps<S> = { ps: PlannedScene & { scene: S }; ep: Episode };
 
-const fmtNum = (n: number) => n.toLocaleString("en-US");
+const decimalsOf = (n: number) => (String(n).split(".")[1] ?? "").length;
+const fmtNum = (n: number, d = 0) => n.toLocaleString("en-US", { minimumFractionDigits: d, maximumFractionDigits: d });
+const fmtStat = (st: { value: number; prefix?: string; unit?: string; decimals?: number }, v = st.value) =>
+  `${st.prefix ?? ""}${fmtNum(v, st.decimals ?? decimalsOf(st.value))}${st.unit ?? ""}`;
 
 /** Max headline stat across the episode — every bar is scaled to it. */
 export const metricMax = (ep: Episode) =>
@@ -109,12 +112,13 @@ export const Rank: React.FC<SceneProps<RankScene>> = ({ ps, ep }) => {
         const at = statAt[i];
         if (frame < at) return null;
         const y = g.stats.y + i * g.stats.row;
-        const val = Math.round(st.value * interpolate(frame, [at, at + 18], [0, 1], { ...clamp, easing: ease.out }));
+        const d = st.decimals ?? decimalsOf(st.value);
+        const val = Math.round(st.value * interpolate(frame, [at, at + 18], [0, 1], { ...clamp, easing: ease.out }) * 10 ** d) / 10 ** d;
         return (
           <React.Fragment key={i}>
             <ChalkText text={st.label} x={g.stats.x} y={y + (g.stats.value - g.stats.label) * 0.7} size={g.stats.label} color="dim" start={at} cps={40} />
             <ChalkText
-              text={`${fmtNum(val)}${st.unit ?? ""}`}
+              text={fmtStat(st, val)}
               x={g.stats.x}
               y={y}
               w={g.stats.w}
@@ -145,7 +149,7 @@ export const Rank: React.FC<SceneProps<RankScene>> = ({ ps, ep }) => {
             )}
           </Sketch>
           <ChalkText
-            text={`${ep.metric} · #1 = ${fmtNum(max)}`}
+            text={`${ep.metric} · #1 = ${fmtStat({ value: max, prefix: ep.metricPrefix, unit: ep.metricUnit })}`}
             x={g.stats.x}
             y={barY + barH + 8}
             w={g.barW}
@@ -219,7 +223,7 @@ export const Leaderboard: React.FC<SceneProps<LeaderboardScene>> = ({ ps, ep }) 
                 />
               </Sketch>
             )}
-            {!short && <ChalkText text={fmtNum(v)} x={barX + barMaxW + 16} y={y} size={fs} color="dim" start={at + 8} cps={0} />}
+            {!short && <ChalkText text={fmtStat({ ...r.stats[0], value: v })} x={barX + barMaxW + 16} y={y} size={fs} color="dim" start={at + 8} cps={0} />}
           </React.Fragment>
         );
       })}

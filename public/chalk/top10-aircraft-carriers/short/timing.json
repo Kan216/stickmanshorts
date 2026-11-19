@@ -1,0 +1,576 @@
+{
+ "format": "short",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "scenes": [
+  {
+   "index": 0,
+   "audio": "chalk/top10-aircraft-carriers/short/s00.mp3",
+   "duration": 3.408,
+   "text": "Which countries have the most aircraft carriers? Let's count.",
+   "words": [
+    {
+     "w": "Which",
+     "t": 0.102,
+     "d": 0.136
+    },
+    {
+     "w": "countries",
+     "t": 0.25,
+     "d": 0.409
+    },
+    {
+     "w": "have",
+     "t": 0.67,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.818,
+     "d": 0.057
+    },
+    {
+     "w": "most",
+     "t": 0.886,
+     "d": 0.273
+    },
+    {
+     "w": "aircraft",
+     "t": 1.205,
+     "d": 0.42
+    },
+    {
+     "w": "carriers?",
+     "t": 1.636,
+     "d": 0.557
+    },
+    {
+     "w": "Let's",
+     "t": 2.568,
+     "d": 0.136
+    },
+    {
+     "w": "count.",
+     "t": 2.716,
+     "d": 0.341
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "audio": "chalk/top10-aircraft-carriers/short/s01.mp3",
+   "duration": 1.872,
+   "text": "Number ten. Thailand, 1.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.205
+    },
+    {
+     "w": "ten.",
+     "t": 0.307,
+     "d": 0.284
+    },
+    {
+     "w": "Thailand,",
+     "t": 0.966,
+     "d": 0.284
+    },
+    {
+     "w": "1.",
+     "t": 1.273,
+     "d": 0.25
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "audio": "chalk/top10-aircraft-carriers/short/s02.mp3",
+   "duration": 3.528,
+   "text": "Number nine. Russia, 1. Stuck in repairs for years.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "nine.",
+     "t": 0.295,
+     "d": 0.295
+    },
+    {
+     "w": "Russia,",
+     "t": 0.966,
+     "d": 0.25
+    },
+    {
+     "w": "1.",
+     "t": 1.239,
+     "d": 0.273
+    },
+    {
+     "w": "Stuck",
+     "t": 1.886,
+     "d": 0.25
+    },
+    {
+     "w": "in",
+     "t": 2.148,
+     "d": 0.068
+    },
+    {
+     "w": "repairs",
+     "t": 2.227,
+     "d": 0.386
+    },
+    {
+     "w": "for",
+     "t": 2.625,
+     "d": 0.114
+    },
+    {
+     "w": "years.",
+     "t": 2.75,
+     "d": 0.443
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "audio": "chalk/top10-aircraft-carriers/short/s03.mp3",
+   "duration": 1.776,
+   "text": "Number eight. Spain, 1.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.216
+    },
+    {
+     "w": "eight.",
+     "t": 0.318,
+     "d": 0.205
+    },
+    {
+     "w": "Spain,",
+     "t": 0.909,
+     "d": 0.284
+    },
+    {
+     "w": "1.",
+     "t": 1.216,
+     "d": 0.227
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "audio": "chalk/top10-aircraft-carriers/short/s04.mp3",
+   "duration": 3.264,
+   "text": "Number seven. France, 1. But it's nuclear powered.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "seven.",
+     "t": 0.284,
+     "d": 0.318
+    },
+    {
+     "w": "France,",
+     "t": 1.023,
+     "d": 0.307
+    },
+    {
+     "w": "1.",
+     "t": 1.352,
+     "d": 0.273
+    },
+    {
+     "w": "But",
+     "t": 2.011,
+     "d": 0.068
+    },
+    {
+     "w": "it's",
+     "t": 2.091,
+     "d": 0.114
+    },
+    {
+     "w": "nuclear",
+     "t": 2.216,
+     "d": 0.318
+    },
+    {
+     "w": "powered.",
+     "t": 2.545,
+     "d": 0.386
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "audio": "chalk/top10-aircraft-carriers/short/s05.mp3",
+   "duration": 4.512,
+   "text": "Number six. Japan, 2. Converted to fly F-35s.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.17
+    },
+    {
+     "w": "six.",
+     "t": 0.273,
+     "d": 0.42
+    },
+    {
+     "w": "Japan,",
+     "t": 1.068,
+     "d": 0.398
+    },
+    {
+     "w": "2.",
+     "t": 1.489,
+     "d": 0.273
+    },
+    {
+     "w": "Converted",
+     "t": 2.136,
+     "d": 0.33
+    },
+    {
+     "w": "to",
+     "t": 2.477,
+     "d": 0.068
+    },
+    {
+     "w": "fly",
+     "t": 2.557,
+     "d": 0.443
+    },
+    {
+     "w": "F-35s.",
+     "t": 3.114,
+     "d": 1.068
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "audio": "chalk/top10-aircraft-carriers/short/s06.mp3",
+   "duration": 1.944,
+   "text": "Number five. India, 2.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "five.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "India,",
+     "t": 0.989,
+     "d": 0.284
+    },
+    {
+     "w": "2.",
+     "t": 1.352,
+     "d": 0.25
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "audio": "chalk/top10-aircraft-carriers/short/s07.mp3",
+   "duration": 2.328,
+   "text": "Number four. United Kingdom, 2.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "four.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "United",
+     "t": 0.989,
+     "d": 0.318
+    },
+    {
+     "w": "Kingdom,",
+     "t": 1.318,
+     "d": 0.33
+    },
+    {
+     "w": "2.",
+     "t": 1.716,
+     "d": 0.273
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "audio": "chalk/top10-aircraft-carriers/short/s08.mp3",
+   "duration": 1.848,
+   "text": "Number three. Italy, 2.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "three.",
+     "t": 0.284,
+     "d": 0.284
+    },
+    {
+     "w": "Italy,",
+     "t": 0.943,
+     "d": 0.261
+    },
+    {
+     "w": "2.",
+     "t": 1.239,
+     "d": 0.273
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "audio": "chalk/top10-aircraft-carriers/short/s09.mp3",
+   "duration": 3.096,
+   "text": "Number two. China, 3. And building more.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "two.",
+     "t": 0.295,
+     "d": 0.227
+    },
+    {
+     "w": "China,",
+     "t": 0.898,
+     "d": 0.295
+    },
+    {
+     "w": "3.",
+     "t": 1.386,
+     "d": 0.284
+    },
+    {
+     "w": "And",
+     "t": 2.045,
+     "d": 0.08
+    },
+    {
+     "w": "building",
+     "t": 2.136,
+     "d": 0.318
+    },
+    {
+     "w": "more.",
+     "t": 2.466,
+     "d": 0.295
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "audio": "chalk/top10-aircraft-carriers/short/s10.mp3",
+   "duration": 5.208,
+   "text": "And number one. The United States, with 11. As many as the next five countries combined.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.091,
+     "d": 0.057
+    },
+    {
+     "w": "number",
+     "t": 0.159,
+     "d": 0.216
+    },
+    {
+     "w": "one.",
+     "t": 0.386,
+     "d": 0.216
+    },
+    {
+     "w": "The",
+     "t": 0.989,
+     "d": 0.034
+    },
+    {
+     "w": "United",
+     "t": 1.034,
+     "d": 0.295
+    },
+    {
+     "w": "States,",
+     "t": 1.341,
+     "d": 0.432
+    },
+    {
+     "w": "with",
+     "t": 1.92,
+     "d": 0.148
+    },
+    {
+     "w": "11.",
+     "t": 2.08,
+     "d": 0.352
+    },
+    {
+     "w": "As",
+     "t": 2.807,
+     "d": 0.125
+    },
+    {
+     "w": "many",
+     "t": 2.943,
+     "d": 0.307
+    },
+    {
+     "w": "as",
+     "t": 3.261,
+     "d": 0.08
+    },
+    {
+     "w": "the",
+     "t": 3.352,
+     "d": 0.068
+    },
+    {
+     "w": "next",
+     "t": 3.432,
+     "d": 0.307
+    },
+    {
+     "w": "five",
+     "t": 3.75,
+     "d": 0.25
+    },
+    {
+     "w": "countries",
+     "t": 4.011,
+     "d": 0.364
+    },
+    {
+     "w": "combined.",
+     "t": 4.386,
+     "d": 0.477
+    }
+   ]
+  },
+  {
+   "index": 11,
+   "audio": "chalk/top10-aircraft-carriers/short/s11.mp3",
+   "duration": 1.872,
+   "text": "Here's the full board.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.125,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.273,
+     "d": 0.08
+    },
+    {
+     "w": "full",
+     "t": 0.364,
+     "d": 0.227
+    },
+    {
+     "w": "board.",
+     "t": 0.602,
+     "d": 0.307
+    }
+   ]
+  },
+  {
+   "index": 12,
+   "audio": "chalk/top10-aircraft-carriers/short/s12.mp3",
+   "duration": 2.904,
+   "text": "Did your country make the list? Tell me in the comments.",
+   "words": [
+    {
+     "w": "Did",
+     "t": 0.091,
+     "d": 0.08
+    },
+    {
+     "w": "your",
+     "t": 0.182,
+     "d": 0.091
+    },
+    {
+     "w": "country",
+     "t": 0.284,
+     "d": 0.318
+    },
+    {
+     "w": "make",
+     "t": 0.614,
+     "d": 0.159
+    },
+    {
+     "w": "the",
+     "t": 0.784,
+     "d": 0.08
+    },
+    {
+     "w": "list?",
+     "t": 0.875,
+     "d": 0.398
+    },
+    {
+     "w": "Tell",
+     "t": 1.648,
+     "d": 0.102
+    },
+    {
+     "w": "me",
+     "t": 1.761,
+     "d": 0.091
+    },
+    {
+     "w": "in",
+     "t": 1.864,
+     "d": 0.057
+    },
+    {
+     "w": "the",
+     "t": 1.932,
+     "d": 0.068
+    },
+    {
+     "w": "comments.",
+     "t": 2.011,
+     "d": 0.545
+    }
+   ]
+  }
+ ]
+}
