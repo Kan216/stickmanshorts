@@ -14,10 +14,6 @@
     "rateShort": "+10%",
     "rateLong": "+0%"
   },
-  "music": {
-    "file": "pad-hope.wav",
-    "volume": 0.2
-  },
   "thumbnail": {
     "text": "WHO SPENDS\nTHE {yellow:MOST}?",
     "kicker": "TOP 10 MILITARY BUDGETS",

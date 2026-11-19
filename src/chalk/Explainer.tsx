@@ -70,7 +70,13 @@ const Header: React.FC<{ plan: PlannedScene[]; text: string }> = ({ plan, text }
 };
 
 /** Music bed that ducks while the narrator talks. */
-const DuckedMusic: React.FC<{ plan: PlannedScene[]; file: string; volume: number }> = ({ plan, file, volume }) => {
+/** Mix defaults per format: present in gaps (≈4 dB under the voice), tucked under speech (≈12 dB). */
+export const MUSIC_DEFAULTS: Record<Format, { file: string; volume: number; duck: number }> = {
+  short: { file: "chalk-curious.wav", volume: 0.56, duck: 0.45 },
+  long: { file: "chalk-documentary.wav", volume: 0.5, duck: 0.42 },
+};
+
+const DuckedMusic: React.FC<{ plan: PlannedScene[]; file: string; volume: number; duckTo: number }> = ({ plan, file, volume, duckTo }) => {
   const total = totalFrames(plan);
   return (
     <Html5Audio
@@ -82,7 +88,7 @@ const DuckedMusic: React.FC<{ plan: PlannedScene[]; file: string; volume: number
         if (ps && ps.words.length) {
           const s = ps.from + ps.words[0].f;
           const e = ps.from + ps.words[ps.words.length - 1].end;
-          duck = 1 - 0.6 * interpolate(f, [s - 6, s, e, e + 10], [0, 1, 1, 0], clamp);
+          duck = 1 - (1 - duckTo) * interpolate(f, [s - 6, s, e, e + 10], [0, 1, 1, 0], clamp);
         }
         const fade = interpolate(f, [0, 15, total - 30, total], [0, 1, 1, 0], clamp);
         return volume * duck * fade;
@@ -115,7 +121,14 @@ export const ChalkExplainer: React.FC<ExplainerProps> = ({ episode, format, timi
         ))}
         <Presenter plan={plan} />
         <Captions plan={plan} />
-        {episode.music && <DuckedMusic plan={plan} file={episode.music.file} volume={episode.music.volume ?? 0.22} />}
+        {!episode.music?.off && (
+          <DuckedMusic
+            plan={plan}
+            file={(format === "long" ? episode.music?.fileLong : episode.music?.file) ?? MUSIC_DEFAULTS[format].file}
+            volume={episode.music?.volume ?? MUSIC_DEFAULTS[format].volume}
+            duckTo={episode.music?.duck ?? MUSIC_DEFAULTS[format].duck}
+          />
+        )}
       </AbsoluteFill>
     </ChalkProvider>
   );

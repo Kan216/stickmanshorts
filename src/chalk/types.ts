@@ -93,7 +93,11 @@ export type Episode = {
   /** false until the numbers have been checked against the sources */
   verified: boolean;
   voice: { name: string; rateShort?: string; rateLong?: string; pitch?: string };
-  music?: { file: string; volume?: number };
+  /**
+   * Background music. Defaults: Shorts → chalk-curious.wav, long-form → chalk-documentary.wav
+   * (original tracks from scripts/gen-music.py). volume = level in gaps; duck = fraction kept under the voice.
+   */
+  music?: { file?: string; fileLong?: string; volume?: number; duck?: number; off?: boolean };
   /** stop-scroll thumbnail (both formats) */
   thumbnail?: {
     /** 2–4 huge words, {yellow:WORD} markup, \n for lines */

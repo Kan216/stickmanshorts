@@ -24,10 +24,6 @@
     "rateShort": "+10%",
     "rateLong": "-8%"
   },
-  "music": {
-    "file": "pad-hope.wav",
-    "volume": 0.16
-  },
   "thumbnail": {
     "text": "WHICH EMPIRE\nLASTED {yellow:LONGEST}?",
     "kicker": "TOP 10 LONGEST EMPIRES",

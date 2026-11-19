@@ -2,7 +2,7 @@
   "name": "stickmanshorts",
   "version": "1.0.0",
   "private": true,
-  "description": "Glowing stickman motivational shorts (9:16) built with Remotion, Three.js and ffmpeg — driven by Claude Code skills.",
+  "description": "Glowing stickman motivational shorts (9:16) built with Remotion, Three.js and ffmpeg \u2014 driven by Claude Code skills.",
   "scripts": {
     "studio": "remotion studio",
     "render": "bash scripts/render.sh",
@@ -12,7 +12,8 @@
     "lint": "tsc --noEmit",
     "chalk:tts": "python3 scripts/chalk-tts.py",
     "chalk:thumb": "bash scripts/chalk-thumb.sh",
-    "yt": "python3 scripts/youtube-upload.py"
+    "yt": "python3 scripts/youtube-upload.py",
+    "music": "python3 scripts/gen-music.py"
   },
   "license": "UNLICENSED",
   "dependencies": {
