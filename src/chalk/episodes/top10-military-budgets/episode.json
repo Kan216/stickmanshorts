@@ -206,5 +206,17 @@
     }
   ],
   "metricPrefix": "$",
-  "metricUnit": "B"
+  "metricUnit": "B",
+  "youtube": {
+    "hashtags": [
+      "Shorts",
+      "MilitarySpending",
+      "Military",
+      "Defense",
+      "Geopolitics",
+      "Top10",
+      "ChalkTalk",
+      "Facts"
+    ]
+  }
 }

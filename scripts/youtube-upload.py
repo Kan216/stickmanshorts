@@ -47,6 +47,8 @@ PENDING = ROOT / ".secrets/youtube_auth_pending.json"
 SCOPES = [
     "https://www.googleapis.com/auth/youtube.upload",
     "https://www.googleapis.com/auth/youtube.readonly",
+    # edit titles/descriptions/hashtags of existing videos (videos.update)
+    "https://www.googleapis.com/auth/youtube",
 ]
 REDIRECT = "http://localhost"
 LOG = ROOT / "out/youtube-uploads.jsonl"
@@ -147,6 +149,13 @@ def metadata(ep: dict, fmt: str) -> dict:
         + ("#Shorts " if fmt == "short" else "")
         + "#ChalkTalk #Top10 #Data"
     )
+    # episode-specific hashtags (first 3 show above the title on YouTube; keep ≤ 15)
+    if y.get("hashtags"):
+        lines = desc.rstrip().split("\n")
+        while lines and lines[-1].strip().startswith("#"):
+            lines.pop()
+        tags_line = " ".join("#" + h.lstrip("#") for h in y["hashtags"][:15])
+        desc = "\n".join(lines).rstrip() + "\n\n" + tags_line
     tags = y.get("tags") or ["ChalkTalk", "top 10", "comparison", "data", "statistics", ep["metric"].lower()] + [s["name"] for s in ranks[:5]]
     return {"title": title, "description": desc[:5000], "tags": tags[:30], "categoryId": y.get("categoryId", "27")}
 
