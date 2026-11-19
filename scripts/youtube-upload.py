@@ -34,6 +34,8 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parent.parent
+# Google may return previously granted scopes too (include_granted_scopes) — accept them
+os.environ.setdefault("OAUTHLIB_RELAX_TOKEN_SCOPE", "1")
 if not os.environ.get("SSL_CERT_FILE") and Path("/root/.ccr/ca-bundle.crt").exists():
     os.environ["SSL_CERT_FILE"] = "/root/.ccr/ca-bundle.crt"
     os.environ.setdefault("REQUESTS_CA_BUNDLE", "/root/.ccr/ca-bundle.crt")
