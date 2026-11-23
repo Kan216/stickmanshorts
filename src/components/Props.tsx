@@ -578,3 +578,63 @@ export const GroundRing: React.FC<{ x: number; y?: number; r: number; color: str
     </Layer>
   );
 };
+
+/** Dotted route line (GPS style). `progress` 0..1 draws the dots from the start. */
+export const DottedRoute: React.FC<{ points: { x: number; y: number }[]; progress?: number; color: string; opacity?: number; dot?: number }> = ({
+  points,
+  progress = 1,
+  color,
+  opacity = 1,
+  dot = 3,
+}) => {
+  const c = resolveColor(color);
+  const n = Math.floor(points.length * Math.max(0, Math.min(1, progress)));
+  return (
+    <Layer opacity={opacity}>
+      {points.slice(0, n).map((p, i) => (i % 2 === 0 ? <circle key={i} cx={p.x} cy={p.y} r={dot} fill={c} opacity={0.5 + 0.5 * (i / Math.max(1, n))} /> : null))}
+    </Layer>
+  );
+};
+
+/** Dark hole in the ground with a label under it. `hit` dims it after a fall. */
+export const Hole: React.FC<{ x: number; label: string; color?: string; groundY?: number; hit?: boolean }> = ({
+  x,
+  label,
+  color = "red",
+  groundY = LAYOUT.groundY,
+  hit = false,
+}) => {
+  const c = resolveColor(color);
+  return (
+    <Layer>
+      <ellipse cx={x} cy={groundY} rx={44} ry={11} fill={COLORS.ink} stroke={c} strokeWidth={3} opacity={hit ? 0.5 : 1} />
+      <ellipse cx={x} cy={groundY + 1} rx={34} ry={7} fill="#000" opacity={0.9} />
+      <text x={x} y={groundY + 36} textAnchor="middle" fill={c} fontFamily="'Segoe UI', Arial, sans-serif" fontWeight={800} fontSize={20} letterSpacing={2} opacity={hit ? 0.5 : 1}>
+        {label}
+      </text>
+    </Layer>
+  );
+};
+
+/** Goal flag on a pole, with a banner label. */
+export const Flag: React.FC<{ x: number; groundY?: number; h?: number; label?: string; color?: string; glow?: number }> = ({
+  x,
+  groundY = LAYOUT.groundY,
+  h = 190,
+  label = "GOAL",
+  color = "gold",
+  glow = 1,
+}) => {
+  const c = resolveColor(color);
+  const top = groundY - h;
+  return (
+    <Layer>
+      <line x1={x} y1={groundY} x2={x} y2={top} stroke={c} strokeWidth={4} strokeLinecap="round" />
+      <path d={`M${x} ${top} L${x + 78} ${top + 16} L${x} ${top + 34} Z`} fill={c} opacity={0.95} />
+      <rect x={x - 6} y={groundY - 36} width={12} height={36} fill={c} opacity={0.15 * glow} />
+      <text x={x + 30} y={top + 20} textAnchor="middle" fill={COLORS.ink} fontFamily="'Segoe UI', Arial, sans-serif" fontWeight={900} fontSize={14} letterSpacing={1}>
+        {label}
+      </text>
+    </Layer>
+  );
+};

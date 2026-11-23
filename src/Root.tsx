@@ -11,6 +11,7 @@ import { Iceberg, ICEBERG_DURATION } from "./shorts/iceberg/Iceberg";
 import { Overthinker, OVERTHINKER_DURATION } from "./shorts/overthinker/Overthinker";
 import { OwnLane, OWN_LANE_DURATION } from "./shorts/own-lane/OwnLane";
 import { ComfortZone, COMFORT_ZONE_DURATION } from "./shorts/comfort-zone/ComfortZone";
+import { GpsRecalculating, GPS_RECALCULATING_DURATION } from "./shorts/gps-recalculating/GpsRecalculating";
 import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
 
@@ -31,6 +32,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="OwnLane" component={OwnLane} durationInFrames={OWN_LANE_DURATION} {...VIDEO} />
     <Composition id="OrbOfLight3D" component={OrbOfLight3D} durationInFrames={150} {...VIDEO} />
     <Composition id="ComfortZone" component={ComfortZone} durationInFrames={COMFORT_ZONE_DURATION} {...VIDEO} />
+    <Composition id="GpsRecalculating" component={GpsRecalculating} durationInFrames={GPS_RECALCULATING_DURATION} {...VIDEO} />
     <Still id="PoseSheet" component={PoseSheet} width={VIDEO.width} height={VIDEO.height} />
   </>
 );
