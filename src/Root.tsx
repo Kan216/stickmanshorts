@@ -12,6 +12,7 @@ import { Overthinker, OVERTHINKER_DURATION } from "./shorts/overthinker/Overthin
 import { OwnLane, OWN_LANE_DURATION } from "./shorts/own-lane/OwnLane";
 import { ComfortZone, COMFORT_ZONE_DURATION } from "./shorts/comfort-zone/ComfortZone";
 import { GpsRecalculating, GPS_RECALCULATING_DURATION } from "./shorts/gps-recalculating/GpsRecalculating";
+import { TheBridge, THE_BRIDGE_DURATION } from "./shorts/the-bridge/TheBridge";
 import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
 
@@ -33,6 +34,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="OrbOfLight3D" component={OrbOfLight3D} durationInFrames={150} {...VIDEO} />
     <Composition id="ComfortZone" component={ComfortZone} durationInFrames={COMFORT_ZONE_DURATION} {...VIDEO} />
     <Composition id="GpsRecalculating" component={GpsRecalculating} durationInFrames={GPS_RECALCULATING_DURATION} {...VIDEO} />
+    <Composition id="TheBridge" component={TheBridge} durationInFrames={THE_BRIDGE_DURATION} {...VIDEO} />
     <Still id="PoseSheet" component={PoseSheet} width={VIDEO.width} height={VIDEO.height} />
   </>
 );

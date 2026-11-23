@@ -638,3 +638,56 @@ export const Flag: React.FC<{ x: number; groundY?: number; h?: number; label?: s
     </Layer>
   );
 };
+
+/** A river gap in the ground between two banks. Water fills from the ground line down. `farBank` glows the far edge. */
+export const River: React.FC<{ x0: number; x1: number; groundY?: number; depth?: number; color?: string; farBank?: string }> = ({
+  x0,
+  x1,
+  groundY = LAYOUT.groundY,
+  depth = 70,
+  color = "#1c2a3d",
+  farBank,
+}) => {
+  const f = useCurrentFrame();
+  const top = Array.from({ length: 30 }).map((_, i) => {
+    const x = x0 + ((x1 - x0) * i) / 29;
+    return `${x},${groundY + Math.sin(i * 1.1 + f / 9) * 2.5}`;
+  });
+  return (
+    <Layer>
+      <polygon points={`${x0},${groundY} ${top.join(" ")} ${x1},${groundY + depth} ${x0},${groundY + depth}`} fill={color} opacity={0.95} />
+      <polyline points={top.join(" ")} fill="none" stroke="#9fb6d4" strokeWidth={2.5} opacity={0.7} />
+      {farBank && (
+        <>
+          <line x1={x1} y1={groundY} x2={VIDEO.width} y2={groundY} stroke={resolveColor(farBank)} strokeWidth={6} opacity={0.25} />
+          <line x1={x1} y1={groundY} x2={VIDEO.width} y2={groundY} stroke={resolveColor(farBank)} strokeWidth={2.5} />
+        </>
+      )}
+    </Layer>
+  );
+};
+
+/** Stones that drop into place one at a time (each `at` is the frame it lands). Lands with a short drop + fade in. */
+export const SteppingStones: React.FC<{ stones: { x: number; at: number }[]; groundY?: number; color?: string }> = ({
+  stones,
+  groundY = LAYOUT.groundY,
+  color = "#8fa3c2",
+}) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  return (
+    <Layer>
+      {stones.map((s, i) => {
+        if (f < s.at) return null;
+        const p = Math.min(1, (f - s.at) / 6);
+        const cy = groundY - 6 - (1 - p) * 40;
+        return (
+          <g key={i} opacity={p}>
+            <ellipse cx={s.x} cy={cy} rx={13} ry={6} fill={c} stroke="#dfe8f5" strokeWidth={1.5} />
+            <ellipse cx={s.x} cy={cy + 2} rx={13} ry={6} fill="#000" opacity={0.25} />
+          </g>
+        );
+      })}
+    </Layer>
+  );
+};
