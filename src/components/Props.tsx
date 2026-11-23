@@ -745,3 +745,67 @@ export const Domino: React.FC<{ x: number; height: number; fall?: number; color?
     </Layer>
   );
 };
+
+/** Elastic band from an anchor post to a point (e.g. a waist). `tension` 0..1 adds a tremble/glow. */
+export const Elastic: React.FC<{ x1: number; y1: number; x2: number; y2: number; postBottom?: number; label?: string; color?: string; tension?: number }> = ({
+  x1,
+  y1,
+  x2,
+  y2,
+  postBottom = LAYOUT.groundY,
+  label,
+  color = "gold",
+  tension = 0.5,
+}) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  const dx = x2 - x1;
+  const dy = y2 - y1;
+  const len = Math.hypot(dx, dy);
+  const nx = -dy / len;
+  const ny = dx / len;
+  const coils = 10;
+  const amp = 4 + 6 * tension;
+  const pts = Array.from({ length: coils * 2 + 1 }).map((_, i) => {
+    const t = i / (coils * 2);
+    const side = i % 2 === 0 ? 0 : amp * Math.sin(f / 3 + i);
+    return `${x1 + dx * t + nx * side},${y1 + dy * t + ny * side}`;
+  });
+  const mx = (x1 + x2) / 2;
+  const my = (y1 + y2) / 2;
+  return (
+    <Layer>
+      <line x1={x1} y1={y1} x2={x1} y2={postBottom} stroke="#3a414c" strokeWidth={6} strokeLinecap="round" />
+      <polyline points={pts.join(" ")} fill="none" stroke={c} strokeWidth={3 + 2 * tension} strokeLinejoin="round" opacity={0.9} />
+      <polyline points={pts.join(" ")} fill="none" stroke={c} strokeWidth={10} opacity={0.18 + 0.2 * tension} />
+      {label && (
+        <text x={mx} y={my - 22} textAnchor="middle" fill={c} fontFamily="'Segoe UI', Arial, sans-serif" fontWeight={900} fontSize={22} letterSpacing={2}>
+          {label}
+        </text>
+      )}
+    </Layer>
+  );
+};
+
+/** Speed lines trailing behind a moving figure. `dir` -1 = streaks to the left (behind a runner going right). */
+export const MotionStreaks: React.FC<{ x: number; y: number; len?: number; color?: string; count?: number; opacity?: number; dir?: 1 | -1 }> = ({
+  x,
+  y,
+  len = 90,
+  color = "gold",
+  count = 6,
+  opacity = 1,
+  dir = -1,
+}) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  return (
+    <Layer opacity={opacity}>
+      {Array.from({ length: count }).map((_, i) => {
+        const yy = y - 20 - i * 16 - rand(i + 3) * 6;
+        const l = len * (0.5 + rand(i) * 0.7) * (1 + 0.1 * Math.sin(f / 2 + i));
+        return <line key={i} x1={x} y1={yy} x2={x - dir * l} y2={yy} stroke={c} strokeWidth={2.5} strokeLinecap="round" opacity={0.7 - i * 0.08} />;
+      })}
+    </Layer>
+  );
+};

@@ -15,6 +15,7 @@ import { GpsRecalculating, GPS_RECALCULATING_DURATION } from "./shorts/gps-recal
 import { TheBridge, THE_BRIDGE_DURATION } from "./shorts/the-bridge/TheBridge";
 import { ProtectFlame, PROTECT_FLAME_DURATION } from "./shorts/protect-flame/ProtectFlame";
 import { Domino, DOMINO_DURATION } from "./shorts/domino/Domino";
+import { Slingshot, SLINGSHOT_DURATION } from "./shorts/slingshot/Slingshot";
 import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
 
@@ -39,6 +40,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="TheBridge" component={TheBridge} durationInFrames={THE_BRIDGE_DURATION} {...VIDEO} />
     <Composition id="ProtectFlame" component={ProtectFlame} durationInFrames={PROTECT_FLAME_DURATION} {...VIDEO} />
     <Composition id="Domino" component={Domino} durationInFrames={DOMINO_DURATION} {...VIDEO} />
+    <Composition id="Slingshot" component={Slingshot} durationInFrames={SLINGSHOT_DURATION} {...VIDEO} />
     <Still id="PoseSheet" component={PoseSheet} width={VIDEO.width} height={VIDEO.height} />
   </>
 );
