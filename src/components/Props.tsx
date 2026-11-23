@@ -691,3 +691,29 @@ export const SteppingStones: React.FC<{ stones: { x: number; at: number }[]; gro
     </Layer>
   );
 };
+
+/** A candle held in a hand (pass the hand point). `lit` 0..1 scales the flame; 0 = out (a thin wisp of smoke). */
+export const Candle: React.FC<{ x: number; y: number; lit?: number; glow?: number; bodyH?: number }> = ({ x, y, lit = 1, glow = 1, bodyH = 26 }) => {
+  const f = useCurrentFrame();
+  const flick = 1 + 0.07 * Math.sin(f / 2.5) + 0.04 * Math.sin(f / 1.1);
+  const h = 20 * lit * flick;
+  const w = 6 * lit * flick;
+  const flame = `M${x} ${y - h} C${x + w} ${y - h * 0.45} ${x + w * 0.6} ${y} ${x} ${y} C${x - w * 0.6} ${y} ${x - w} ${y - h * 0.45} ${x} ${y - h} Z`;
+  const wisp = Math.max(0, 1 - lit);
+  return (
+    <Layer>
+      <rect x={x - 4} y={y} width={8} height={bodyH} rx={2} fill="#e8d6b0" opacity={0.9} />
+      <line x1={x} y1={y} x2={x} y2={y - 2} stroke="#222" strokeWidth={1.5} />
+      {lit > 0.02 && (
+        <>
+          <circle cx={x} cy={y - h * 0.5} r={h * 1.7} fill="#ff9a3c" opacity={0.22 * lit * glow} />
+          <path d={flame} fill="#ffb347" opacity={0.95} />
+          <path d={`M${x} ${y - h * 0.7} C${x + w * 0.4} ${y - h * 0.4} ${x + w * 0.3} ${y - h * 0.15} ${x} ${y - h * 0.1} C${x - w * 0.3} ${y - h * 0.15} ${x - w * 0.4} ${y - h * 0.4} ${x} ${y - h * 0.7} Z`} fill="#fff4c4" opacity={0.9} />
+        </>
+      )}
+      {wisp > 0 && (
+        <path d={`M${x} ${y - 4} q6 -10 0 -20 q-6 -10 0 -20`} fill="none" stroke="#9aa3b2" strokeWidth={2} opacity={0.5 * wisp} />
+      )}
+    </Layer>
+  );
+};
