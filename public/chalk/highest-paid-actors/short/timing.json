@@ -1,0 +1,541 @@
+{
+ "format": "short",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "scenes": [
+  {
+   "index": 0,
+   "audio": "chalk/highest-paid-actors/short/s00.mp3",
+   "duration": 2.76,
+   "text": "Which actors earned the most this year? Let's count.",
+   "words": [
+    {
+     "w": "Which",
+     "t": 0.102,
+     "d": 0.136
+    },
+    {
+     "w": "actors",
+     "t": 0.25,
+     "d": 0.341
+    },
+    {
+     "w": "earned",
+     "t": 0.602,
+     "d": 0.159
+    },
+    {
+     "w": "the",
+     "t": 0.773,
+     "d": 0.045
+    },
+    {
+     "w": "most",
+     "t": 0.83,
+     "d": 0.273
+    },
+    {
+     "w": "this",
+     "t": 1.114,
+     "d": 0.159
+    },
+    {
+     "w": "year?",
+     "t": 1.284,
+     "d": 0.261
+    },
+    {
+     "w": "Let's",
+     "t": 1.92,
+     "d": 0.136
+    },
+    {
+     "w": "count.",
+     "t": 2.068,
+     "d": 0.341
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "audio": "chalk/highest-paid-actors/short/s01.mp3",
+   "duration": 6.216,
+   "text": "Number ten. Millie Bobby Brown, $26 million. The youngest on the list in two decades.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.205
+    },
+    {
+     "w": "ten.",
+     "t": 0.307,
+     "d": 0.284
+    },
+    {
+     "w": "Millie",
+     "t": 0.966,
+     "d": 0.216
+    },
+    {
+     "w": "Bobby",
+     "t": 1.193,
+     "d": 0.273
+    },
+    {
+     "w": "Brown,",
+     "t": 1.477,
+     "d": 0.375
+    },
+    {
+     "w": "$26 million.",
+     "t": 2.091,
+     "d": 1.42
+    },
+    {
+     "w": "The",
+     "t": 3.898,
+     "d": 0.034
+    },
+    {
+     "w": "youngest",
+     "t": 3.943,
+     "d": 0.398
+    },
+    {
+     "w": "on",
+     "t": 4.352,
+     "d": 0.068
+    },
+    {
+     "w": "the",
+     "t": 4.432,
+     "d": 0.08
+    },
+    {
+     "w": "list",
+     "t": 4.523,
+     "d": 0.307
+    },
+    {
+     "w": "in",
+     "t": 4.943,
+     "d": 0.091
+    },
+    {
+     "w": "two",
+     "t": 5.045,
+     "d": 0.216
+    },
+    {
+     "w": "decades.",
+     "t": 5.273,
+     "d": 0.591
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "audio": "chalk/highest-paid-actors/short/s02.mp3",
+   "duration": 3.504,
+   "text": "Number nine. Daniel Craig, $27 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "nine.",
+     "t": 0.295,
+     "d": 0.295
+    },
+    {
+     "w": "Daniel",
+     "t": 0.966,
+     "d": 0.239
+    },
+    {
+     "w": "Craig,",
+     "t": 1.216,
+     "d": 0.364
+    },
+    {
+     "w": "$27 million.",
+     "t": 1.83,
+     "d": 1.341
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "audio": "chalk/highest-paid-actors/short/s03.mp3",
+   "duration": 3.552,
+   "text": "Number eight. Jason Momoa, $28 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.216
+    },
+    {
+     "w": "eight.",
+     "t": 0.318,
+     "d": 0.205
+    },
+    {
+     "w": "Jason",
+     "t": 0.898,
+     "d": 0.307
+    },
+    {
+     "w": "Momoa,",
+     "t": 1.216,
+     "d": 0.455
+    },
+    {
+     "w": "$28 million.",
+     "t": 1.932,
+     "d": 1.284
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "audio": "chalk/highest-paid-actors/short/s04.mp3",
+   "duration": 3.384,
+   "text": "Number seven. Jack Black, $28 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "seven.",
+     "t": 0.284,
+     "d": 0.318
+    },
+    {
+     "w": "Jack",
+     "t": 0.977,
+     "d": 0.205
+    },
+    {
+     "w": "Black,",
+     "t": 1.193,
+     "d": 0.364
+    },
+    {
+     "w": "$28 million.",
+     "t": 1.795,
+     "d": 1.239
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "audio": "chalk/highest-paid-actors/short/s05.mp3",
+   "duration": 3.912,
+   "text": "Number six. Denzel Washington, $38 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.17
+    },
+    {
+     "w": "six.",
+     "t": 0.273,
+     "d": 0.42
+    },
+    {
+     "w": "Denzel",
+     "t": 1.068,
+     "d": 0.33
+    },
+    {
+     "w": "Washington,",
+     "t": 1.409,
+     "d": 0.534
+    },
+    {
+     "w": "$38 million.",
+     "t": 2.193,
+     "d": 1.375
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "audio": "chalk/highest-paid-actors/short/s06.mp3",
+   "duration": 3.408,
+   "text": "Number five. Brad Pitt, $41 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "five.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "Brad",
+     "t": 1.0,
+     "d": 0.227
+    },
+    {
+     "w": "Pitt,",
+     "t": 1.239,
+     "d": 0.284
+    },
+    {
+     "w": "$41 million.",
+     "t": 1.773,
+     "d": 1.284
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "audio": "chalk/highest-paid-actors/short/s07.mp3",
+   "duration": 5.52,
+   "text": "Number four. Scarlett Johansson, $43 million. The highest-paid actress.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "four.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "Scarlett",
+     "t": 0.989,
+     "d": 0.364
+    },
+    {
+     "w": "Johansson,",
+     "t": 1.364,
+     "d": 0.545
+    },
+    {
+     "w": "$43 million.",
+     "t": 2.148,
+     "d": 1.545
+    },
+    {
+     "w": "The",
+     "t": 4.068,
+     "d": 0.045
+    },
+    {
+     "w": "highest-paid",
+     "t": 4.125,
+     "d": 0.523
+    },
+    {
+     "w": "actress.",
+     "t": 4.659,
+     "d": 0.523
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "audio": "chalk/highest-paid-actors/short/s08.mp3",
+   "duration": 3.504,
+   "text": "Number three. Mark Wahlberg, $44 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "three.",
+     "t": 0.284,
+     "d": 0.284
+    },
+    {
+     "w": "Mark",
+     "t": 0.943,
+     "d": 0.216
+    },
+    {
+     "w": "Wahlberg,",
+     "t": 1.17,
+     "d": 0.455
+    },
+    {
+     "w": "$44 million.",
+     "t": 1.818,
+     "d": 1.341
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "audio": "chalk/highest-paid-actors/short/s09.mp3",
+   "duration": 3.456,
+   "text": "Number two. Tom Cruise, $46 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "two.",
+     "t": 0.295,
+     "d": 0.227
+    },
+    {
+     "w": "Tom",
+     "t": 0.898,
+     "d": 0.182
+    },
+    {
+     "w": "Cruise,",
+     "t": 1.091,
+     "d": 0.432
+    },
+    {
+     "w": "$46 million.",
+     "t": 1.693,
+     "d": 1.42
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "audio": "chalk/highest-paid-actors/short/s10.mp3",
+   "duration": 3.456,
+   "text": "And number one. Adam Sandler, $48 million.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.091,
+     "d": 0.057
+    },
+    {
+     "w": "number",
+     "t": 0.159,
+     "d": 0.216
+    },
+    {
+     "w": "one.",
+     "t": 0.386,
+     "d": 0.216
+    },
+    {
+     "w": "Adam",
+     "t": 0.977,
+     "d": 0.227
+    },
+    {
+     "w": "Sandler,",
+     "t": 1.216,
+     "d": 0.409
+    },
+    {
+     "w": "$48 million.",
+     "t": 1.83,
+     "d": 1.284
+    }
+   ]
+  },
+  {
+   "index": 11,
+   "audio": "chalk/highest-paid-actors/short/s11.mp3",
+   "duration": 1.872,
+   "text": "Here's the full board.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.125,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.273,
+     "d": 0.08
+    },
+    {
+     "w": "full",
+     "t": 0.364,
+     "d": 0.227
+    },
+    {
+     "w": "board.",
+     "t": 0.602,
+     "d": 0.307
+    }
+   ]
+  },
+  {
+   "index": 12,
+   "audio": "chalk/highest-paid-actors/short/s12.mp3",
+   "duration": 2.808,
+   "text": "Who surprised you the most? Tell me in the comments.",
+   "words": [
+    {
+     "w": "Who",
+     "t": 0.102,
+     "d": 0.057
+    },
+    {
+     "w": "surprised",
+     "t": 0.17,
+     "d": 0.455
+    },
+    {
+     "w": "you",
+     "t": 0.636,
+     "d": 0.068
+    },
+    {
+     "w": "the",
+     "t": 0.716,
+     "d": 0.057
+    },
+    {
+     "w": "most?",
+     "t": 0.784,
+     "d": 0.386
+    },
+    {
+     "w": "Tell",
+     "t": 1.545,
+     "d": 0.102
+    },
+    {
+     "w": "me",
+     "t": 1.659,
+     "d": 0.091
+    },
+    {
+     "w": "in",
+     "t": 1.761,
+     "d": 0.057
+    },
+    {
+     "w": "the",
+     "t": 1.83,
+     "d": 0.068
+    },
+    {
+     "w": "comments.",
+     "t": 1.909,
+     "d": 0.545
+    }
+   ]
+  }
+ ]
+}

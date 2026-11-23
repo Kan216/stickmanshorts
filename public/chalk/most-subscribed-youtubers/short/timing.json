@@ -1,0 +1,571 @@
+{
+ "format": "short",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "scenes": [
+  {
+   "index": 0,
+   "audio": "chalk/most-subscribed-youtubers/short/s00.mp3",
+   "duration": 3.072,
+   "text": "Who has the most subscribers on YouTube? Let's count.",
+   "words": [
+    {
+     "w": "Who",
+     "t": 0.114,
+     "d": 0.068
+    },
+    {
+     "w": "has",
+     "t": 0.193,
+     "d": 0.148
+    },
+    {
+     "w": "the",
+     "t": 0.352,
+     "d": 0.08
+    },
+    {
+     "w": "most",
+     "t": 0.443,
+     "d": 0.295
+    },
+    {
+     "w": "subscribers",
+     "t": 0.75,
+     "d": 0.602
+    },
+    {
+     "w": "on",
+     "t": 1.364,
+     "d": 0.102
+    },
+    {
+     "w": "YouTube?",
+     "t": 1.477,
+     "d": 0.386
+    },
+    {
+     "w": "Let's",
+     "t": 2.239,
+     "d": 0.136
+    },
+    {
+     "w": "count.",
+     "t": 2.386,
+     "d": 0.341
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "audio": "chalk/most-subscribed-youtubers/short/s01.mp3",
+   "duration": 3.768,
+   "text": "Number ten. Alejo Igoa, 126 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.205
+    },
+    {
+     "w": "ten.",
+     "t": 0.307,
+     "d": 0.284
+    },
+    {
+     "w": "Alejo",
+     "t": 0.966,
+     "d": 0.42
+    },
+    {
+     "w": "Igoa,",
+     "t": 1.398,
+     "d": 0.466
+    },
+    {
+     "w": "126",
+     "t": 2.125,
+     "d": 0.909
+    },
+    {
+     "w": "million.",
+     "t": 3.045,
+     "d": 0.375
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "audio": "chalk/most-subscribed-youtubers/short/s02.mp3",
+   "duration": 3.552,
+   "text": "Number nine. Like Nastya, 134 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "nine.",
+     "t": 0.295,
+     "d": 0.295
+    },
+    {
+     "w": "Like",
+     "t": 0.966,
+     "d": 0.148
+    },
+    {
+     "w": "Nastya,",
+     "t": 1.125,
+     "d": 0.523
+    },
+    {
+     "w": "134",
+     "t": 1.875,
+     "d": 0.932
+    },
+    {
+     "w": "million.",
+     "t": 2.818,
+     "d": 0.398
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "audio": "chalk/most-subscribed-youtubers/short/s03.mp3",
+   "duration": 3.504,
+   "text": "Number eight. KIMPRO, 135 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.216
+    },
+    {
+     "w": "eight.",
+     "t": 0.318,
+     "d": 0.205
+    },
+    {
+     "w": "KIMPRO,",
+     "t": 0.898,
+     "d": 0.432
+    },
+    {
+     "w": "135",
+     "t": 1.489,
+     "d": 1.239
+    },
+    {
+     "w": "million.",
+     "t": 2.739,
+     "d": 0.42
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "audio": "chalk/most-subscribed-youtubers/short/s04.mp3",
+   "duration": 3.864,
+   "text": "Number seven. Kids Diana Show, 139 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "seven.",
+     "t": 0.284,
+     "d": 0.318
+    },
+    {
+     "w": "Kids",
+     "t": 0.989,
+     "d": 0.182
+    },
+    {
+     "w": "Diana",
+     "t": 1.182,
+     "d": 0.318
+    },
+    {
+     "w": "Show,",
+     "t": 1.511,
+     "d": 0.33
+    },
+    {
+     "w": "139",
+     "t": 2.057,
+     "d": 1.102
+    },
+    {
+     "w": "million.",
+     "t": 3.17,
+     "d": 0.352
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "audio": "chalk/most-subscribed-youtubers/short/s05.mp3",
+   "duration": 3.36,
+   "text": "Number six. Stokes Twins, 150 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.17
+    },
+    {
+     "w": "six.",
+     "t": 0.273,
+     "d": 0.42
+    },
+    {
+     "w": "Stokes",
+     "t": 1.08,
+     "d": 0.261
+    },
+    {
+     "w": "Twins,",
+     "t": 1.352,
+     "d": 0.466
+    },
+    {
+     "w": "150",
+     "t": 2.011,
+     "d": 0.648
+    },
+    {
+     "w": "million.",
+     "t": 2.67,
+     "d": 0.352
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "audio": "chalk/most-subscribed-youtubers/short/s06.mp3",
+   "duration": 3.48,
+   "text": "Number five. Vlad and Niki, 151 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "five.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "Vlad",
+     "t": 0.989,
+     "d": 0.239
+    },
+    {
+     "w": "and",
+     "t": 1.239,
+     "d": 0.08
+    },
+    {
+     "w": "Niki,",
+     "t": 1.33,
+     "d": 0.33
+    },
+    {
+     "w": "151",
+     "t": 1.932,
+     "d": 0.83
+    },
+    {
+     "w": "million.",
+     "t": 2.773,
+     "d": 0.375
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "audio": "chalk/most-subscribed-youtubers/short/s07.mp3",
+   "duration": 3.24,
+   "text": "Number four. SET India, 190 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "four.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "SET",
+     "t": 1.0,
+     "d": 0.17
+    },
+    {
+     "w": "India,",
+     "t": 1.182,
+     "d": 0.375
+    },
+    {
+     "w": "190",
+     "t": 1.818,
+     "d": 0.67
+    },
+    {
+     "w": "million.",
+     "t": 2.5,
+     "d": 0.386
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "audio": "chalk/most-subscribed-youtubers/short/s08.mp3",
+   "duration": 3.312,
+   "text": "Number three. Cocomelon, 203 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "three.",
+     "t": 0.284,
+     "d": 0.284
+    },
+    {
+     "w": "Cocomelon,",
+     "t": 0.943,
+     "d": 0.534
+    },
+    {
+     "w": "203",
+     "t": 1.727,
+     "d": 0.795
+    },
+    {
+     "w": "million.",
+     "t": 2.534,
+     "d": 0.432
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "audio": "chalk/most-subscribed-youtubers/short/s09.mp3",
+   "duration": 4.824,
+   "text": "Number two. T-Series, 316 million. An Indian music label.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "two.",
+     "t": 0.295,
+     "d": 0.227
+    },
+    {
+     "w": "T-Series,",
+     "t": 0.909,
+     "d": 0.614
+    },
+    {
+     "w": "316",
+     "t": 1.693,
+     "d": 1.0
+    },
+    {
+     "w": "million.",
+     "t": 2.705,
+     "d": 0.352
+    },
+    {
+     "w": "An",
+     "t": 3.432,
+     "d": 0.091
+    },
+    {
+     "w": "Indian",
+     "t": 3.534,
+     "d": 0.295
+    },
+    {
+     "w": "music",
+     "t": 3.841,
+     "d": 0.307
+    },
+    {
+     "w": "label.",
+     "t": 4.159,
+     "d": 0.318
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "audio": "chalk/most-subscribed-youtubers/short/s10.mp3",
+   "duration": 5.808,
+   "text": "And number one. MrBeast, with 527 million subscribers. Way ahead of everyone.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.091,
+     "d": 0.057
+    },
+    {
+     "w": "number",
+     "t": 0.159,
+     "d": 0.216
+    },
+    {
+     "w": "one.",
+     "t": 0.386,
+     "d": 0.216
+    },
+    {
+     "w": "MrBeast,",
+     "t": 0.977,
+     "d": 0.659
+    },
+    {
+     "w": "with",
+     "t": 1.83,
+     "d": 0.136
+    },
+    {
+     "w": "527",
+     "t": 1.977,
+     "d": 1.273
+    },
+    {
+     "w": "million",
+     "t": 3.261,
+     "d": 0.295
+    },
+    {
+     "w": "subscribers.",
+     "t": 3.568,
+     "d": 0.716
+    },
+    {
+     "w": "Way",
+     "t": 4.659,
+     "d": 0.114
+    },
+    {
+     "w": "ahead",
+     "t": 4.784,
+     "d": 0.182
+    },
+    {
+     "w": "of",
+     "t": 4.977,
+     "d": 0.057
+    },
+    {
+     "w": "everyone.",
+     "t": 5.045,
+     "d": 0.409
+    }
+   ]
+  },
+  {
+   "index": 11,
+   "audio": "chalk/most-subscribed-youtubers/short/s11.mp3",
+   "duration": 1.872,
+   "text": "Here's the full board.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.125,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.273,
+     "d": 0.08
+    },
+    {
+     "w": "full",
+     "t": 0.364,
+     "d": 0.227
+    },
+    {
+     "w": "board.",
+     "t": 0.602,
+     "d": 0.307
+    }
+   ]
+  },
+  {
+   "index": 12,
+   "audio": "chalk/most-subscribed-youtubers/short/s12.mp3",
+   "duration": 2.808,
+   "text": "Who surprised you the most? Tell me in the comments.",
+   "words": [
+    {
+     "w": "Who",
+     "t": 0.102,
+     "d": 0.057
+    },
+    {
+     "w": "surprised",
+     "t": 0.17,
+     "d": 0.455
+    },
+    {
+     "w": "you",
+     "t": 0.636,
+     "d": 0.068
+    },
+    {
+     "w": "the",
+     "t": 0.716,
+     "d": 0.057
+    },
+    {
+     "w": "most?",
+     "t": 0.784,
+     "d": 0.386
+    },
+    {
+     "w": "Tell",
+     "t": 1.545,
+     "d": 0.102
+    },
+    {
+     "w": "me",
+     "t": 1.659,
+     "d": 0.091
+    },
+    {
+     "w": "in",
+     "t": 1.761,
+     "d": 0.057
+    },
+    {
+     "w": "the",
+     "t": 1.83,
+     "d": 0.068
+    },
+    {
+     "w": "comments.",
+     "t": 1.909,
+     "d": 0.545
+    }
+   ]
+  }
+ ]
+}

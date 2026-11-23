@@ -24,8 +24,11 @@ export const Hook: React.FC<SceneProps<HookScene>> = ({ ps }) => {
   const { L, format } = useChalk();
   const s = ps.scene;
   const short = format === "short";
-  const size = short ? 96 : 84;
-  const lines = s.title.split("\n").length;
+  // auto-fit so no title line wraps (Gochi Hand ≈ 0.58em per char)
+  const plainLines = s.title.replace(/\{(\w+|#[0-9a-fA-F]{3,8}):([^}]+)\}/g, "$2").split("\n");
+  const longest = Math.max(...plainLines.map((l) => l.length));
+  const size = Math.min(short ? 96 : 84, Math.floor((short ? 624 : 900) / (longest * 0.58)));
+  const lines = plainLines.length;
   const titleY = short ? 250 : 170;
   const w = short ? L.W - 2 * L.pad : 900;
   const x = short ? L.pad : 80;

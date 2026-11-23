@@ -1,0 +1,540 @@
+{
+ "format": "short",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "scenes": [
+  {
+   "index": 0,
+   "audio": "chalk/most-viewed-videos/short/s00.mp3",
+   "duration": 3.288,
+   "text": "What's the most watched video in YouTube history? Let's count.",
+   "words": [
+    {
+     "w": "What's",
+     "t": 0.102,
+     "d": 0.148
+    },
+    {
+     "w": "the",
+     "t": 0.261,
+     "d": 0.08
+    },
+    {
+     "w": "most",
+     "t": 0.352,
+     "d": 0.239
+    },
+    {
+     "w": "watched",
+     "t": 0.602,
+     "d": 0.261
+    },
+    {
+     "w": "video",
+     "t": 0.875,
+     "d": 0.364
+    },
+    {
+     "w": "in",
+     "t": 1.25,
+     "d": 0.102
+    },
+    {
+     "w": "YouTube",
+     "t": 1.364,
+     "d": 0.341
+    },
+    {
+     "w": "history?",
+     "t": 1.716,
+     "d": 0.375
+    },
+    {
+     "w": "Let's",
+     "t": 2.466,
+     "d": 0.136
+    },
+    {
+     "w": "count.",
+     "t": 2.614,
+     "d": 0.341
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "audio": "chalk/most-viewed-videos/short/s01.mp3",
+   "duration": 3.072,
+   "text": "Number eight. Shape of You, 6.7 billion.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.216
+    },
+    {
+     "w": "eight.",
+     "t": 0.318,
+     "d": 0.205
+    },
+    {
+     "w": "Shape",
+     "t": 0.898,
+     "d": 0.205
+    },
+    {
+     "w": "of",
+     "t": 1.114,
+     "d": 0.068
+    },
+    {
+     "w": "You,",
+     "t": 1.193,
+     "d": 0.17
+    },
+    {
+     "w": "6.7",
+     "t": 1.614,
+     "d": 0.761
+    },
+    {
+     "w": "billion.",
+     "t": 2.386,
+     "d": 0.341
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "audio": "chalk/most-viewed-videos/short/s02.mp3",
+   "duration": 3.264,
+   "text": "Number seven. Phonics Song, 6.9 billion.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "seven.",
+     "t": 0.284,
+     "d": 0.318
+    },
+    {
+     "w": "Phonics",
+     "t": 1.023,
+     "d": 0.261
+    },
+    {
+     "w": "Song,",
+     "t": 1.295,
+     "d": 0.33
+    },
+    {
+     "w": "6.9",
+     "t": 1.852,
+     "d": 0.705
+    },
+    {
+     "w": "billion.",
+     "t": 2.568,
+     "d": 0.341
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "audio": "chalk/most-viewed-videos/short/s03.mp3",
+   "duration": 3.504,
+   "text": "Number six. See You Again, 7.0 billion.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.17
+    },
+    {
+     "w": "six.",
+     "t": 0.273,
+     "d": 0.42
+    },
+    {
+     "w": "See",
+     "t": 1.08,
+     "d": 0.159
+    },
+    {
+     "w": "You",
+     "t": 1.25,
+     "d": 0.114
+    },
+    {
+     "w": "Again,",
+     "t": 1.375,
+     "d": 0.352
+    },
+    {
+     "w": "7.0",
+     "t": 1.955,
+     "d": 0.83
+    },
+    {
+     "w": "billion.",
+     "t": 2.795,
+     "d": 0.364
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "audio": "chalk/most-viewed-videos/short/s04.mp3",
+   "duration": 3.792,
+   "text": "Number five. Johny Johny Yes Papa, 7.3 billion.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "five.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "Johny",
+     "t": 0.989,
+     "d": 0.216
+    },
+    {
+     "w": "Johny",
+     "t": 1.216,
+     "d": 0.295
+    },
+    {
+     "w": "Yes",
+     "t": 1.523,
+     "d": 0.205
+    },
+    {
+     "w": "Papa,",
+     "t": 1.739,
+     "d": 0.386
+    },
+    {
+     "w": "7.3",
+     "t": 2.398,
+     "d": 0.682
+    },
+    {
+     "w": "billion.",
+     "t": 3.091,
+     "d": 0.364
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "audio": "chalk/most-viewed-videos/short/s05.mp3",
+   "duration": 3.288,
+   "text": "Number four. Bath Song, 7.7 billion.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "four.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "Bath",
+     "t": 1.0,
+     "d": 0.182
+    },
+    {
+     "w": "Song,",
+     "t": 1.193,
+     "d": 0.352
+    },
+    {
+     "w": "7.7",
+     "t": 1.795,
+     "d": 0.807
+    },
+    {
+     "w": "billion.",
+     "t": 2.614,
+     "d": 0.33
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "audio": "chalk/most-viewed-videos/short/s06.mp3",
+   "duration": 3.144,
+   "text": "Number three. Despacito, 9.2 billion.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "three.",
+     "t": 0.284,
+     "d": 0.284
+    },
+    {
+     "w": "Despacito,",
+     "t": 0.943,
+     "d": 0.602
+    },
+    {
+     "w": "9.2",
+     "t": 1.83,
+     "d": 0.614
+    },
+    {
+     "w": "billion.",
+     "t": 2.455,
+     "d": 0.352
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "audio": "chalk/most-viewed-videos/short/s07.mp3",
+   "duration": 5.016,
+   "text": "Number two. Wheels on the Bus, 9.8 billion. A Cocomelon nursery rhyme.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "two.",
+     "t": 0.295,
+     "d": 0.227
+    },
+    {
+     "w": "Wheels",
+     "t": 0.898,
+     "d": 0.239
+    },
+    {
+     "w": "on",
+     "t": 1.148,
+     "d": 0.08
+    },
+    {
+     "w": "the",
+     "t": 1.239,
+     "d": 0.08
+    },
+    {
+     "w": "Bus,",
+     "t": 1.33,
+     "d": 0.42
+    },
+    {
+     "w": "9.8",
+     "t": 1.943,
+     "d": 0.625
+    },
+    {
+     "w": "billion.",
+     "t": 2.58,
+     "d": 0.318
+    },
+    {
+     "w": "A",
+     "t": 3.273,
+     "d": 0.057
+    },
+    {
+     "w": "Cocomelon",
+     "t": 3.341,
+     "d": 0.591
+    },
+    {
+     "w": "nursery",
+     "t": 3.943,
+     "d": 0.409
+    },
+    {
+     "w": "rhyme.",
+     "t": 4.364,
+     "d": 0.307
+    }
+   ]
+  },
+  {
+   "index": 8,
+   "audio": "chalk/most-viewed-videos/short/s08.mp3",
+   "duration": 5.76,
+   "text": "And number one. Baby Shark Dance, 17.6 billion views. Almost double the next video.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.091,
+     "d": 0.057
+    },
+    {
+     "w": "number",
+     "t": 0.159,
+     "d": 0.216
+    },
+    {
+     "w": "one.",
+     "t": 0.386,
+     "d": 0.216
+    },
+    {
+     "w": "Baby",
+     "t": 0.977,
+     "d": 0.239
+    },
+    {
+     "w": "Shark",
+     "t": 1.227,
+     "d": 0.273
+    },
+    {
+     "w": "Dance,",
+     "t": 1.511,
+     "d": 0.386
+    },
+    {
+     "w": "17.6",
+     "t": 2.091,
+     "d": 1.011
+    },
+    {
+     "w": "billion",
+     "t": 3.114,
+     "d": 0.33
+    },
+    {
+     "w": "views.",
+     "t": 3.455,
+     "d": 0.42
+    },
+    {
+     "w": "Almost",
+     "t": 4.25,
+     "d": 0.284
+    },
+    {
+     "w": "double",
+     "t": 4.545,
+     "d": 0.205
+    },
+    {
+     "w": "the",
+     "t": 4.761,
+     "d": 0.068
+    },
+    {
+     "w": "next",
+     "t": 4.841,
+     "d": 0.216
+    },
+    {
+     "w": "video.",
+     "t": 5.068,
+     "d": 0.352
+    }
+   ]
+  },
+  {
+   "index": 9,
+   "audio": "chalk/most-viewed-videos/short/s09.mp3",
+   "duration": 1.872,
+   "text": "Here's the full board.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.125,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.273,
+     "d": 0.08
+    },
+    {
+     "w": "full",
+     "t": 0.364,
+     "d": 0.227
+    },
+    {
+     "w": "board.",
+     "t": 0.602,
+     "d": 0.307
+    }
+   ]
+  },
+  {
+   "index": 10,
+   "audio": "chalk/most-viewed-videos/short/s10.mp3",
+   "duration": 2.808,
+   "text": "Who surprised you the most? Tell me in the comments.",
+   "words": [
+    {
+     "w": "Who",
+     "t": 0.102,
+     "d": 0.057
+    },
+    {
+     "w": "surprised",
+     "t": 0.17,
+     "d": 0.455
+    },
+    {
+     "w": "you",
+     "t": 0.636,
+     "d": 0.068
+    },
+    {
+     "w": "the",
+     "t": 0.716,
+     "d": 0.057
+    },
+    {
+     "w": "most?",
+     "t": 0.784,
+     "d": 0.386
+    },
+    {
+     "w": "Tell",
+     "t": 1.545,
+     "d": 0.102
+    },
+    {
+     "w": "me",
+     "t": 1.659,
+     "d": 0.091
+    },
+    {
+     "w": "in",
+     "t": 1.761,
+     "d": 0.057
+    },
+    {
+     "w": "the",
+     "t": 1.83,
+     "d": 0.068
+    },
+    {
+     "w": "comments.",
+     "t": 1.909,
+     "d": 0.545
+    }
+   ]
+  }
+ ]
+}
