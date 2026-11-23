@@ -15,8 +15,11 @@ const fmtStat = (st: { value: number; prefix?: string; unit?: string; decimals?:
   `${st.prefix ?? ""}${fmtNum(v, st.decimals ?? decimalsOf(st.value))}${st.unit ?? ""}`;
 
 /** Max headline stat across the episode — every bar is scaled to it. */
+/** the stat that drives bars: the one flagged `bar`, else the first */
+export const barStat = (s: RankScene) => s.stats.find((st) => st.bar) ?? s.stats[0];
+
 export const metricMax = (ep: Episode) =>
-  Math.max(1, ...ep.scenes.filter((s): s is RankScene => s.type === "rank").map((s) => s.stats[0]?.value ?? 0));
+  Math.max(1, ...ep.scenes.filter((s): s is RankScene => s.type === "rank").map((s) => barStat(s)?.value ?? 0));
 
 /* ======================= HOOK ======================= */
 
@@ -88,8 +91,9 @@ export const Rank: React.FC<SceneProps<RankScene>> = ({ ps, ep }) => {
   const rankW = g.rank.size * 0.44 * rankText.length;
   const barY = g.stats.y + s.stats.length * g.stats.row + 26;
   const barH = short ? 36 : 40;
-  const v0 = s.stats[0]?.value ?? 0;
-  const grow = interpolate(frame, [statAt[0], statAt[0] + 22], [0, 1], { ...clamp, easing: ease.out });
+  const bi = Math.max(0, s.stats.findIndex((st) => st === barStat(s)));
+  const v0 = s.stats[bi]?.value ?? 0;
+  const grow = interpolate(frame, [statAt[bi], statAt[bi] + 22], [0, 1], { ...clamp, easing: ease.out });
   const fillW = g.barW * (v0 / max) * grow;
 
   return (
@@ -140,10 +144,10 @@ export const Rank: React.FC<SceneProps<RankScene>> = ({ ps, ep }) => {
       })}
 
       {/* comparison bar: outline = the #1 value, hatch = this country */}
-      {frame >= statAt[0] && (
+      {frame >= statAt[bi] && (
         <>
           <Sketch>
-            <Draw d={roughRect(g.stats.x, barY, g.barW, barH, 60 + s.rank, 2)} start={statAt[0]} dur={12} color="dim" width={3} opacity={0.7} />
+            <Draw d={roughRect(g.stats.x, barY, g.barW, barH, 60 + s.rank, 2)} start={statAt[bi]} dur={12} color="dim" width={3} opacity={0.7} />
             {fillW > 2 && (
               <>
                 <path d={hatch(g.stats.x + 3, barY + 3, fillW - 6, barH - 6, 9, s.rank)} stroke={CHALK.yellow} strokeWidth={3.5} opacity={0.85} fill="none" />
@@ -159,7 +163,7 @@ export const Rank: React.FC<SceneProps<RankScene>> = ({ ps, ep }) => {
             size={30}
             color="dim"
             align="right"
-            start={statAt[0] + 10}
+            start={statAt[bi] + 10}
             cps={60}
             opacity={0.8}
           />
@@ -207,7 +211,7 @@ export const Leaderboard: React.FC<SceneProps<LeaderboardScene>> = ({ ps, ep }) 
       {rows.map((r, i) => {
         const at = 12 + i * step;
         const y = top + i * rowH;
-        const v = r.stats[0]?.value ?? 0;
+        const v = barStat(r)?.value ?? 0;
         const grow = interpolate(frame, [at + 4, at + 20], [0, 1], { ...clamp, easing: ease.out });
         const fs = rowH * 0.62;
         return (
@@ -226,7 +230,7 @@ export const Leaderboard: React.FC<SceneProps<LeaderboardScene>> = ({ ps, ep }) 
                 />
               </Sketch>
             )}
-            {!short && <ChalkText text={fmtStat({ ...r.stats[0], value: v })} x={barX + barMaxW + 16} y={y} size={fs} color="dim" start={at + 8} cps={0} />}
+            {!short && <ChalkText text={fmtStat({ ...barStat(r), value: v })} x={barX + barMaxW + 16} y={y} size={fs} color="dim" start={at + 8} cps={0} />}
           </React.Fragment>
         );
       })}

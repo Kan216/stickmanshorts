@@ -15,6 +15,7 @@ import ep_celebrity_houses from "./celebrity-houses/episode.json";
 import ep_celebrity_weddings from "./celebrity-weddings/episode.json";
 import ep_celebrity_cars from "./celebrity-cars/episode.json";
 import ep_who_is_richer from "./who-is-richer/episode.json";
+import strongestMilitaries from "./strongest-militaries/episode.json";
 
 /** Every ChalkTalk episode. Each one is registered twice: <id>Short (9:16) and <id>Long (16:9). */
 export const EPISODES: Episode[] = [
@@ -34,4 +35,5 @@ export const EPISODES: Episode[] = [
   ep_celebrity_weddings as Episode,
   ep_celebrity_cars as Episode,
   ep_who_is_richer as Episode,
+  strongestMilitaries as Episode,
 ];

@@ -12,6 +12,8 @@ export type Stat = {
   decimals?: number;
   cue?: string;
   color?: string;
+  /** this stat drives the comparison bar + leaderboard (default: the first stat) */
+  bar?: boolean;
 };
 
 type Common = {

@@ -1,0 +1,381 @@
+{
+  "slug": "strongest-militaries",
+  "id": "StrongestMilitaries",
+  "title": "Top 10 Most Powerful Militaries in the World (2026)",
+  "header": "TOP 10 · MOST POWERFUL MILITARIES 2026",
+  "metric": "Defense budget",
+  "metricPrefix": "$",
+  "metricUnit": "B",
+  "asOf": "2026",
+  "sources": [
+    "Global Firepower 2026",
+    "SIPRI Military Expenditure 2025"
+  ],
+  "verified": true,
+  "formats": [
+    "long"
+  ],
+  "voice": {
+    "name": "en-US-AndrewNeural",
+    "rateShort": "+10%",
+    "rateLong": "-6%"
+  },
+  "thumbnail": {
+    "text": "WHO HAS THE\nSTRONGEST {yellow:MILITARY}?",
+    "kicker": "TOP 10 MILITARIES 2026",
+    "flags": [
+      "us",
+      "ru",
+      "cn"
+    ],
+    "flagLabels": [
+      "#1",
+      "#2",
+      "#3"
+    ],
+    "flagValues": [
+      "USA",
+      "RUSSIA",
+      "CHINA"
+    ],
+    "badge": "2026 RANKING"
+  },
+  "youtube": {
+    "title": "Top 10 Most Powerful Militaries in the World (2026) — Explained on a Chalkboard",
+    "hashtags": [
+      "Military",
+      "GlobalFirepower",
+      "Geopolitics",
+      "Army",
+      "Defense",
+      "Top10",
+      "ChalkTalk",
+      "Education"
+    ],
+    "tags": [
+      "most powerful militaries 2026",
+      "strongest military",
+      "global firepower 2026",
+      "military ranking",
+      "US military",
+      "China military",
+      "Russia military",
+      "ChalkTalk"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "WHO HAS THE\nSTRONGEST {yellow:MILITARY}?",
+      "subtitle": "Top 10 most powerful militaries, 2026",
+      "say": "Which country has the most powerful military on Earth? It's not just about the number of soldiers. Budgets, aircraft, tanks, ships and even oil all matter. Today we're putting the world's ten strongest militaries on the board, from number ten to number one. And some of the results might surprise you.",
+      "pause": 0.8
+    },
+    {
+      "type": "hook",
+      "title": "HOW IT'S {yellow:RANKED}",
+      "subtitle": "Global Firepower 2026 · 60+ factors · lower score = stronger",
+      "say": "First, how it's ranked. We're using the 2026 Global Firepower index. It scores 145 countries on more than sixty factors, from troops and equipment to money, logistics and geography. A perfect score would be zero, so the lower the score, the stronger the military. Nuclear weapons are not part of the score, but we'll mention them. Let's count.",
+      "pause": 0.8
+    },
+    {
+      "type": "rank",
+      "rank": 10,
+      "country": "it",
+      "name": "Italy",
+      "note": "Two aircraft carriers in the Mediterranean",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.2211,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 48.1,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 714
+        }
+      ],
+      "say": "Number ten. Italy. With a Global Firepower score of 0.2211, a defense budget of $48.1 billion, and 714 aircraft. Italy runs two aircraft carriers, the Cavour and the Trieste, both able to fly F-35 jets. And at Cameri, in northern Italy, it hosts the only F-35 final assembly line in Europe. Its navy is one of the strongest in the Mediterranean, and Italian companies build their own frigates, helicopters and submarines. Italy's famous Carabinieri, its military police, are part of the armed forces too, and Italian troops serve on NATO missions from the Baltic to the Balkans.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 9,
+      "country": "tr",
+      "name": "Türkiye",
+      "note": "NATO's 2nd-largest army · drone exporter",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.1975,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 30.0,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 1101
+        }
+      ],
+      "say": "Number nine. Türkiye, with a score of 0.1975. It spends $30 billion a year, operates 1,101 aircraft and about 2,284 tanks, with 481,000 active troops. That makes it NATO's second largest army, after the United States. Türkiye has also become a drone superpower. Its Bayraktar TB2 drones have been sold to dozens of countries. And its ship, the Anadolu, was designed to launch drones at sea. Türkiye also controls the straits between the Black Sea and the Mediterranean, the only sea route in and out of the Black Sea. That gives it huge strategic weight.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 8,
+      "country": "gb",
+      "name": "United Kingdom",
+      "note": "Nuclear submarines · two carriers",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.1881,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 88,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 625
+        }
+      ],
+      "say": "Number eight. The United Kingdom, scoring 0.1881. Its defense budget is about $88 billion, the sixth largest in the world, with 625 aircraft. Britain's army is small, but it has global reach. It operates two large aircraft carriers, and a fleet of nuclear-armed submarines, so that at least one is always at sea. Britain is one of only five countries officially recognized as nuclear powers under the Non-Proliferation Treaty. Its special forces, the SAS, are among the most famous in the world, and the Royal Navy is building a new generation of frigates to replace its older ships.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 7,
+      "country": "jp",
+      "name": "Japan",
+      "note": "Self-Defense Forces · spending rising fast",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.1876,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 62.2,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 1429
+        }
+      ],
+      "say": "Number seven. Japan, with a score of 0.1876, a budget of $62.2 billion, and 1,429 aircraft. Japan's constitution renounces war, so its military is officially called the Self-Defense Forces. But that is changing. Japan plans to raise defense spending to two percent of its economy by 2027, and it has converted its Izumo class ships to carry F-35 fighter jets. Its navy, the Maritime Self-Defense Force, is one of the most capable in Asia, with modern destroyers and very quiet submarines.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 6,
+      "country": "fr",
+      "name": "France",
+      "note": "Nuclear carrier · own nuclear deterrent",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.1798,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 68,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 974
+        }
+      ],
+      "say": "Number six. France, scoring 0.1798, with a $68 billion budget and 974 aircraft. France builds almost everything itself, from Rafale fighter jets to nuclear submarines. It operates the Charles de Gaulle, the only nuclear powered aircraft carrier outside the United States. France also keeps its own independent nuclear weapons, and has troops and bases spread from Africa to the Pacific. It is also the world's second biggest arms exporter, behind only the United States.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 5,
+      "country": "kr",
+      "name": "South Korea",
+      "note": "Conscription · still technically at war",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.1642,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 47.8,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 1540
+        }
+      ],
+      "say": "Number five. South Korea, with a score of 0.1642, a budget of $47.8 billion, and 1,540 aircraft. Most South Korean men must serve in the military, because the Korean War never officially ended. It stopped with an armistice in 1953, not a peace treaty. South Korea has also become a major arms exporter. Its K2 tanks and K9 artillery are now sold to countries like Poland. And about half of all South Koreans live in and around Seoul, only around fifty kilometers from the border with the North.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 4,
+      "country": "in",
+      "name": "India",
+      "note": "Huge army · nuclear triad · own carrier",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.1346,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 92.1,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 2183
+        }
+      ],
+      "say": "Number four. India. Score: 0.1346. A budget of $92.1 billion, 2,183 aircraft, and about 3,913 tanks. India has one of the largest militaries on Earth, with roughly 1.4 million active troops. It has nuclear weapons that can be launched from land, air and sea. And in 2022, it commissioned the INS Vikrant, its first aircraft carrier built at home. And it guards long, tense mountain borders with both China and Pakistan, some of them high up in the Himalayas.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 3,
+      "country": "cn",
+      "name": "China",
+      "note": "2M+ troops · biggest navy by ships",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.0919,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 336,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 3529
+        }
+      ],
+      "say": "Number three. China, scoring 0.0919. Its budget is about $336 billion, second only to the United States, with 3,529 aircraft and 5,870 tanks, the most of any country. China has the largest army in the world, about 2 million active troops, and the biggest navy by number of ships. Its nuclear arsenal is growing fast too, to an estimated 600 warheads. China's military spending has grown every single year for three decades, and it is building new warships faster than any other country.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 2,
+      "country": "ru",
+      "name": "Russia",
+      "note": "Largest nuclear arsenal on Earth",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.0791,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 190,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 4237
+        }
+      ],
+      "say": "Number two. Russia, with a score of 0.0791. Russia spends about $190 billion a year, and fields 4,237 aircraft, 5,630 tanks and about 1.3 million active troops. Its biggest card is nuclear. Russia holds an estimated 5,459 nuclear warheads, the largest arsenal in the world. Its military budget has grown sharply during the war in Ukraine. And it has the largest country on Earth to defend, stretching across eleven time zones.",
+      "pause": 1.0
+    },
+    {
+      "type": "rank",
+      "rank": 1,
+      "country": "us",
+      "name": "United States",
+      "note": "11 carriers · budget > next 6 combined",
+      "stats": [
+        {
+          "label": "Power score",
+          "value": 0.0741,
+          "decimals": 4,
+          "color": "blue"
+        },
+        {
+          "label": "Defense budget",
+          "value": 954,
+          "prefix": "$",
+          "unit": "B",
+          "bar": true
+        },
+        {
+          "label": "Aircraft",
+          "value": 13032
+        }
+      ],
+      "say": "And number one. The United States, with a score of 0.0741, the best in the world. It spends $954 billion a year, more than the next six countries combined. It flies 13,032 military aircraft, more than Russia, China and India put together. It operates 11 aircraft carriers, and has bases on every continent except Antarctica. By almost every measure, it is still the world's strongest military. The US Navy alone has so many aircraft that it's often called the second biggest air force in the world.",
+      "pause": 1.4
+    },
+    {
+      "type": "leaderboard",
+      "title": "TOP 10 · {yellow:DEFENSE BUDGETS}",
+      "say": "Now look at the money side by side. The United States spends almost three times as much as China, and China spends more than Russia, India and Britain combined. But money isn't everything.",
+      "pause": 1.2
+    },
+    {
+      "type": "hook",
+      "title": "WHAT RANKINGS {yellow:MISS}",
+      "subtitle": "Nuclear weapons · alliances · experience · morale",
+      "say": "Rankings like this miss a lot. They don't count nuclear weapons, and nine countries have them. They don't measure training, combat experience or morale. And they ignore alliances. NATO's members together spend more than half of all the money spent on militaries in the world. So treat this list as a starting point, not the final word.",
+      "pause": 1.0
+    },
+    {
+      "type": "outro",
+      "title": "Did your country\nmake the {yellow:list}?",
+      "say": "Did your country make the top ten? Tell me in the comments, and subscribe to ChalkTalk for more numbers on the board.",
+      "pause": 1.2
+    }
+  ]
+}
