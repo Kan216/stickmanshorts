@@ -948,3 +948,67 @@ export const GlassShards: React.FC<{ x: number; y: number; t: number; color: str
     </Layer>
   );
 };
+
+/** A heavy full-width slab with a label. `cracked` 0..1 draws a crack across it. */
+export const PressureSlab: React.FC<{ y: number; h?: number; label?: string; color?: string; cracked?: number }> = ({
+  y,
+  h = 56,
+  label = "PRESSURE",
+  color = "#8a8f9a",
+  cracked = 0,
+}) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  const crackPts = [
+    [360, y + 2],
+    [352, y + h * 0.4],
+    [368, y + h * 0.6],
+    [350, y + h - 2],
+  ];
+  return (
+    <Layer>
+      <rect x={24} y={y} width={672} height={h} rx={10} fill="#2a2e36" stroke={c} strokeWidth={3} />
+      <rect x={24} y={y + h - 10} width={672} height={10} fill="#1a1d23" />
+      <text x={360} y={y + h * 0.66} textAnchor="middle" fill="#d6dbe5" fontFamily="'Segoe UI', Arial, sans-serif" fontWeight={900} fontSize={24} letterSpacing={6}>
+        {label}
+      </text>
+      {cracked > 0 && (
+        <polyline
+          points={crackPts.map(([x, yy], i) => `${x + (i === 0 ? 0 : Math.sin(f / 5 + i) * 0)},${yy}`).join(" ")}
+          fill="none"
+          stroke="#fff4c4"
+          strokeWidth={3}
+          opacity={cracked}
+        />
+      )}
+    </Layer>
+  );
+};
+
+/** A faceted glowing diamond centred on (x, y). `opacity` lets it fade in over a figure. */
+export const Diamond: React.FC<{ x: number; y: number; w?: number; h?: number; color?: string; opacity?: number; glow?: number }> = ({
+  x,
+  y,
+  w = 120,
+  h = 190,
+  color = "#cfeaff",
+  opacity = 1,
+  glow = 1,
+}) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  const top = { x, y: y - h / 2 };
+  const bot = { x, y: y + h / 2 };
+  const L = { x: x - w / 2, y: y - h * 0.08 };
+  const R = { x: x + w / 2, y: y - h * 0.08 };
+  const shine = 0.6 + 0.4 * Math.sin(f / 6);
+  return (
+    <Layer opacity={opacity}>
+      <circle cx={x} cy={y} r={h * 0.9} fill="#8fd0ff" opacity={0.22 * glow * shine} />
+      <polygon points={`${top.x},${top.y} ${R.x},${R.y} ${bot.x},${bot.y} ${L.x},${L.y}`} fill={c} opacity={0.85} stroke="#ffffff" strokeWidth={2} />
+      <polygon points={`${top.x},${top.y} ${L.x},${L.y} ${x},${y + h * 0.1}`} fill="#ffffff" opacity={0.35} />
+      <polygon points={`${top.x},${top.y} ${R.x},${R.y} ${x},${y + h * 0.1}`} fill="#5fb6ff" opacity={0.35} />
+      <line x1={L.x} y1={L.y} x2={R.x} y2={R.y} stroke="#ffffff" strokeWidth={1.5} opacity={0.8} />
+    </Layer>
+  );
+};

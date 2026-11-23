@@ -19,6 +19,7 @@ import { Slingshot, SLINGSHOT_DURATION } from "./shorts/slingshot/Slingshot";
 import { MuteTheNoise, MUTE_THE_NOISE_DURATION } from "./shorts/mute-the-noise/MuteTheNoise";
 import { StrongFriend, STRONG_FRIEND_DURATION } from "./shorts/strong-friend/StrongFriend";
 import { GlassBalls, GLASS_BALLS_DURATION } from "./shorts/glass-balls/GlassBalls";
+import { PressureDiamond, PRESSURE_DIAMOND_DURATION } from "./shorts/pressure-diamond/PressureDiamond";
 import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
 
@@ -47,6 +48,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="MuteTheNoise" component={MuteTheNoise} durationInFrames={MUTE_THE_NOISE_DURATION} {...VIDEO} />
     <Composition id="StrongFriend" component={StrongFriend} durationInFrames={STRONG_FRIEND_DURATION} {...VIDEO} />
     <Composition id="GlassBalls" component={GlassBalls} durationInFrames={GLASS_BALLS_DURATION} {...VIDEO} />
+    <Composition id="PressureDiamond" component={PressureDiamond} durationInFrames={PRESSURE_DIAMOND_DURATION} {...VIDEO} />
     <Still id="PoseSheet" component={PoseSheet} width={VIDEO.width} height={VIDEO.height} />
   </>
 );
