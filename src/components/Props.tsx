@@ -717,3 +717,31 @@ export const Candle: React.FC<{ x: number; y: number; lit?: number; glow?: numbe
     </Layer>
   );
 };
+
+/** A domino standing on the ground line. `fall` 0..90 tips it to the right, pivoting on its bottom-right corner. */
+export const Domino: React.FC<{ x: number; height: number; fall?: number; color?: string; label?: string; groundY?: number; ratio?: number }> = ({
+  x,
+  height,
+  fall = 0,
+  color = "white",
+  label,
+  groundY = LAYOUT.groundY,
+  ratio = 0.28,
+}) => {
+  const c = resolveColor(color);
+  const w = height * ratio;
+  const px = x + w;
+  return (
+    <Layer>
+      <g transform={`rotate(${fall} ${px} ${groundY})`}>
+        <rect x={x} y={groundY - height} width={w} height={height} rx={Math.min(3, w / 3)} fill={c} fillOpacity={0.22} stroke={c} strokeWidth={Math.max(1.5, height * 0.03)} />
+        <line x1={x + w / 2} y1={groundY - height * 0.5} x2={x + w / 2} y2={groundY - height * 0.5} stroke={c} />
+      </g>
+      {label && fall < 1 && (
+        <text x={x + w / 2} y={groundY - height - Math.max(8, height * 0.04)} textAnchor="middle" fill={c} fontFamily="'Segoe UI', Arial, sans-serif" fontWeight={800} fontSize={Math.max(10, Math.min(24, height * 0.18))} letterSpacing={1}>
+          {label}
+        </text>
+      )}
+    </Layer>
+  );
+};
