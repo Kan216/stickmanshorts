@@ -1,0 +1,150 @@
+{
+  "slug": "celebrity-houses",
+  "id": "CelebrityHouses",
+  "title": "Top 5 Most Expensive Celebrity Houses",
+  "header": "CELEBRITY HOUSES · PURCHASE PRICE",
+  "metric": "Price paid",
+  "asOf": "2026",
+  "sources": [
+    "Reported purchase prices (Architectural Digest, press)"
+  ],
+  "verified": true,
+  "formats": [
+    "short"
+  ],
+  "voice": {
+    "name": "en-US-AndrewNeural",
+    "rateShort": "+10%",
+    "rateLong": "+0%"
+  },
+  "thumbnail": {
+    "text": "THE PRICIEST\nCELEBRITY {yellow:HOME}?",
+    "kicker": "CELEBRITY MANSIONS",
+    "flags": [
+      "us",
+      "us",
+      "ca"
+    ],
+    "flagLabels": [
+      "Beyoncé",
+      "Kim K",
+      "Weeknd"
+    ],
+    "flagValues": [
+      "$200M",
+      "$70M",
+      "$70M"
+    ],
+    "badge": "$200 MILLION"
+  },
+  "youtube": {
+    "hashtags": [
+      "Shorts",
+      "Mansion",
+      "Celebrities",
+      "Beyonce",
+      "RealEstate",
+      "Top5",
+      "ChalkTalk",
+      "Facts"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "THE PRICIEST\nCELEBRITY {yellow:HOME}?",
+      "subtitle": "Reported purchase prices",
+      "say": "Which celebrity paid the most for a house? Let's count."
+    },
+    {
+      "type": "rank",
+      "rank": 5,
+      "country": "gb",
+      "name": "Adele",
+      "stats": [
+        {
+          "label": "Beverly Park, 2022",
+          "value": 58,
+          "prefix": "$",
+          "unit": "M"
+        }
+      ],
+      "say": "Number five. Adele, $58 million."
+    },
+    {
+      "type": "rank",
+      "rank": 4,
+      "country": "us",
+      "name": "J.Lo & Ben Affleck",
+      "stats": [
+        {
+          "label": "Beverly Hills, 2023",
+          "value": 60,
+          "prefix": "$",
+          "unit": "M"
+        }
+      ],
+      "say": "Number four. J.Lo & Ben Affleck, $60 million."
+    },
+    {
+      "type": "rank",
+      "rank": 3,
+      "country": "ca",
+      "name": "The Weeknd",
+      "stats": [
+        {
+          "label": "Bel Air, 2021",
+          "value": 70,
+          "prefix": "$",
+          "unit": "M"
+        }
+      ],
+      "say": "Number three. The Weeknd, $70 million."
+    },
+    {
+      "type": "rank",
+      "rank": 2,
+      "country": "us",
+      "name": "Kim Kardashian",
+      "stats": [
+        {
+          "label": "Malibu, 2022",
+          "value": 70.4,
+          "prefix": "$",
+          "unit": "M"
+        }
+      ],
+      "say": "Number two. Kim Kardashian, $70.4 million."
+    },
+    {
+      "type": "rank",
+      "rank": 1,
+      "country": "us",
+      "name": "Beyoncé & Jay-Z",
+      "stats": [
+        {
+          "label": "Malibu, 2023",
+          "value": 200,
+          "prefix": "$",
+          "unit": "M"
+        }
+      ],
+      "say": "And number one. Beyoncé and Jay-Z, $200 million. The most expensive home ever sold in California.",
+      "pause": 0.8
+    },
+    {
+      "type": "leaderboard",
+      "title": "THE FULL LIST",
+      "say": "Here's the full board.",
+      "pause": 1.2
+    },
+    {
+      "type": "outro",
+      "title": "Who {yellow:surprised}\nyou most?",
+      "say": "Who surprised you the most? Tell me in the comments.",
+      "pause": 1.0
+    }
+  ],
+  "metricPrefix": "$",
+  "metricUnit": "M"
+}

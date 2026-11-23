@@ -1,0 +1,214 @@
+{
+  "slug": "most-subscribed-youtubers",
+  "id": "MostSubscribedYouTubers",
+  "title": "Top 10 Most Subscribed YouTube Channels",
+  "header": "TOP 10 · YOUTUBE SUBSCRIBERS",
+  "metric": "Subscribers",
+  "asOf": "Nov 2026",
+  "sources": [
+    "vidIQ YouTube stats (Nov 22, 2026)"
+  ],
+  "verified": true,
+  "formats": [
+    "short"
+  ],
+  "voice": {
+    "name": "en-US-AndrewNeural",
+    "rateShort": "+10%",
+    "rateLong": "+0%"
+  },
+  "thumbnail": {
+    "text": "WHO RULES\n{yellow:YOUTUBE}?",
+    "kicker": "MOST SUBSCRIBED CHANNELS",
+    "flags": [
+      "us",
+      "in",
+      "us"
+    ],
+    "flagLabels": [
+      "#1",
+      "#2",
+      "#3"
+    ],
+    "flagValues": [
+      "527M",
+      "316M",
+      "203M"
+    ],
+    "badge": "527 MILLION"
+  },
+  "youtube": {
+    "hashtags": [
+      "Shorts",
+      "YouTube",
+      "MrBeast",
+      "YouTubers",
+      "Subscribers",
+      "Top10",
+      "ChalkTalk",
+      "Facts"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "WHO RULES\n{yellow:YOUTUBE}?",
+      "subtitle": "Most subscribed channels, Nov 2026",
+      "say": "Who has the most subscribers on YouTube? Let's count."
+    },
+    {
+      "type": "rank",
+      "rank": 10,
+      "country": "ar",
+      "name": "Alejo Igoa",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 126,
+          "unit": "M"
+        }
+      ],
+      "say": "Number ten. Alejo Igoa, 126 million."
+    },
+    {
+      "type": "rank",
+      "rank": 9,
+      "country": "us",
+      "name": "Like Nastya",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 134,
+          "unit": "M"
+        }
+      ],
+      "say": "Number nine. Like Nastya, 134 million."
+    },
+    {
+      "type": "rank",
+      "rank": 8,
+      "country": "kr",
+      "name": "KIMPRO",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 135,
+          "unit": "M"
+        }
+      ],
+      "say": "Number eight. KIMPRO, 135 million."
+    },
+    {
+      "type": "rank",
+      "rank": 7,
+      "country": "us",
+      "name": "Kids Diana Show",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 139,
+          "unit": "M"
+        }
+      ],
+      "say": "Number seven. Kids Diana Show, 139 million."
+    },
+    {
+      "type": "rank",
+      "rank": 6,
+      "country": "us",
+      "name": "Stokes Twins",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 150,
+          "unit": "M"
+        }
+      ],
+      "say": "Number six. Stokes Twins, 150 million."
+    },
+    {
+      "type": "rank",
+      "rank": 5,
+      "country": "us",
+      "name": "Vlad and Niki",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 151,
+          "unit": "M"
+        }
+      ],
+      "say": "Number five. Vlad and Niki, 151 million."
+    },
+    {
+      "type": "rank",
+      "rank": 4,
+      "country": "in",
+      "name": "SET India",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 190,
+          "unit": "M"
+        }
+      ],
+      "say": "Number four. SET India, 190 million."
+    },
+    {
+      "type": "rank",
+      "rank": 3,
+      "country": "us",
+      "name": "Cocomelon",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 203,
+          "unit": "M"
+        }
+      ],
+      "say": "Number three. Cocomelon, 203 million."
+    },
+    {
+      "type": "rank",
+      "rank": 2,
+      "country": "in",
+      "name": "T-Series",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 316,
+          "unit": "M"
+        }
+      ],
+      "say": "Number two. T-Series, 316 million. An Indian music label."
+    },
+    {
+      "type": "rank",
+      "rank": 1,
+      "country": "us",
+      "name": "MrBeast",
+      "stats": [
+        {
+          "label": "Subscribers",
+          "value": 527,
+          "unit": "M"
+        }
+      ],
+      "say": "And number one. MrBeast, with 527 million subscribers. Way ahead of everyone.",
+      "pause": 0.8
+    },
+    {
+      "type": "leaderboard",
+      "title": "THE FULL LIST",
+      "say": "Here's the full board.",
+      "pause": 1.2
+    },
+    {
+      "type": "outro",
+      "title": "Who {yellow:surprised}\nyou most?",
+      "say": "Who surprised you the most? Tell me in the comments.",
+      "pause": 1.0
+    }
+  ],
+  "metricUnit": "M"
+}

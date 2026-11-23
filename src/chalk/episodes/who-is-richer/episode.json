@@ -1,0 +1,163 @@
+{
+  "slug": "who-is-richer",
+  "id": "WhoIsRicher",
+  "title": "Celebrity Net Worth: Who Is Richer?",
+  "header": "WHO IS RICHER?",
+  "metric": "Net worth",
+  "asOf": "2026",
+  "sources": [
+    "Forbes celebrity billionaires 2026"
+  ],
+  "verified": true,
+  "formats": [
+    "short"
+  ],
+  "voice": {
+    "name": "en-US-AndrewNeural",
+    "rateShort": "+10%",
+    "rateLong": "+0%"
+  },
+  "thumbnail": {
+    "text": "WHO IS\n{yellow:RICHER}?",
+    "kicker": "CELEBRITY NET WORTH",
+    "flags": [
+      "us",
+      "us",
+      "us"
+    ],
+    "flagLabels": [
+      "Jordan",
+      "Oprah",
+      "Swift"
+    ],
+    "flagValues": [
+      "$4.3B",
+      "$3.2B",
+      "$2.0B"
+    ],
+    "badge": "5 BATTLES"
+  },
+  "youtube": {
+    "hashtags": [
+      "Shorts",
+      "NetWorth",
+      "Celebrities",
+      "Billionaire",
+      "Forbes",
+      "WhoIsRicher",
+      "ChalkTalk",
+      "Facts"
+    ]
+  },
+  "scenes": [
+    {
+      "type": "hook",
+      "title": "WHO IS\n{yellow:RICHER}?",
+      "subtitle": "Five celebrity money battles",
+      "say": "Celebrity versus celebrity. Who's richer? Guess before the answer."
+    },
+    {
+      "type": "versus",
+      "label": "Forbes 2026 net worth",
+      "prefix": "$",
+      "unit": "B",
+      "a": {
+        "name": "Taylor Swift",
+        "country": "us",
+        "value": 2.0
+      },
+      "b": {
+        "name": "Kim Kardashian",
+        "country": "us",
+        "value": 1.9
+      },
+      "winCue": "wins",
+      "say": "Taylor Swift, or Kim Kardashian? Swift, $2.0 billion. Kardashian, $1.9 billion. Swift wins.",
+      "pause": 0.9
+    },
+    {
+      "type": "versus",
+      "label": "Forbes 2026 net worth",
+      "prefix": "$",
+      "unit": "B",
+      "a": {
+        "name": "Oprah Winfrey",
+        "country": "us",
+        "value": 3.2
+      },
+      "b": {
+        "name": "Jay-Z",
+        "country": "us",
+        "value": 2.8
+      },
+      "winCue": "wins",
+      "say": "Oprah Winfrey, or Jay-Z? Winfrey, $3.2 billion. Jay-Z, $2.8 billion. Winfrey wins.",
+      "pause": 0.9
+    },
+    {
+      "type": "versus",
+      "label": "Forbes 2026 net worth",
+      "prefix": "$",
+      "unit": "B",
+      "a": {
+        "name": "Peter Jackson",
+        "country": "nz",
+        "value": 1.9
+      },
+      "b": {
+        "name": "Tyler Perry",
+        "country": "us",
+        "value": 1.4
+      },
+      "winCue": "wins",
+      "say": "Peter Jackson, or Tyler Perry? Jackson, $1.9 billion. Perry, $1.4 billion. Jackson wins.",
+      "pause": 0.9
+    },
+    {
+      "type": "versus",
+      "label": "Forbes 2026 net worth",
+      "prefix": "$",
+      "unit": "B",
+      "a": {
+        "name": "Michael Jordan",
+        "country": "us",
+        "value": 4.3
+      },
+      "b": {
+        "name": "Vince McMahon",
+        "country": "us",
+        "value": 3.6
+      },
+      "winCue": "wins",
+      "say": "Michael Jordan, or Vince McMahon? Jordan, $4.3 billion. McMahon, $3.6 billion. Jordan wins.",
+      "pause": 0.9
+    },
+    {
+      "type": "versus",
+      "label": "Forbes 2026 net worth",
+      "prefix": "$",
+      "unit": "B",
+      "a": {
+        "name": "Steven Spielberg",
+        "country": "us",
+        "value": 7.1
+      },
+      "b": {
+        "name": "George Lucas",
+        "country": "us",
+        "value": 5.2
+      },
+      "winCue": "wins",
+      "say": "Steven Spielberg, or George Lucas? Spielberg, $7.1 billion. Lucas, $5.2 billion. Spielberg wins.",
+      "pause": 0.9
+    },
+    {
+      "type": "outro",
+      "title": "Did you\n{yellow:guess} right?",
+      "say": "How many did you guess right? Tell me in the comments.",
+      "pause": 1.0
+    }
+  ],
+  "metricPrefix": "$",
+  "metricUnit": "B"
+}

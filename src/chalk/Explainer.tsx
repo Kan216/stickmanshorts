@@ -9,6 +9,7 @@ import { ChalkText } from "./draw";
 import { buildPlan, totalFrames } from "./plan";
 import { Hook, Leaderboard, Outro, Rank } from "./scenes";
 import { Era, Timeline } from "./scenes/history";
+import { Versus } from "./scenes/versus";
 import { FPS, Format, LAYOUTS } from "./theme";
 import type { Episode, PlannedScene, Timing } from "./types";
 
@@ -33,6 +34,8 @@ const SceneBody: React.FC<{ ps: PlannedScene; ep: Episode }> = ({ ps, ep }) => {
       return <Era ps={ps as never} ep={ep} />;
     case "timeline":
       return <Timeline ps={ps as never} ep={ep} />;
+    case "versus":
+      return <Versus ps={ps as never} ep={ep} />;
   }
 };
 

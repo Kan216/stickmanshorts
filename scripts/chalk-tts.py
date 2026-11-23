@@ -50,7 +50,7 @@ def probe_duration(path: Path) -> float:
     return float(out)
 
 
-async def synth(text: str, voice: str, rate: str, pitch: str, mp3: Path, tries: int = 5) -> list[dict]:
+async def synth(text: str, voice: str, rate: str, pitch: str, mp3: Path, tries: int = 8) -> list[dict]:
     """The service occasionally drops a request (NoAudioReceived) — retry with backoff."""
     for attempt in range(tries):
         try:
@@ -59,7 +59,7 @@ async def synth(text: str, voice: str, rate: str, pitch: str, mp3: Path, tries: 
             if attempt == tries - 1:
                 raise
             print(f"    retry {attempt + 1} ({type(e).__name__})")
-            await asyncio.sleep(1.5 * (attempt + 1))
+            await asyncio.sleep(min(20, 2.0 * (attempt + 1) ** 1.5))
     return []
 
 
@@ -131,8 +131,14 @@ async def run(slug: str, formats: list[str], only: int | None) -> None:
             if only is not None and idx != only and idx in old_by_idx and mp3.exists():
                 scenes.append(old_by_idx[idx])
                 continue
-            words = await synth(text, voice, rate, pitch, mp3)
-            words = attach_punctuation(words, text)
+            cache = mp3.with_suffix(".json")  # per-scene cache → reruns resume where they stopped
+            key = {"text": text, "voice": voice, "rate": rate, "pitch": pitch}
+            if mp3.exists() and cache.exists() and json.loads(cache.read_text()).get("key") == key and only is None:
+                words = json.loads(cache.read_text())["words"]
+            else:
+                words = await synth(text, voice, rate, pitch, mp3)
+                words = attach_punctuation(words, text)
+                cache.write_text(json.dumps({"key": key, "words": words}))
             dur = probe_duration(mp3)
             scenes.append({
                 "index": idx,

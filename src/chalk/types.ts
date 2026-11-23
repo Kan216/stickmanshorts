@@ -74,7 +74,20 @@ export type TimelineScene = Common & {
   title?: string;
 };
 
-export type Scene = HookScene | RankScene | LeaderboardScene | OutroScene | EraScene | TimelineScene;
+/** Head-to-head: two people/countries, one number each; the bigger one wins. */
+export type VersusSide = { name: string; country: string; value: number; cue?: string };
+export type VersusScene = Common & {
+  type: "versus";
+  a: VersusSide;
+  b: VersusSide;
+  label?: string;
+  prefix?: string;
+  unit?: string;
+  /** word that triggers the winner circle (default: after the second value) */
+  winCue?: string;
+};
+
+export type Scene = HookScene | RankScene | LeaderboardScene | OutroScene | EraScene | TimelineScene | VersusScene;
 
 export type Episode = {
   slug: string;

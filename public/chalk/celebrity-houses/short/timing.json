@@ -1,0 +1,381 @@
+{
+ "format": "short",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "scenes": [
+  {
+   "index": 0,
+   "audio": "chalk/celebrity-houses/short/s00.mp3",
+   "duration": 3.168,
+   "text": "Which celebrity paid the most for a house? Let's count.",
+   "words": [
+    {
+     "w": "Which",
+     "t": 0.102,
+     "d": 0.114
+    },
+    {
+     "w": "celebrity",
+     "t": 0.227,
+     "d": 0.455
+    },
+    {
+     "w": "paid",
+     "t": 0.693,
+     "d": 0.307
+    },
+    {
+     "w": "the",
+     "t": 1.011,
+     "d": 0.057
+    },
+    {
+     "w": "most",
+     "t": 1.08,
+     "d": 0.227
+    },
+    {
+     "w": "for",
+     "t": 1.318,
+     "d": 0.125
+    },
+    {
+     "w": "a",
+     "t": 1.455,
+     "d": 0.023
+    },
+    {
+     "w": "house?",
+     "t": 1.489,
+     "d": 0.466
+    },
+    {
+     "w": "Let's",
+     "t": 2.33,
+     "d": 0.136
+    },
+    {
+     "w": "count.",
+     "t": 2.477,
+     "d": 0.341
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "audio": "chalk/celebrity-houses/short/s01.mp3",
+   "duration": 3.192,
+   "text": "Number five. Adele, $58 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "five.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "Adele,",
+     "t": 0.989,
+     "d": 0.352
+    },
+    {
+     "w": "$58 million.",
+     "t": 1.534,
+     "d": 1.307
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "audio": "chalk/celebrity-houses/short/s02.mp3",
+   "duration": 4.368,
+   "text": "Number four. J.Lo & Ben Affleck, $60 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "four.",
+     "t": 0.284,
+     "d": 0.33
+    },
+    {
+     "w": "J.",
+     "t": 0.989,
+     "d": 0.17
+    },
+    {
+     "w": ".",
+     "t": 1.17,
+     "d": 0.193
+    },
+    {
+     "w": "Lo",
+     "t": 1.375,
+     "d": 0.352
+    },
+    {
+     "w": "&",
+     "t": 1.795,
+     "d": 0.136
+    },
+    {
+     "w": "Ben",
+     "t": 1.943,
+     "d": 0.17
+    },
+    {
+     "w": "Affleck",
+     "t": 2.125,
+     "d": 0.42
+    },
+    {
+     "w": "$60 million",
+     "t": 2.784,
+     "d": 1.25
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "audio": "chalk/celebrity-houses/short/s03.mp3",
+   "duration": 3.12,
+   "text": "Number three. The Weeknd, $70 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.182
+    },
+    {
+     "w": "three.",
+     "t": 0.284,
+     "d": 0.284
+    },
+    {
+     "w": "The",
+     "t": 0.955,
+     "d": 0.045
+    },
+    {
+     "w": "Weeknd,",
+     "t": 1.011,
+     "d": 0.364
+    },
+    {
+     "w": "$70 million.",
+     "t": 1.614,
+     "d": 1.17
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "audio": "chalk/celebrity-houses/short/s04.mp3",
+   "duration": 4.08,
+   "text": "Number two. Kim Kardashian, $70.4 million.",
+   "words": [
+    {
+     "w": "Number",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "two.",
+     "t": 0.295,
+     "d": 0.227
+    },
+    {
+     "w": "Kim",
+     "t": 0.909,
+     "d": 0.136
+    },
+    {
+     "w": "Kardashian,",
+     "t": 1.057,
+     "d": 0.591
+    },
+    {
+     "w": "$70.4 million.",
+     "t": 1.898,
+     "d": 1.83
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "audio": "chalk/celebrity-houses/short/s05.mp3",
+   "duration": 6.936,
+   "text": "And number one. Beyonc\u00e9 and Jay-Z, $200 million. The most expensive home ever sold in California.",
+   "words": [
+    {
+     "w": "And",
+     "t": 0.091,
+     "d": 0.057
+    },
+    {
+     "w": "number",
+     "t": 0.159,
+     "d": 0.216
+    },
+    {
+     "w": "one.",
+     "t": 0.386,
+     "d": 0.216
+    },
+    {
+     "w": "Beyonc\u00e9",
+     "t": 0.977,
+     "d": 0.58
+    },
+    {
+     "w": "and",
+     "t": 1.568,
+     "d": 0.08
+    },
+    {
+     "w": "Jay-Z,",
+     "t": 1.659,
+     "d": 0.489
+    },
+    {
+     "w": "$200 million.",
+     "t": 2.386,
+     "d": 1.273
+    },
+    {
+     "w": "The",
+     "t": 4.045,
+     "d": 0.045
+    },
+    {
+     "w": "most",
+     "t": 4.102,
+     "d": 0.227
+    },
+    {
+     "w": "expensive",
+     "t": 4.341,
+     "d": 0.534
+    },
+    {
+     "w": "home",
+     "t": 4.886,
+     "d": 0.318
+    },
+    {
+     "w": "ever",
+     "t": 5.398,
+     "d": 0.17
+    },
+    {
+     "w": "sold",
+     "t": 5.58,
+     "d": 0.295
+    },
+    {
+     "w": "in",
+     "t": 5.886,
+     "d": 0.08
+    },
+    {
+     "w": "California.",
+     "t": 5.977,
+     "d": 0.614
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "audio": "chalk/celebrity-houses/short/s06.mp3",
+   "duration": 1.872,
+   "text": "Here's the full board.",
+   "words": [
+    {
+     "w": "Here's",
+     "t": 0.125,
+     "d": 0.136
+    },
+    {
+     "w": "the",
+     "t": 0.273,
+     "d": 0.08
+    },
+    {
+     "w": "full",
+     "t": 0.364,
+     "d": 0.227
+    },
+    {
+     "w": "board.",
+     "t": 0.602,
+     "d": 0.307
+    }
+   ]
+  },
+  {
+   "index": 7,
+   "audio": "chalk/celebrity-houses/short/s07.mp3",
+   "duration": 2.808,
+   "text": "Who surprised you the most? Tell me in the comments.",
+   "words": [
+    {
+     "w": "Who",
+     "t": 0.102,
+     "d": 0.057
+    },
+    {
+     "w": "surprised",
+     "t": 0.17,
+     "d": 0.455
+    },
+    {
+     "w": "you",
+     "t": 0.636,
+     "d": 0.068
+    },
+    {
+     "w": "the",
+     "t": 0.716,
+     "d": 0.057
+    },
+    {
+     "w": "most?",
+     "t": 0.784,
+     "d": 0.386
+    },
+    {
+     "w": "Tell",
+     "t": 1.545,
+     "d": 0.102
+    },
+    {
+     "w": "me",
+     "t": 1.659,
+     "d": 0.091
+    },
+    {
+     "w": "in",
+     "t": 1.761,
+     "d": 0.057
+    },
+    {
+     "w": "the",
+     "t": 1.83,
+     "d": 0.068
+    },
+    {
+     "w": "comments.",
+     "t": 1.909,
+     "d": 0.545
+    }
+   ]
+  }
+ ]
+}
