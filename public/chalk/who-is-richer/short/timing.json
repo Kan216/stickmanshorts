@@ -1,0 +1,433 @@
+{
+ "format": "short",
+ "voice": "en-US-AndrewNeural",
+ "rate": "+10%",
+ "scenes": [
+  {
+   "index": 0,
+   "audio": "chalk/who-is-richer/short/s00.mp3",
+   "duration": 4.248,
+   "text": "Celebrity versus celebrity. Who's richer? Guess before the answer.",
+   "words": [
+    {
+     "w": "Celebrity",
+     "t": 0.102,
+     "d": 0.523
+    },
+    {
+     "w": "versus",
+     "t": 0.682,
+     "d": 0.409
+    },
+    {
+     "w": "celebrity.",
+     "t": 1.102,
+     "d": 0.557
+    },
+    {
+     "w": "Who's",
+     "t": 2.045,
+     "d": 0.148
+    },
+    {
+     "w": "richer?",
+     "t": 2.205,
+     "d": 0.341
+    },
+    {
+     "w": "Guess",
+     "t": 2.92,
+     "d": 0.193
+    },
+    {
+     "w": "before",
+     "t": 3.125,
+     "d": 0.284
+    },
+    {
+     "w": "the",
+     "t": 3.42,
+     "d": 0.08
+    },
+    {
+     "w": "answer.",
+     "t": 3.511,
+     "d": 0.386
+    }
+   ]
+  },
+  {
+   "index": 1,
+   "audio": "chalk/who-is-richer/short/s01.mp3",
+   "duration": 8.28,
+   "text": "Taylor Swift, or Kim Kardashian? Swift, $2.0 billion. Kardashian, $1.9 billion. Swift wins.",
+   "words": [
+    {
+     "w": "Taylor",
+     "t": 0.102,
+     "d": 0.205
+    },
+    {
+     "w": "Swift,",
+     "t": 0.318,
+     "d": 0.341
+    },
+    {
+     "w": "or",
+     "t": 0.92,
+     "d": 0.08
+    },
+    {
+     "w": "Kim",
+     "t": 1.011,
+     "d": 0.159
+    },
+    {
+     "w": "Kardashian?",
+     "t": 1.182,
+     "d": 0.545
+    },
+    {
+     "w": "Swift,",
+     "t": 2.102,
+     "d": 0.398
+    },
+    {
+     "w": "$2.0 billion.",
+     "t": 2.716,
+     "d": 1.534
+    },
+    {
+     "w": "Kardashian,",
+     "t": 4.614,
+     "d": 0.545
+    },
+    {
+     "w": "$1.9 billion.",
+     "t": 5.42,
+     "d": 1.477
+    },
+    {
+     "w": "Swift",
+     "t": 7.284,
+     "d": 0.25
+    },
+    {
+     "w": "wins.",
+     "t": 7.545,
+     "d": 0.398
+    }
+   ]
+  },
+  {
+   "index": 2,
+   "audio": "chalk/who-is-richer/short/s02.mp3",
+   "duration": 8.04,
+   "text": "Oprah Winfrey, or Jay-Z? Winfrey, $3.2 billion. Jay-Z, $2.8 billion. Winfrey wins.",
+   "words": [
+    {
+     "w": "Oprah",
+     "t": 0.091,
+     "d": 0.239
+    },
+    {
+     "w": "Winfrey,",
+     "t": 0.341,
+     "d": 0.443
+    },
+    {
+     "w": "or",
+     "t": 0.932,
+     "d": 0.091
+    },
+    {
+     "w": "Jay-Z?",
+     "t": 1.034,
+     "d": 0.443
+    },
+    {
+     "w": "Winfrey,",
+     "t": 1.852,
+     "d": 0.432
+    },
+    {
+     "w": "$3.2 billion.",
+     "t": 2.489,
+     "d": 1.523
+    },
+    {
+     "w": "Jay-Z,",
+     "t": 4.386,
+     "d": 0.455
+    },
+    {
+     "w": "$2.8 billion.",
+     "t": 5.114,
+     "d": 1.489
+    },
+    {
+     "w": "Winfrey",
+     "t": 6.977,
+     "d": 0.284
+    },
+    {
+     "w": "wins.",
+     "t": 7.273,
+     "d": 0.432
+    }
+   ]
+  },
+  {
+   "index": 3,
+   "audio": "chalk/who-is-richer/short/s03.mp3",
+   "duration": 7.848,
+   "text": "Peter Jackson, or Tyler Perry? Jackson, $1.9 billion. Perry, $1.4 billion. Jackson wins.",
+   "words": [
+    {
+     "w": "Peter",
+     "t": 0.091,
+     "d": 0.193
+    },
+    {
+     "w": "Jackson,",
+     "t": 0.295,
+     "d": 0.443
+    },
+    {
+     "w": "or",
+     "t": 0.932,
+     "d": 0.068
+    },
+    {
+     "w": "Tyler",
+     "t": 1.011,
+     "d": 0.295
+    },
+    {
+     "w": "Perry?",
+     "t": 1.318,
+     "d": 0.318
+    },
+    {
+     "w": "Jackson,",
+     "t": 2.011,
+     "d": 0.42
+    },
+    {
+     "w": "$1.9 billion.",
+     "t": 2.693,
+     "d": 1.455
+    },
+    {
+     "w": "Perry,",
+     "t": 4.534,
+     "d": 0.284
+    },
+    {
+     "w": "$1.4 billion.",
+     "t": 5.068,
+     "d": 1.375
+    },
+    {
+     "w": "Jackson",
+     "t": 6.818,
+     "d": 0.307
+    },
+    {
+     "w": "wins.",
+     "t": 7.136,
+     "d": 0.375
+    }
+   ]
+  },
+  {
+   "index": 4,
+   "audio": "chalk/who-is-richer/short/s04.mp3",
+   "duration": 8.016,
+   "text": "Michael Jordan, or Vince McMahon? Jordan, $4.3 billion. McMahon, $3.6 billion. Jordan wins.",
+   "words": [
+    {
+     "w": "Michael",
+     "t": 0.091,
+     "d": 0.25
+    },
+    {
+     "w": "Jordan,",
+     "t": 0.352,
+     "d": 0.352
+    },
+    {
+     "w": "or",
+     "t": 0.977,
+     "d": 0.091
+    },
+    {
+     "w": "Vince",
+     "t": 1.08,
+     "d": 0.205
+    },
+    {
+     "w": "McMahon?",
+     "t": 1.295,
+     "d": 0.42
+    },
+    {
+     "w": "Jordan,",
+     "t": 2.091,
+     "d": 0.318
+    },
+    {
+     "w": "$4.3 billion.",
+     "t": 2.682,
+     "d": 1.511
+    },
+    {
+     "w": "McMahon,",
+     "t": 4.568,
+     "d": 0.409
+    },
+    {
+     "w": "$3.6 billion.",
+     "t": 5.193,
+     "d": 1.511
+    },
+    {
+     "w": "Jordan",
+     "t": 7.068,
+     "d": 0.205
+    },
+    {
+     "w": "wins.",
+     "t": 7.284,
+     "d": 0.398
+    }
+   ]
+  },
+  {
+   "index": 5,
+   "audio": "chalk/who-is-richer/short/s05.mp3",
+   "duration": 8.784,
+   "text": "Steven Spielberg, or George Lucas? Spielberg, $7.1 billion. Lucas, $5.2 billion. Spielberg wins.",
+   "words": [
+    {
+     "w": "Steven",
+     "t": 0.102,
+     "d": 0.295
+    },
+    {
+     "w": "Spielberg,",
+     "t": 0.409,
+     "d": 0.477
+    },
+    {
+     "w": "or",
+     "t": 1.159,
+     "d": 0.068
+    },
+    {
+     "w": "George",
+     "t": 1.239,
+     "d": 0.261
+    },
+    {
+     "w": "Lucas?",
+     "t": 1.511,
+     "d": 0.477
+    },
+    {
+     "w": "Spielberg,",
+     "t": 2.364,
+     "d": 0.5
+    },
+    {
+     "w": "$7.1 billion.",
+     "t": 3.091,
+     "d": 1.659
+    },
+    {
+     "w": "Lucas,",
+     "t": 5.125,
+     "d": 0.466
+    },
+    {
+     "w": "$5.2 billion.",
+     "t": 5.761,
+     "d": 1.455
+    },
+    {
+     "w": "Spielberg",
+     "t": 7.591,
+     "d": 0.42
+    },
+    {
+     "w": "wins.",
+     "t": 8.023,
+     "d": 0.42
+    }
+   ]
+  },
+  {
+   "index": 6,
+   "audio": "chalk/who-is-richer/short/s06.mp3",
+   "duration": 2.664,
+   "text": "How many did you guess right? Tell me in the comments.",
+   "words": [
+    {
+     "w": "How",
+     "t": 0.102,
+     "d": 0.068
+    },
+    {
+     "w": "many",
+     "t": 0.182,
+     "d": 0.125
+    },
+    {
+     "w": "did",
+     "t": 0.318,
+     "d": 0.114
+    },
+    {
+     "w": "you",
+     "t": 0.443,
+     "d": 0.08
+    },
+    {
+     "w": "guess",
+     "t": 0.534,
+     "d": 0.261
+    },
+    {
+     "w": "right?",
+     "t": 0.807,
+     "d": 0.239
+    },
+    {
+     "w": "Tell",
+     "t": 1.42,
+     "d": 0.102
+    },
+    {
+     "w": "me",
+     "t": 1.534,
+     "d": 0.091
+    },
+    {
+     "w": "in",
+     "t": 1.636,
+     "d": 0.057
+    },
+    {
+     "w": "the",
+     "t": 1.705,
+     "d": 0.068
+    },
+    {
+     "w": "comments.",
+     "t": 1.784,
+     "d": 0.545
+    }
+   ]
+  }
+ ]
+}
