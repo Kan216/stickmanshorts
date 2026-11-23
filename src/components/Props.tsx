@@ -889,3 +889,62 @@ export const Mask: React.FC<{ head: { x: number; y: number }; r: number; lift?: 
     </Layer>
   );
 };
+
+/** A labelled ball: glass (translucent with a highlight) or rubber (solid). */
+export const JuggleBall: React.FC<{ x: number; y: number; r?: number; color: string; label: string; glass?: boolean; opacity?: number }> = ({
+  x,
+  y,
+  r = 40,
+  color,
+  label,
+  glass = true,
+  opacity = 1,
+}) => {
+  const c = resolveColor(color);
+  return (
+    <Layer opacity={opacity}>
+      <circle cx={x} cy={y} r={r * 1.5} fill={c} opacity={glass ? 0.18 : 0.25} />
+      <circle cx={x} cy={y} r={r} fill={glass ? "#0a0d14" : c} fillOpacity={glass ? 0.55 : 1} stroke={c} strokeWidth={3} />
+      {glass && <path d={`M${x - r * 0.6} ${y - r * 0.2} A${r * 0.7} ${r * 0.7} 0 0 1 ${x - r * 0.1} ${y - r * 0.7}`} fill="none" stroke="#ffffff" strokeWidth={3} strokeLinecap="round" opacity={0.7} />}
+      <text x={x} y={y + 4} textAnchor="middle" fill={glass ? c : "#0a0d14"} fontFamily="'Segoe UI', Arial, sans-serif" fontWeight={900} fontSize={Math.max(10, r * 0.3)} letterSpacing={0.5}>
+        {label}
+      </text>
+    </Layer>
+  );
+};
+
+/** Glowing shards bursting out of a point. `t` 0..1 = how far they have flown. */
+export const GlassShards: React.FC<{ x: number; y: number; t: number; color: string; count?: number; spread?: number }> = ({
+  x,
+  y,
+  t,
+  color,
+  count = 12,
+  spread = 150,
+}) => {
+  const c = resolveColor(color);
+  const e = 1 - Math.pow(1 - Math.max(0, Math.min(1, t)), 3);
+  return (
+    <Layer opacity={1 - Math.max(0, t - 0.5) * 2}>
+      {Array.from({ length: count }).map((_, i) => {
+        const a = (Math.PI * 2 * i) / count + rand(i) * 0.4 - Math.PI / 2 + 0.3;
+        const d = spread * (0.5 + rand(i + 7) * 0.7) * e;
+        const px = x + Math.cos(a) * d;
+        const py = y + Math.sin(a) * d * 0.8 + e * e * 60;
+        const rot = a * 180 / Math.PI + t * 400;
+        return (
+          <polygon
+            key={i}
+            points="0,-9 6,6 -6,4"
+            fill={c}
+            stroke="#fff4c4"
+            strokeWidth={1}
+            transform={`translate(${px} ${py}) rotate(${rot})`}
+            opacity={0.9}
+          />
+        );
+      })}
+      <circle cx={x} cy={y} r={20 + 60 * e} fill={c} opacity={0.35 * (1 - e)} />
+    </Layer>
+  );
+};
