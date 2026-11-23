@@ -16,6 +16,7 @@ import { TheBridge, THE_BRIDGE_DURATION } from "./shorts/the-bridge/TheBridge";
 import { ProtectFlame, PROTECT_FLAME_DURATION } from "./shorts/protect-flame/ProtectFlame";
 import { Domino, DOMINO_DURATION } from "./shorts/domino/Domino";
 import { Slingshot, SLINGSHOT_DURATION } from "./shorts/slingshot/Slingshot";
+import { MuteTheNoise, MUTE_THE_NOISE_DURATION } from "./shorts/mute-the-noise/MuteTheNoise";
 import { PoseSheet } from "./shorts/PoseSheet";
 import { OrbOfLight3D } from "./three/OrbOfLight3D";
 
@@ -41,6 +42,7 @@ export const RemotionRoot: React.FC = () => (
     <Composition id="ProtectFlame" component={ProtectFlame} durationInFrames={PROTECT_FLAME_DURATION} {...VIDEO} />
     <Composition id="Domino" component={Domino} durationInFrames={DOMINO_DURATION} {...VIDEO} />
     <Composition id="Slingshot" component={Slingshot} durationInFrames={SLINGSHOT_DURATION} {...VIDEO} />
+    <Composition id="MuteTheNoise" component={MuteTheNoise} durationInFrames={MUTE_THE_NOISE_DURATION} {...VIDEO} />
     <Still id="PoseSheet" component={PoseSheet} width={VIDEO.width} height={VIDEO.height} />
   </>
 );

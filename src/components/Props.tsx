@@ -809,3 +809,52 @@ export const MotionStreaks: React.FC<{ x: number; y: number; len?: number; color
     </Layer>
   );
 };
+
+/** Speech bubble with a tail. `shatter` 0..1 splits and fades it (glitch break). */
+export const SpeechBubble: React.FC<{ x: number; y: number; text: string; color?: string; opacity?: number; scale?: number; shatter?: number }> = ({
+  x,
+  y,
+  text,
+  color = "white",
+  opacity = 1,
+  scale = 1,
+  shatter = 0,
+}) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  const w = (text.length * 13 + 30) * scale;
+  const h = 44 * scale;
+  const bubble = (dx: number, dy: number, op: number, fill: string) => (
+    <g transform={`translate(${x + dx} ${y + dy})`} opacity={op}>
+      <rect x={-w / 2} y={-h / 2} width={w} height={h} rx={12 * scale} fill={fill} stroke={c} strokeWidth={2.5} />
+      <path d={`M${-8 * scale} ${h / 2 - 1} L0 ${h / 2 + 12 * scale} L${8 * scale} ${h / 2 - 1} Z`} fill={fill} stroke={c} strokeWidth={2.5} />
+      <text x={0} y={6 * scale} textAnchor="middle" fill={c} fontFamily="'Segoe UI', Arial, sans-serif" fontWeight={800} fontSize={20 * scale} letterSpacing={1}>
+        {text}
+      </text>
+    </g>
+  );
+  if (shatter <= 0) return <Layer opacity={opacity}>{bubble(0, 0, 1, "#0a0d14")}</Layer>;
+  const j = Math.sin(f * 1.7) * 6 * shatter;
+  return (
+    <Layer opacity={opacity}>
+      {bubble(-shatter * 26, -shatter * 8 + j * 0.3, (1 - shatter) * 0.9, "#0a0d14")}
+      {bubble(shatter * 22, shatter * 10, (1 - shatter) * 0.5, "#0a0d14")}
+      {bubble(j, -shatter * 18, shatter * 0.5, "#0a0d14")}
+    </Layer>
+  );
+};
+
+/** Over-ear headphones drawn around a head point (`head`, radius `r`). */
+export const Headphones: React.FC<{ head: { x: number; y: number }; r: number; color?: string; opacity?: number }> = ({ head, r, color = "white", opacity = 1 }) => {
+  const c = resolveColor(color);
+  const R = r * 1.9;
+  const cx = head.x;
+  const cy = head.y + r * 0.1;
+  return (
+    <Layer opacity={opacity}>
+      <path d={`M${cx - R} ${cy + r * 0.6} A${R} ${R} 0 0 1 ${cx + R} ${cy + r * 0.6}`} fill="none" stroke={c} strokeWidth={5} strokeLinecap="round" />
+      <rect x={cx - R - 9} y={cy + r * 0.2} width={14} height={r * 1.4} rx={6} fill={c} />
+      <rect x={cx + R - 5} y={cy + r * 0.2} width={14} height={r * 1.4} rx={6} fill={c} />
+    </Layer>
+  );
+};
