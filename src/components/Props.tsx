@@ -554,3 +554,27 @@ export const FinishTape: React.FC<{ x: number; groundY: number; h?: number; brok
     </Layer>
   );
 };
+
+/** Glowing ring lying flat on the floor (perspective ellipse). Use for comfort zones, footprints, spawn pads. */
+export const GroundRing: React.FC<{ x: number; y?: number; r: number; color: string; strength?: number; opacity?: number; pulse?: boolean }> = ({
+  x,
+  y = LAYOUT.groundY - 2,
+  r,
+  color,
+  strength = 1,
+  opacity = 1,
+  pulse = false,
+}) => {
+  const f = useCurrentFrame();
+  const c = resolveColor(color);
+  const k = pulse ? 1 + 0.03 * Math.sin(f / 4) : 1;
+  const rx = r * k;
+  const ry = rx * 0.28;
+  return (
+    <Layer opacity={opacity}>
+      <ellipse cx={x} cy={y} rx={rx * 1.08} ry={ry * 1.25} fill={c} opacity={0.12 * strength} />
+      <ellipse cx={x} cy={y} rx={rx} ry={ry} fill="none" stroke={c} strokeWidth={10} opacity={0.22 * strength} />
+      <ellipse cx={x} cy={y} rx={rx} ry={ry} fill="none" stroke={c} strokeWidth={3} opacity={0.95 * strength} />
+    </Layer>
+  );
+};
