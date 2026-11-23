@@ -858,3 +858,34 @@ export const Headphones: React.FC<{ head: { x: number; y: number }; r: number; c
     </Layer>
   );
 };
+
+/** A smiling face plate over a head. `lift` 0..1 lifts it off (up, tilting away). `head` is the head centre. */
+export const Mask: React.FC<{ head: { x: number; y: number }; r: number; lift?: number; color?: string; opacity?: number }> = ({
+  head,
+  r,
+  lift = 0,
+  color = "#e9e4d8",
+  opacity = 1,
+}) => {
+  const R = r * 1.25;
+  const dx = lift * 70;
+  const dy = -lift * 150;
+  const rot = -lift * 38;
+  const cx = head.x;
+  const cy = head.y;
+  const sad = lift > 0.6;
+  return (
+    <Layer opacity={opacity * (1 - Math.max(0, lift - 0.9) * 10)}>
+      <g transform={`translate(${dx} ${dy}) rotate(${rot} ${cx} ${cy})`}>
+        <circle cx={cx} cy={cy} r={R} fill={color} stroke="#0a0d14" strokeWidth={2} />
+        <path d={`M${cx - R * 0.55} ${cy + R * 0.02} Q${cx - R * 0.45} ${cy - R * 0.12} ${cx - R * 0.3} ${cy + R * 0.02}`} fill="none" stroke="#0a0d14" strokeWidth={3} strokeLinecap="round" />
+        <path d={`M${cx + R * 0.3} ${cy + R * 0.02} Q${cx + R * 0.45} ${cy - R * 0.12} ${cx + R * 0.55} ${cy + R * 0.02}`} fill="none" stroke="#0a0d14" strokeWidth={3} strokeLinecap="round" />
+        {sad ? (
+          <path d={`M${cx - R * 0.3} ${cy + R * 0.45} Q${cx} ${cy + R * 0.22} ${cx + R * 0.3} ${cy + R * 0.45}`} fill="none" stroke="#0a0d14" strokeWidth={3} strokeLinecap="round" />
+        ) : (
+          <path d={`M${cx - R * 0.35} ${cy + R * 0.3} Q${cx} ${cy + R * 0.62} ${cx + R * 0.35} ${cy + R * 0.3}`} fill="none" stroke="#0a0d14" strokeWidth={3} strokeLinecap="round" />
+        )}
+      </g>
+    </Layer>
+  );
+};
